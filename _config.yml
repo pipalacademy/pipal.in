@@ -1,0 +1,19 @@
+#
+# Jekyll Config
+# 
+
+
+# Data Model
+collections:
+
+
+# Site settings
+permalink: :slug
+timezone: Asia/Kolkata
+
+
+# Build settings
+source: .
+destination: ./_site
+exclude:
+  - README.md

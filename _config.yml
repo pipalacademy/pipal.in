@@ -5,6 +5,8 @@
 
 # Data Model
 collections:
+  trainers:
+    output: true
 
 
 # Site settings

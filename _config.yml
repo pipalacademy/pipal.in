@@ -18,6 +18,7 @@ collections:
 # Site settings
 permalink: :slug
 timezone: Asia/Kolkata
+markdown_ext: "markdown,mkdown,mkdn,mkd,md,liquid"
 
 
 # Build settings

@@ -6,10 +6,13 @@
 # Data Model
 collections:
   courses:
+    title: Courses
     output: true
   trainers:
+    title: Trainers
     output: true
   testimonials:
+    title: Testimonials
 
 
 # Site settings

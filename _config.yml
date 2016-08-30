@@ -13,7 +13,6 @@ timezone: Asia/Kolkata
 
 
 # Build settings
-source: .
+source: ./templates
 destination: ./_site
-exclude:
-  - README.md
+

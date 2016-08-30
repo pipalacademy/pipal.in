@@ -5,6 +5,8 @@
 
 # Data Model
 collections:
+  courses:
+    output: true
   trainers:
     output: true
   testimonials:

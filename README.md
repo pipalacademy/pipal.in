@@ -12,9 +12,9 @@ Install
     - Ruby 2.3+
     - Jekyll 3.2+
     
-2.  Run the following command
+2.  Build the site
         
-        $ jekyll build --watch
+        $ jekyll build
     
 3.  Access the generated ./_site folder from your browser
 
@@ -25,12 +25,23 @@ Install
 Development
 -----------
 
-1.  Install dev tools:
+1.  Create an environment specific config file
+    if required (eg. to override `baseurl`):
+    
+        $ cp sample_env_config.yml _env_config.yml
+        $ vi _env_config.yml
+
+2.  Install dev tools:
     - Node.js http://nodejs.org
     - Gulp http://gulpjs.com/
-    - $ npm install
+    
+        $ cd assets & npm install
 
-2.  Run Gulp
+3.  Enable continuous builds of the site
+    
+        $ jekyll build --watch --config _config.yml,_env_config.yml
+
+4.  Enable continuous builds of the assets
     
         $ gulp
 

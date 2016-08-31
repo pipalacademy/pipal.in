@@ -18,10 +18,15 @@ collections:
 # Site settings
 permalink: :slug
 timezone: Asia/Kolkata
-markdown_ext: "markdown,mkdown,mkdn,mkd,md,liquid"
+baseurl: ""
 
 
 # Build settings
 source: ./templates
 destination: ./_site
+keep_files:
+  - build
+  - js
+  - img
+markdown_ext: "markdown,mkdown,mkdn,mkd,md,liquid"
 

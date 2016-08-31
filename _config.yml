@@ -15,6 +15,16 @@ collections:
     title: Testimonials
 
 
+# Defaults
+defaults:
+  -
+    scope:
+      path: "_courses"
+      type: "courses"
+    values:
+      layout: "course"
+
+
 # Site settings
 permalink: :slug
 timezone: Asia/Kolkata

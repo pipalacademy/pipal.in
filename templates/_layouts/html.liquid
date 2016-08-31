@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class="has-no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ siteName }}</title>
+  
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="{{ site.baseurl | append: '/fonts.css' }}" type="text/css">
+  <link rel="stylesheet" href="{{ site.baseurl | append: '/build/style.css' }}" type="text/css">
+  
+  <!--
+    
+    IA, design and development
+    by Miranj http://miranj.in
+    
+  -->
+</head>
+<body class="{{ layout.body_class|default:'fill-white' }}">
+  <div id="page" class="{{ layout.page_class|default:'fill-offwhite container-max nopad' }} clearfix">
+    
+    {{ content }}
+    
+  </div><!-- #page -->
+</body>
+</html>

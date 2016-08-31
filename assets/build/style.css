@@ -644,6 +644,49 @@ body {
   color: #111;
 }
 /* Objects */
+.container {
+  max-width: 35em;
+  margin: 0 auto;
+  padding: 24px;
+  padding: 1.5rem;
+}
+.banner {
+  background-color: #008000;
+  background: -webkit-linear-gradient(left top, #008000, #009a00);
+  background: linear-gradient(to right bottom, #008000, #009a00);
+  color: white;
+  padding: 0 0 16px;
+  padding: 0 0 1rem;
+  font-weight: 300;
+}
+.banner-title {
+  color: inherit;
+  font-weight: 800;
+}
+.section-heading {
+  border-left: 16px solid;
+  border-left: 1rem solid;
+  margin-left: -24px;
+  margin-left: -1.5rem;
+  padding-left: 8px;
+  padding-left: 0.5rem;
+  color: #008000;
+}
+.highlight {
+  margin: 0 -24px;
+  margin: 0 -1.5rem;
+  padding: 16px 24px;
+  padding: 1rem 1.5rem;
+  background: -webkit-linear-gradient(left, #FFA, #FFF);
+  background: linear-gradient(to right, #FFA, #FFF);
+  color: #111;
+}
+.highlight-heading {
+  color: red;
+  text-transform: uppercase;
+  margin: 24px 0 8px;
+  margin: 1.5rem 0 0.5rem;
+}
 /* ==|== print styles =======================================================
    Print styles.
    Inlined to avoid required HTTP connection: h5bp.com/r

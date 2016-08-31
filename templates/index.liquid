@@ -1,10 +1,7 @@
 ---
+layout: base
 ---
-<h1>
-  Pipal Academy
-</h1>
-
-<dl>
+<dl class="container">
   {% for collection in site.collections %}
     <dt>
       {{ collection.title }}
@@ -14,7 +11,7 @@
         <ul>
           {% for doc in collection.docs %}
             <li>
-              <a href="{{ './' | append: doc.url }}">
+              <a href="{{ site.baseurl | append: doc.url }}">
                 {{ doc.title }}
               </a>
             </li>

@@ -1,0 +1,140 @@
+/* ============== */
+/* = Typography = */
+/* ============== */
+
+
+
+// Font serving on Retina devices
+.retina-font-weight(@font-weight; @important:~'') {
+    @media (-webkit-min-device-pixel-ratio: 1.5),
+           (min--moz-device-pixel-ratio: 1.5),
+           (min-resolution: 1.5dppx),
+           (min-resolution: 144dpi)
+    {
+        & { font-weight: @font-weight @important; }
+    }
+}
+
+
+
+/*  Families  */
+
+body {
+    font-family: @prose-stack;
+    line-height: @prose-leading;
+    font-weight: normal;
+}
+.wf-active body {
+    font-family: @prose-webfont-stack;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dt,
+label,
+input[type=submit],
+input[type=button],
+button,
+.button {
+    font-family: @title-stack;
+    line-height: @title-leading;
+    font-weight: 800;
+}
+.wf-active {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    dt,
+    label,
+    input[type=submit],
+    input[type=button],
+    button,
+    .button {
+        font-family: @title-webfont-stack;
+    }
+}
+table,
+th {
+    font-family: @title-stack;
+    line-height: @title-leading;
+}
+.wf-active {
+    table,
+    th {
+        font-family: @title-webfont-stack;
+    }
+}
+
+/* Declaring it separately to allow it to override the defaults declared just above */
+.prose-type {
+    font-family: @prose-stack;
+    .wf-active & { font-family: @prose-webfont-stack; }
+}
+.title-type {
+    font-family: @title-stack;
+    .wf-active & { font-family: @title-webfont-stack; }
+}
+
+
+
+pre,
+code,
+.monospace { font-family: Menlo, Monaco, Consolas, Bitstream Vera Sans Mono, monospace; }
+code {
+    font-size: 0.7em;
+    background-color: #F9F9F9;
+    padding: 0.2em;
+}
+
+
+
+/* Helpers */
+
+.quo            { margin-left: -0.24em; }
+.dquo           { margin-left: -0.44em; }
+.tquo           { margin-left: -0.68em; }
+
+
+
+/*  Scale  */
+
+html    { font-size: 16px; }
+body    { font-size: 18px;     line-height: @prose-leading; }
+
+/* 1.5 */
+    .size-huge     { font-size: 5.063rem; }
+h1, .size-xxlarge  { font-size: 3.375rem; }
+h2, .size-xlarge   { font-size: 2.25rem; }
+h3, .size-large    { font-size: 1.5rem; }
+    .size-regular  { font-size: 1rem; }
+
+/* 1.414 */
+    .size-huge     { font-size: 3.998rem; }
+h1, .size-xxlarge  { font-size: 2.827rem; }
+h2, .size-xlarge   { font-size: 1.999rem; }
+h3, .size-large    { font-size: 1.414rem; }
+    .size-regular  { font-size: 1rem; }
+
+/* 1.333 */
+/*    .size-huge     { font-size: 3.157rem; }
+h1, .size-xxlarge  { font-size: 2.369rem; }
+h2, .size-xlarge   { font-size: 1.777rem; }
+h3, .size-large    { font-size: 1.333rem; }
+    .size-regular  { font-size: 1rem; }
+*/
+
+
+/* Defaults */
+h1,
+h2,
+h3,
+dt {
+    margin: 2rem 0 1rem;
+}
+p { margin: 0 0 1.5rem; }

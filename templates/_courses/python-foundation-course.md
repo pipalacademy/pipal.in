@@ -11,7 +11,8 @@ audience: |
   
   This course assumes that the participants already have experience with some programming language. Prior exposure to Python is not required.
   
-  **This is not an introduction to programming course.** Participants should already be familiar with the basic concepts of programming like variables, assignment, functions, loops, arrays etc.
+prerequisites: |
+  *This is not an introduction to programming course.* Participants should already be familiar with the basic concepts of programming like variables, assignment, functions, loops, arrays etc.
 
 outline: |
   

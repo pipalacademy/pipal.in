@@ -9,27 +9,28 @@ brief:
 audience: |
   This course is targeted at experienced Python programmers who would like to learn advanced features of the Python programming language for building libraries and frameworks with beautiful APIs.
   
-  This course assumes a working knowledge of Python programming. It is NOT recommended for programmers who are new to Python.
+prerequisites: |
+  This course assumes a working knowledge of Python programming. It is *not* recommended for programmers who are new to Python.
 
 outline: |
   
-  ## Warm up
+  ### Warm up
   
   Review of Python programming language. Topics covered are lists, dictionaries, list comprehensions and importing modules.
   
-  ## Higher ­Order Functions and Decorators
+  ### Higher ­Order Functions and Decorators
   
   A deeper look at functions in Python. Covers functions with variable arguments, keyword and default arguments, scoping rules, recursion, higher order functions and decorators.
   
-  ## Iterators and Generators
+  ### Iterators and Generators
   
   Introduction to Iterators, generators and generator expressions with emphasis on working with large data and how these techniques help to make code more readable. Also explores coroutines using the new async and await syntax and async programming.
   
-  ## Deeper look at classes and objects
+  ### Deeper look at classes and objects
   
   Understanding classes and objects at a deeper level. Covers old-style and new-style classes, static methods, class methods, special methods for operator overloading, slots, descriptors, context managers and meta classes.
   
-  ## Writing Python Libraries
+  ### Writing Python Libraries
   
   Covers best practices of writing, documenting, testing and distributing python libraries.
 
@@ -46,5 +47,8 @@ trainers:
   - anand
 
 testimonials:
+
+video: |
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/I_oZv55j0EU?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 ---

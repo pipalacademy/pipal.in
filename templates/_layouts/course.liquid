@@ -32,7 +32,7 @@ layout: base
   </header>
   
   {% if page.video %}
-    <figure class="containers">
+    <figure class="container">
       <div class="embed-fluid">
         {{ page.video }}
       </div>
@@ -49,32 +49,42 @@ layout: base
     </section>
   {% endif %}
   
-  <section class="container">
-    <h2 class="section-heading size-xlarge">
-      Audience
-    </h2>
-    <div class="prose">
-      {{ page.audience | markdownify }}
-    </div>
-    
-    <div class="highlight">
-      <h3 class="highlight-heading size-small">
-        Pre-requisites
-      </h3>
-      <div class="prose">
-        {{ page.prerequisites | markdownify }}
-      </div>
-    </div>
-  </section>
+  {% if page.audience or page.prerequisites %}
+    <section class="container">
+      {% if page.audience %}
+        <h2 class="section-heading size-xlarge">
+          Audience
+        </h2>
+        <div class="prose">
+          {{ page.audience | markdownify }}
+        </div>
+      {% endif %}
+      
+      {% if page.prerequisites %}
+        <div class="highlight">
+          <h3 class="highlight-heading size-small">
+            Pre-requisites
+          </h3>
+          <div class="prose">
+            {{ page.prerequisites | markdownify }}
+          </div>
+        </div>
+      {% endif %}
+    </section>
+  {% endif %}
   
-  <section class="container">
-    <h2 class="section-heading size-xlarge">
-      Course Outline
-    </h2>
-    <div class="prose">
-      {{ page.outline | markdownify }}
-    </div>
-  </section>
+  
+  {% if page.outline %}
+    <section class="container">
+      <h2 class="section-heading size-xlarge">
+        Course Outline
+      </h2>
+      <div class="prose">
+        {{ page.outline | markdownify }}
+      </div>
+    </section>
+  {% endif %}
+  
   
   {% if page.testimonials %}
     <section>

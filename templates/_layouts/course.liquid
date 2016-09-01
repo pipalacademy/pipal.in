@@ -11,6 +11,23 @@ layout: base
       <div class="size-larges">
         {{ page.brief | markdownify }}
       </div>
+      
+      {% if page.duration or page.participants %}
+        <dl class="labels">
+          {% if page.duration %}
+            <dt class="visuallyhidden">Suggested Duration</dt>
+            <dd class="label-timer">
+              {{ page.duration }}
+            </dd>
+          {% endif %}
+          {% if page.participants %}
+            <dt class="visuallyhidden">Participants</dt>
+            <dd class="label-people">
+              Class of {{ page.participants }}
+            </dd>
+          {% endif %}
+        </dl>
+      {% endif %}
     </div>
   </header>
   
@@ -20,6 +37,16 @@ layout: base
         {{ page.video }}
       </div>
     </figure>
+  {% endif %}
+  
+  
+  {% if page.description %}
+    <section class="container">
+      <h2 class="section-heading size-xlarge">The Course</h2>
+      <div class="prose">
+        {{ page.description | markdownify }}
+      </div>
+    </section>
   {% endif %}
   
   <section class="container">
@@ -48,4 +75,46 @@ layout: base
       {{ page.outline | markdownify }}
     </div>
   </section>
+  
+  {% if page.testimonials %}
+    <section>
+      <header class="container">
+        <h2 class="section-heading size-xlarge">
+          Testimonials
+        </h2>
+      </header>
+      
+      {% for t_slug in page.testimonials %}
+        {% assign testimonial = site.testimonials | where: 'slug', t_slug | first %}
+        {% assign t_id =  'testimonial-' | append: t_slug %}
+        {% assign t_truncate =  testimonial.content | size %}
+        {% if testimonial %}
+          <aside id="{{ t_id }}">
+            <blockquote class="speechbubble container {% if t_truncate > 250 %}truncate-el{% endif %}">
+              {{ testimonial.content | markdownify }}
+              {% if t_truncate > 250 %}
+                <a
+                  class="truncate-dismiss"
+                  href="#{{ t_id }}">
+                  <span class="truncate-button">
+                    …Read More
+                  </span>
+                </a>
+              {% endif %}
+            </blockquote>
+            <hgroup class="container">
+              <h4 class="speechbubble-attribution size-large">
+                {{ testimonial.title }}
+              </h4>
+              <h5 class="speechbubble-credentials size-small">
+                <b>{{ testimonial.org }}</b>
+                {{ testimonial.designation }}
+              </h5>
+            </hgroup>
+          </aside>
+        {% endif %}
+      {% endfor %}
+    </section>
+  {% endif %}
+  
 </article>

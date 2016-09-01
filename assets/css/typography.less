@@ -84,7 +84,18 @@ code {
 
 /*  Scale  */
 
-html    { font-size: 16px;     line-height: @prose-leading; }
+    html    { font-size: 16px;     line-height: @prose-leading; }
+@media (min-width: @sm-min) {
+    html    { font-size: 18px;     line-height: @prose-leading; }
+}
+@media (min-width: @md-min) {
+    html    { font-size: 21px;     line-height: @prose-leading; }
+}
+@media (min-width: @lg-min) {
+    html    { font-size: 24px;     line-height: @prose-leading; }
+}
+
+
 
 /* 1.5 */
     .size-huge     { font-size: 5.063rem; }
@@ -93,6 +104,7 @@ h2, .size-xlarge   { font-size: 2.25rem; }
 h3, .size-large    { font-size: 1.5rem; }
 body,.size-regular { font-size: 1.125rem; }
     .size-small    { font-size: 1rem; }
+    .size-xsmall   { font-size: 0.667rem; }
 
 /* 1.414 */
     .size-huge     { font-size: 3.998rem; }
@@ -101,6 +113,7 @@ h2, .size-xlarge   { font-size: 1.999rem; }
 h3, .size-large    { font-size: 1.414rem; }
 body,.size-regular { font-size: 1.125rem; }
     .size-small    { font-size: 1rem; }
+    .size-xsmall   { font-size: 0.75rem; }
 
 /* 1.333 */
 /*    .size-huge     { font-size: 3.157rem; }
@@ -108,6 +121,8 @@ h1, .size-xxlarge  { font-size: 2.369rem; }
 h2, .size-xlarge   { font-size: 1.777rem; }
 h3, .size-large    { font-size: 1.333rem; }
 body,.size-regular { font-size: 1.125rem; }
+    .size-small    { font-size: 1rem; }
+    .size-xsmall   { font-size: 0.75rem; }
 */
 
 

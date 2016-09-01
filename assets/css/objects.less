@@ -9,7 +9,7 @@
 
 .banner {
     background-color: @brand-three;
-    background: linear-gradient(to right bottom, @brand-three, lighten(@brand-three, 5%));
+    background: linear-gradient(to right bottom, darken(@brand-three, 15%), lighten(@brand-three, 15%));
     color: @brand-one;
     padding: 0 0 1rem;
     font-weight: 300;
@@ -39,4 +39,58 @@
     text-transform: uppercase;
     margin: 1.5rem 0 0.5rem;
 }
+
+
+
+.labels {
+    .size-xsmall;
+    margin: 2.5rem 0 -0.25rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.label-people,
+.label-timer {
+    display: inline-block;
+    background: url(../img/timer.svg) no-repeat scroll center left;
+    background-size: 1rem auto;
+    padding-left: 1.25rem;
+    margin: 0 1rem 0.5rem 0;
+}
+.label-people { background-image: url(../img/people.svg); }
+
+
+.speechbubble {
+    background-color: #EEE;
+    background: linear-gradient(to bottom, #EEE, #DDD);
+    border-top: 1px solid #DDD;
+    margin-bottom: 0;
+    font-style: italic;
+    position: relative;
+    transition: height 1s ease-in-out;
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: -1.75rem;
+        left: 0.875rem;
+        width: 0;
+        height:0;
+        border: 0.875em solid;
+        border-color: #DDD transparent transparent transparent;
+    }
+    p:last-child { margin-bottom: 0; }
+}
+.speechbubble-attribution {
+    color: @brand-three;
+    font-weight: bold;
+    margin: 0.25rem 0;
+}
+.speechbubble-credentials {
+    // color: gray;
+    margin-top: 0;
+    font-weight: 300;
+    line-height: 1.2;
+    .retina-font-weight(normal);
+    b { .retina-font-weight(800); margin-right: 0.25rem; }
+}
+
 

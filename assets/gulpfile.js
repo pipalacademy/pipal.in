@@ -125,7 +125,7 @@ gulp.task(WATCH_TASK, function () {
 // Run individual tasks, then start the watcher
 gulp.task('default', [
     CSS_TASK,
-    // JS_TASK,
+    JS_TASK,
     LINT_TASK,
     WATCH_TASK
 ]);

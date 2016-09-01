@@ -9,8 +9,17 @@ brief:
 audience: |
   This course is targeted at experienced Python programmers who would like to learn advanced features of the Python programming language for building libraries and frameworks with beautiful APIs.
   
-prerequisites: |
   This course assumes a working knowledge of Python programming. It is *not* recommended for programmers who are new to Python.
+  
+prerequisites: |
+  - Working knowledge of Python programming
+  
+  This course is *not* for you if –
+  
+  - You have never written a list comprehension
+  - You have never used generators or decorators before
+  - You have never written a class in Python
+  - You don't know what `__str__` and `__repr__` means
 
 outline: |
   
@@ -33,6 +42,9 @@ outline: |
   ### Writing Python Libraries
   
   Covers best practices of writing, documenting, testing and distributing python libraries.
+
+duration: 3 days
+participants: 12 or less
 
 format: |
   The suggested duration of the course is 3 days.

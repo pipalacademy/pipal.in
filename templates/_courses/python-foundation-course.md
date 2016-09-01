@@ -36,6 +36,9 @@ outline: |
      
      Introduction to automated testing using unittest and py.test modules.
 
+duration: 3 to 4 days
+participants: 12 or less
+
 format: |
   The suggested duration of the course is 3 days. The duration can be extended to 4 days to cover some
   additional topics, if required.

@@ -13,6 +13,9 @@ schedule: |
   September 18, 2016 (Sunday)
   9:00 AM to 4:00 PM
 
+brief:
+  Explore everything that happens behind the scenes of your favorite web framework.
+
 description: |
   HTTP Bottom Up is a two-day hands-on workshop to explore everything that happens behind the scenes of your favorite web framework.
   

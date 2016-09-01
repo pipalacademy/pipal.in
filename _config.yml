@@ -9,7 +9,7 @@ collections:
     title: Courses
     output: true
   events:
-    title: New Courses
+    title: Events
     output: true
   trainers:
     title: Trainers

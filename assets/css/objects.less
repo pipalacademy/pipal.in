@@ -93,11 +93,11 @@
 .speechbubble {
     background-color: lighten(@brand-five, 5%);
     background: linear-gradient(to bottom, lighten(@brand-five, 5%), @brand-five);
-    border-top: 1px solid @brand-five;
+    border: 1px solid @brand-five;
+    border-bottom: none;
     margin-bottom: 0;
     font-style: italic;
     position: relative;
-    transition: height 1s ease-in-out;
     &:after {
         content: "";
         position: absolute;
@@ -108,7 +108,8 @@
         border: 0.875em solid;
         border-color: @brand-five transparent transparent transparent;
     }
-    p:last-child { margin-bottom: 0; }
+    p:last-of-type { margin-bottom: 0; }
+    .truncate-el { margin-bottom: -1.5rem; }
 }
 .speechbubble-attribution {
     color: @brand-three;

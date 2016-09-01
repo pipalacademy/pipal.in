@@ -64,8 +64,8 @@ trainers:
   - anand
 
 testimonials:
-  - arvind-kota
-  - anurag-mathur
-  - bargava-subramanian
+  - /testimonials/arvind-kota
+  - /testimonials/anurag-mathur
+  - /testimonials/bargava-subramanian
 
 ---

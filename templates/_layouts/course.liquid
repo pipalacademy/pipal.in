@@ -31,6 +31,7 @@ layout: base
     </div>
   </header>
   
+  
   {% if page.video %}
     <figure class="container">
       <div class="embed-fluid">
@@ -38,6 +39,7 @@ layout: base
       </div>
     </figure>
   {% endif %}
+  
   
   {% if page.events %}
     <section class="container">
@@ -70,7 +72,6 @@ layout: base
   {% endif %}
   
   
-  
   {% if page.description %}
     <section class="container">
       <h2 class="section-heading size-xlarge">The Course</h2>
@@ -79,6 +80,7 @@ layout: base
       </div>
     </section>
   {% endif %}
+  
   
   {% if page.audience or page.prerequisites %}
     <section class="container">
@@ -125,22 +127,28 @@ layout: base
         </h2>
       </header>
       
-      {% for t_slug in page.testimonials %}
-        {% assign testimonial = site.testimonials | where: 'slug', t_slug | first %}
-        {% assign t_id =  'testimonial-' | append: t_slug %}
+      {% for t_id in page.testimonials %}
+        {% assign testimonial = site.testimonials | where: 'id', t_id | first %}
+        {% assign t_id =  'testimonial-' | append: testimonial.slug %}
         {% assign t_truncate =  testimonial.content | size %}
         {% if testimonial %}
           <aside id="{{ t_id }}">
-            <blockquote class="speechbubble container {% if t_truncate > 250 %}truncate-el{% endif %}">
-              {{ testimonial.content | markdownify }}
+            <blockquote class="speechbubble container">
               {% if t_truncate > 250 %}
-                <a
-                  class="truncate-dismiss"
-                  href="#{{ t_id }}">
-                  <span class="truncate-button">
-                    …Read More
-                  </span>
-                </a>
+                <div class="truncate-el">
+              {% endif %}
+                  
+                  {{ testimonial.content | markdownify }}
+                  
+              {% if t_truncate > 250 %}
+                  <a
+                    class="truncate-dismiss"
+                    href="#{{ t_id }}">
+                    <span class="truncate-button">
+                      …Read More
+                    </span>
+                  </a>
+                </div>
               {% endif %}
             </blockquote>
             <hgroup class="container">

@@ -502,7 +502,23 @@ button,
 .button {
   font-family: Foco, sans-serif;
   line-height: 1;
-  font-weight: 800;
+  font-weight: bold;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx), (min-resolution: 144dpi) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  dt,
+  label,
+  input[type=submit],
+  input[type=button],
+  button,
+  .button {
+    font-weight: 800 ;
+  }
 }
 .wf-active h1,
 .wf-active h2,
@@ -547,7 +563,7 @@ code,
 }
 code {
   font-size: 0.7em;
-  background-color: #F9F9F9;
+  background-color: rgba(245, 245, 245, 0.5);
   padding: 0.2em;
 }
 /* Helpers */
@@ -638,9 +654,48 @@ dt {
   margin: 32px 0 16px;
   margin: 2rem 0 1rem;
 }
+ul,
+ol,
+dl,
+blockquote,
+pre,
+figure,
 p {
   margin: 0 0 24px;
   margin: 0 0 1.5rem;
+}
+.prose p + ol,
+.prose p + ul {
+  margin-top: -16px;
+  margin-top: -1rem;
+}
+.prose ol,
+.prose ul {
+  padding-left: 1em;
+}
+.prose li {
+  margin-bottom: 0.5em;
+}
+.prose li li {
+  margin-left: 0.5em;
+}
+.prose ol {
+  list-style-type: decimal;
+}
+.prose ul {
+  list-style-type: circle;
+}
+.prose ol ol,
+.prose ol ul,
+.prose ul ol,
+.prose ul ul {
+  margin-bottom: 0.75em;
+}
+.prose ol ol:last-child,
+.prose ol ul:last-child,
+.prose ul ol:last-child,
+.prose ul ul:last-child {
+  margin-bottom: 0;
 }
 /* ========= */
 /* = Theme = */

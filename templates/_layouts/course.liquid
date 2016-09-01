@@ -15,8 +15,10 @@ layout: base
   </header>
   
   {% if page.video %}
-    <figure class="container">
-      {{ page.video }}
+    <figure class="containers">
+      <div class="embed-fluid">
+        {{ page.video }}
+      </div>
     </figure>
   {% endif %}
   
@@ -24,13 +26,17 @@ layout: base
     <h2 class="section-heading size-xlarge">
       Audience
     </h2>
-    {{ page.audience | markdownify }}
+    <div class="prose">
+      {{ page.audience | markdownify }}
+    </div>
     
     <div class="highlight">
       <h3 class="highlight-heading size-small">
         Pre-requisites
       </h3>
-      {{ page.prerequisites | markdownify }}
+      <div class="prose">
+        {{ page.prerequisites | markdownify }}
+      </div>
     </div>
   </section>
   
@@ -38,6 +44,8 @@ layout: base
     <h2 class="section-heading size-xlarge">
       Course Outline
     </h2>
-    {{ page.outline | markdownify }}
+    <div class="prose">
+      {{ page.outline | markdownify }}
+    </div>
   </section>
 </article>

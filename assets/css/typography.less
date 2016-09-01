@@ -23,9 +23,7 @@ body {
     font-family: @prose-stack;
     line-height: @prose-leading;
     font-weight: normal;
-}
-.wf-active body {
-    font-family: @prose-webfont-stack;
+    .wf-active & { font-family: @prose-webfont-stack; }
 }
 h1,
 h2,
@@ -41,35 +39,17 @@ button,
 .button {
     font-family: @title-stack;
     line-height: @title-leading;
-    font-weight: 800;
-}
-.wf-active {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    dt,
-    label,
-    input[type=submit],
-    input[type=button],
-    button,
-    .button {
-        font-family: @title-webfont-stack;
-    }
+    font-weight: bold;
+    .retina-font-weight(800);
+    .wf-active & { font-family: @title-webfont-stack; }
 }
 table,
 th {
     font-family: @title-stack;
     line-height: @title-leading;
+    .wf-active & { font-family: @title-webfont-stack; }
 }
-.wf-active {
-    table,
-    th {
-        font-family: @title-webfont-stack;
-    }
-}
+
 
 /* Declaring it separately to allow it to override the defaults declared just above */
 .prose-type {
@@ -88,7 +68,7 @@ code,
 .monospace { font-family: Menlo, Monaco, Consolas, Bitstream Vera Sans Mono, monospace; }
 code {
     font-size: 0.7em;
-    background-color: #F9F9F9;
+    background-color: rgba(245,245,245,0.5);
     padding: 0.2em;
 }
 
@@ -138,4 +118,30 @@ h3,
 dt {
     margin: 2rem 0 1rem;
 }
+ul,
+ol,
+dl,
+blockquote,
+pre,
+figure,
 p { margin: 0 0 1.5rem; }
+
+.prose {
+    p + ol,
+    p + ul { margin-top: -1rem; }
+    
+    ol,
+    ul           { padding-left: 1em; }
+    li           { margin-bottom:0.5em; }
+    li li        { margin-left:  0.5em; }
+    ol           { list-style-type: decimal; }
+    ul           { list-style-type: circle; }
+    ol ol,
+    ol ul,
+    ul ol,
+    ul ul                { margin-bottom: 0.75em; }
+    ol ol:last-child,
+    ol ul:last-child,
+    ul ol:last-child,
+    ul ul:last-child     { margin-bottom: 0; }
+}

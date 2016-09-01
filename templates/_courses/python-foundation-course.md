@@ -16,27 +16,27 @@ prerequisites: |
 
 outline: |
   
-  1. Getting Started
-     
-     Quick introduction to Python programming language, including basic data types, functions, methods, modules, conditionals and loops.
-     
-  2. Working with Data
-     
-     Introduction to Python’s powerful datastuctures including, lists and dictionaries. Also covers list comprehensions, processing text and working with files.
-     
-  3. Modules
-     
-     Introduction to Python module system, importing modules, writing custom modules, documenting code using docstrings and installing third-party modules. This section concludes with a tour of Python standard library covering modules related to file system handling, downloading stuff from web, JSON and working with APIs.
-     
-  4. Classes and Objects
-     
-     Introduction to object-oriented programming with Python. Describes how classes offer a different programming model. Covers writing classes, object creation, inheritance and exception handling.
-     
-  5. Testing Python Programs
-     
-     Introduction to automated testing using unittest and py.test modules.
+  ### Getting Started
+  
+  Quick introduction to Python programming language, including basic data types, functions, methods, modules, conditionals and loops.
+  
+  ### Working with Data
+  
+  Introduction to Python’s powerful datastuctures including, lists and dictionaries. Also covers list comprehensions, processing text and working with files.
+  
+  ### Modules
+  
+  Introduction to Python module system, importing modules, writing custom modules, documenting code using docstrings and installing third-party modules. This section concludes with a tour of Python standard library covering modules related to file system handling, downloading stuff from web, JSON and working with APIs.
+  
+  ### Classes and Objects
+  
+  Introduction to object-oriented programming with Python. Describes how classes offer a different programming model. Covers writing classes, object creation, inheritance and exception handling.
+  
+  ### Testing Python Programs
+  
+  Introduction to automated testing using unittest and py.test modules.
 
-duration: 3 to 4 days
+duration: 3–4 days
 participants: 12 or less
 
 format: |

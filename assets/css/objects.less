@@ -109,7 +109,10 @@
         border-color: @brand-five transparent transparent transparent;
     }
     p:last-of-type { margin-bottom: 0; }
-    .truncate-el { margin-bottom: -1.5rem; }
+    .truncate-el {
+        margin-bottom: -1.5rem;
+        @media (min-width: @md-min) { margin-bottom: 0; }
+    }
 }
 .speechbubble-attribution {
     color: @brand-three;

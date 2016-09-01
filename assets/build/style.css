@@ -925,6 +925,11 @@ a:visited {
   margin-bottom: -24px;
   margin-bottom: -1.5rem;
 }
+@media (min-width: 60em) {
+  .speechbubble .truncate-el {
+    margin-bottom: 0;
+  }
+}
 .speechbubble-attribution {
   color: #1A936F;
   font-weight: bold;

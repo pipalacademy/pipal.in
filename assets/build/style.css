@@ -563,9 +563,6 @@ code {
 /*  Scale  */
 html {
   font-size: 16px;
-}
-body {
-  font-size: 18px;
   line-height: 1.45;
 }
 /* 1.5 */
@@ -588,7 +585,12 @@ h3,
   font-size: 24px;
   font-size: 1.5rem;
 }
+body,
 .size-regular {
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+.size-small {
   font-size: 16px;
   font-size: 1rem;
 }
@@ -612,7 +614,12 @@ h3,
   font-size: 22.624px;
   font-size: 1.414rem;
 }
+body,
 .size-regular {
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+.size-small {
   font-size: 16px;
   font-size: 1rem;
 }
@@ -621,7 +628,7 @@ h3,
 h1, .size-xxlarge  { font-size: 2.369rem; }
 h2, .size-xlarge   { font-size: 1.777rem; }
 h3, .size-large    { font-size: 1.333rem; }
-    .size-regular  { font-size: 1rem; }
+body,.size-regular { font-size: 1.125rem; }
 */
 /* Defaults */
 h1,

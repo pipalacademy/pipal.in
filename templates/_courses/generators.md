@@ -43,4 +43,8 @@ trainers:
 testimonials:
 video:
 
+events:
+  - /events/2016/generators
+
+
 ---

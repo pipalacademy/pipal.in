@@ -8,6 +8,9 @@ collections:
   courses:
     title: Courses
     output: true
+  events:
+    title: New Courses
+    output: true
   trainers:
     title: Trainers
     output: true
@@ -23,10 +26,16 @@ defaults:
       type: "courses"
     values:
       layout: "course"
+  -
+    scope:
+      path: "_events"
+      type: "events"
+    values:
+      layout: "course"
 
 
 # Site settings
-permalink: :slug
+# permalink: :slug
 timezone: Asia/Kolkata
 baseurl: ""
 

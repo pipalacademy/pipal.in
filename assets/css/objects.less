@@ -9,18 +9,17 @@
 
 .banner {
     background-color: @brand-three;
-    background: linear-gradient(to right bottom, darken(@brand-three, 15%), lighten(@brand-three, 15%));
+    background: linear-gradient(to right bottom, darken(@brand-three, 10%), lighten(@brand-three, 10%));
     color: @brand-one;
     padding: 0 0 1rem;
     font-weight: 300;
+    margin-bottom: 2rem;
 }
-.banner-title {
-    color:inherit;
-    font-weight: 800;
-}
+.banner-title {}
 
 
 .section-heading {
+    margin-top: 0;
     border-left: 1rem solid;
     margin-left: -1.5rem;
     padding-left: 0.5rem;
@@ -31,15 +30,14 @@
 .highlight {
     margin: 0 -1.5rem;
     padding: 1rem 1.5rem;
-    background: linear-gradient(to right , #FFA, #FFF);
+    background: fade(@brand-four, 50%);
     color: @brand-two;
 }
 .highlight-heading {
-    color: red;
+    color: @brand-three;
     text-transform: uppercase;
     margin: 1.5rem 0 0.5rem;
 }
-
 
 
 .labels {
@@ -60,9 +58,9 @@
 
 
 .speechbubble {
-    background-color: #EEE;
-    background: linear-gradient(to bottom, #EEE, #DDD);
-    border-top: 1px solid #DDD;
+    background-color: lighten(@brand-five, 5%);
+    background: linear-gradient(to bottom, lighten(@brand-five, 5%), @brand-five);
+    border-top: 1px solid @brand-five;
     margin-bottom: 0;
     font-style: italic;
     position: relative;
@@ -75,7 +73,7 @@
         width: 0;
         height:0;
         border: 0.875em solid;
-        border-color: #DDD transparent transparent transparent;
+        border-color: @brand-five transparent transparent transparent;
     }
     p:last-child { margin-bottom: 0; }
 }

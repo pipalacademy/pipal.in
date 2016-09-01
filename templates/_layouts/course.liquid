@@ -39,6 +39,37 @@ layout: base
     </figure>
   {% endif %}
   
+  {% if page.events %}
+    <section class="container">
+      <h2 class="section-heading size-xlarge">
+        Upcoming Events
+      </h2>
+      
+      {% for e_path in page.events %}
+        {% assign event = site.events | where: 'id', e_path | first %}
+        {% if event %}
+          <article class="advert clearfix">
+            <h2 class="advert-title size-xlarge">
+              <b>{{ event.city }}</b>
+              {{ event.dates }}
+            </h2>
+            <h1 class="advert-title size-small">
+              <b>{{ event.title }}</b>
+              {{ event.event_type }}
+            </h1>
+            <div class="prose">
+              {{ event.brief | markdownify }}
+            </div>
+            <a class="advert-button size-small" href="{{ site.baseurl | append: event.url }}">
+              <span>Details &amp; Tickets &rarr;</span>
+            </a>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </section>
+  {% endif %}
+  
+  
   
   {% if page.description %}
     <section class="container">

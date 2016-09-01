@@ -18,6 +18,39 @@
 .banner-title {}
 
 
+.advert {
+    background-color: @brand-two;
+    background: linear-gradient(to right bottom, darken(@brand-two, 15%), lighten(@brand-two, 5%));
+    color: @brand-five;
+    padding: 1rem 1.5rem 0;
+    margin: 2rem 0 1rem;
+    font-weight: 300;
+}
+.advert-title {
+    font-weight: 300;
+    &.size-small { text-transform: uppercase; }
+    b { font-weight: bold; }
+}
+.advert-button,
+.advert-button:visited {
+    display: block;
+    padding: 1rem 1.5rem;
+    margin: 3rem -1.5rem 0;
+    
+    background: @brand-three;
+    color: @brand-one;
+    
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    span { display: block; }
+}
+.advert-button:hover {
+    span { animation: shiftRight 1s ease-in-out infinite; }
+}
+
+
 .section-heading {
     margin-top: 0;
     border-left: 1rem solid;

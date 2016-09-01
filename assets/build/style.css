@@ -807,6 +807,48 @@ a:visited {
   margin-bottom: 32px;
   margin-bottom: 2rem;
 }
+.advert {
+  background-color: #114B5F;
+  background: -webkit-linear-gradient(left top, #05181e, #155c75);
+  background: linear-gradient(to right bottom, #05181e, #155c75);
+  color: #C6DABF;
+  padding: 16px 24px 0;
+  padding: 1rem 1.5rem 0;
+  margin: 32px 0 16px;
+  margin: 2rem 0 1rem;
+  font-weight: 300;
+}
+.advert-title {
+  font-weight: 300;
+}
+.advert-title.size-small {
+  text-transform: uppercase;
+}
+.advert-title b {
+  font-weight: bold;
+}
+.advert-button,
+.advert-button:visited {
+  display: block;
+  padding: 16px 24px;
+  padding: 1rem 1.5rem;
+  margin: 48px -24px 0;
+  margin: 3rem -1.5rem 0;
+  background: #1A936F;
+  color: #F3E9D2;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+.advert-button span,
+.advert-button:visited span {
+  display: block;
+}
+.advert-button:hover span {
+  -webkit-animation: shiftRight 1s ease-in-out infinite;
+          animation: shiftRight 1s ease-in-out infinite;
+}
 .section-heading {
   margin-top: 0;
   border-left: 16px solid;

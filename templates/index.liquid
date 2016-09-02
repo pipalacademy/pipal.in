@@ -4,7 +4,10 @@ layout: base
 <dl class="container">
   {% for collection in site.collections %}
     <dt>
-      {{ collection.title }}
+      {% assign slug = collection.title | slugify %}
+      <a href="{{ site.baseurl | append: '/' | append: slug }}">
+        {{ collection.title }}
+      </a>
     </dt>
     <dd>
       {% if collection.output %}

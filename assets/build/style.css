@@ -834,8 +834,9 @@ a:visited {
   margin: 1.5rem 0 1rem;
 }
 .advert-title b {
-  margin-right: 8px;
-  margin-right: 0.5rem;
+  display: block;
+  margin-bottom: 4px;
+  margin-bottom: 0.25rem;
 }
 .advert-subtitle {
   text-transform: uppercase;
@@ -844,6 +845,10 @@ a:visited {
   margin-right: 2.4px;
   margin-right: 0.15rem;
   color: #1A936F;
+}
+.advert-subtitle b + b {
+  margin-left: 5.6px;
+  margin-left: 0.35rem;
 }
 .advert-subtitle .label-pin {
   margin: 0;
@@ -980,18 +985,25 @@ a:visited {
   margin: 0.25rem 0 0.25rem 0.25rem;
 }
 .speechbubble {
+  margin: 32px 0 48px;
+  margin: 2rem 0 3rem;
+}
+.speechbubble-quote {
   background-color: #d4e3cf;
   background: -webkit-linear-gradient(top, #d4e3cf, #C6DABF);
   background: linear-gradient(to bottom, #d4e3cf, #C6DABF);
   border: 1px solid #C6DABF;
   border-bottom: none;
-  margin-bottom: 0;
+  margin: 0 -24px 24px;
+  margin: 0 -1.5rem 1.5rem;
+  padding: 24px;
+  padding: 1.5rem;
   font-style: italic;
   font-weight: 300;
   line-height: 1.6;
   position: relative;
 }
-.speechbubble:after {
+.speechbubble-quote:after {
   content: "";
   position: absolute;
   bottom: -28px;
@@ -1003,17 +1015,14 @@ a:visited {
   border: 0.875em solid;
   border-color: #C6DABF transparent transparent transparent;
 }
-.speechbubble p:last-of-type {
+.speechbubble-quote p:last-of-type {
   margin-bottom: 0;
 }
-.speechbubble .truncate-el {
-  margin-bottom: -24px;
-  margin-bottom: -1.5rem;
-}
-@media (min-width: 60em) {
-  .speechbubble .truncate-el {
-    margin-bottom: 0;
-  }
+.speechbubble-quote .truncate-el {
+  padding: 24px;
+  padding: 1.5rem;
+  margin: -24px;
+  margin: -1.5rem;
 }
 .speechbubble-attribution {
   color: #1A936F;
@@ -1041,9 +1050,10 @@ a:visited {
   }
 }
 .links-list {
-  margin: 0px;
-  margin: 0rem;
+  margin: 8px 0;
+  margin: 0.5rem 0;
   padding: 0 !important;
+  line-height: 1;
 }
 .links-list li {
   display: inline-block;

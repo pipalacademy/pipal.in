@@ -89,8 +89,8 @@ layout: base
   
   
   {% if page.testimonials %}
-    <section>
-      <header class="container">
+    <section class="container">
+      <header>
         <h2 class="section-heading size-xlarge">
           Testimonials
         </h2>
@@ -101,8 +101,8 @@ layout: base
         {% assign t_id =  'testimonial-' | append: testimonial.slug %}
         {% assign t_truncate =  testimonial.content | size %}
         {% if testimonial %}
-          <aside id="{{ t_id }}">
-            <blockquote class="speechbubble container">
+          <aside id="{{ t_id }}" class="speechbubble">
+            <blockquote class="speechbubble-quote">
               {% if t_truncate > 250 %}
                 <div class="truncate-el">
               {% endif %}
@@ -120,15 +120,14 @@ layout: base
                 </div>
               {% endif %}
             </blockquote>
-            <hgroup class="container">
-              <h4 class="speechbubble-attribution size-large">
-                {{ testimonial.title }}
-              </h4>
-              <h5 class="speechbubble-credentials size-small">
-                <b>{{ testimonial.org }}</b>
-                {{ testimonial.designation }}
-              </h5>
-            </hgroup>
+            
+            <h4 class="speechbubble-attribution size-large">
+              {{ testimonial.title }}
+            </h4>
+            <h5 class="speechbubble-credentials size-small">
+              <b>{{ testimonial.org }}</b>
+              {{ testimonial.designation }}
+            </h5>
           </aside>
         {% endif %}
       {% endfor %}

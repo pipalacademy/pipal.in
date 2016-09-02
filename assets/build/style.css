@@ -492,7 +492,7 @@ img {
 @media (min-width: 40em) {
   .container {
     max-width: 50rem;
-    padding: 2rem 4rem;
+    padding: 2rem 6rem;
   }
 }
 .has-js .truncate-el {
@@ -914,8 +914,8 @@ a:visited {
 }
 @media (min-width: 40em) {
   .section-heading {
-    margin-left: -4rem;
-    border-left-width: 3.5rem;
+    margin-left: -6rem;
+    border-left-width: 5.5rem;
   }
 }
 .highlight {
@@ -976,6 +976,15 @@ a:visited {
 .person-list {
   margin: 32px -24px 0 0;
   margin: 2rem -1.5rem 0 0;
+}
+.banner .person-list {
+  margin-right: -24px;
+  margin-right: -1.5rem;
+}
+@media (min-width: 40em) {
+  .banner .person-list {
+    margin-right: -6rem;
+  }
 }
 .person {
   padding-left: 80px;

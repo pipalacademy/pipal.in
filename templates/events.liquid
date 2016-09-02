@@ -1,0 +1,28 @@
+---
+layout: base
+
+title: Upcoming Events
+
+permalink: /events/
+---
+
+<main>
+  
+  <header class="banner clearfix">
+    <div class="container">
+      <h1 class="banner-title">
+        Upcoming Events
+      </h1>
+    </div>
+  </header>
+  
+  <div class="container">
+    {% for event in site.events %}
+      {%
+        include event_teaser.liquid
+        event=event
+      %}
+    {% endfor %}
+  </div>
+  
+</main>

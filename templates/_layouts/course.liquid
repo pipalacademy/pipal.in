@@ -57,37 +57,11 @@ layout: base
         Upcoming Events
       </h2>
       
-      {% for e_path in page.events %}
-        {% assign event = site.events | where: 'id', e_path | first %}
-        {% assign event_link = site.baseurl | append: event.url %}
-        {% if event %}
-          <article class="advert clearfix">
-            <h1 class="advert-subtitle size-xsmall">
-              <b>{{ event.event_type }}</b>
-              <span class="label-pin">
-                {{ event.city }}
-              </span>
-            </h1>
-            <h2 class="advert-title size-xlarge">
-              <b>{{ event.title }}</b>
-              {{ event.dates }}
-            </h2>
-            <div class="prose">
-              {{ event.brief | markdownify }}
-            </div>
-            
-            {% assign event_trainers = '' | split: '' | push: event.trainer %}
-            {%
-              include trainers_list.liquid
-              trainers=event_trainers
-              link=event_link
-            %}
-            
-            <a class="advert-button size-small" href="{{ event_link }}">
-              <span>Details &amp; Tickets &rarr;</span>
-            </a>
-          </article>
-        {% endif %}
+      {% for e_id in page.events %}
+        {%
+          include event_teaser.liquid
+          id=e_id
+        %}
       {% endfor %}
     </section>
   {% endif %}

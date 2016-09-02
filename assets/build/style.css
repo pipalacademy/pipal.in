@@ -934,6 +934,12 @@ a:visited {
 .label-pin {
   background-image: url(../img/pin.svg);
 }
+.person-list-title {
+  text-transform: uppercase;
+  margin: 8px 0;
+  margin: 0.5rem 0;
+  text-align: right;
+}
 .person-list {
   margin: 32px -24px 0 0;
   margin: 2rem -1.5rem 0 0;

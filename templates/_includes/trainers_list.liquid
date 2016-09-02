@@ -1,8 +1,4 @@
 {% if include.trainers %}
-  {% assign trainers_count = include.trainers | size %}
-  <h4 class="size-xsmall hidden">
-    Trainer{% if trainers_count > 1 %}s{% endif %}
-  </h4>
   <a href="{{ include.link }}">
     <ul class="person-list">
       {% for tr_id in include.trainers %}
@@ -14,12 +10,12 @@
                 <img alt=" " src="{{ site.baseurl | append: trainer.photo }}">
               </figure>
             {% endif %}
-          
+            
             <div class="person-info">
               <h5 class="person-name size-regular">
                 {{ trainer.title }}
               </h5>
-            
+              
               {% if trainer.links.twitter %}
                 <span class="person-handle size-small">
                   @{{ trainer.links.twitter }}
@@ -31,4 +27,11 @@
       {% endfor %}
     </ul>
   </a>
+    
+  {% if include.title %}
+    {% assign trainers_count = include.trainers | size %}
+    <h4 class="person-list-title size-xsmall">
+      Trainer{% if trainers_count > 1 %}s{% endif %}
+    </h4>
+  {% endif %}
 {% endif %}

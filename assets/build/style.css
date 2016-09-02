@@ -482,6 +482,19 @@ img {
   width: 100% !important;
   height: 100% !important;
 }
+.container {
+  margin: 0 auto;
+  max-width: 560px;
+  max-width: 35rem;
+  padding: 24px 24px;
+  padding: 1.5rem 1.5rem;
+}
+@media (min-width: 40em) {
+  .container {
+    max-width: 50rem;
+    padding: 2rem 4rem;
+  }
+}
 .has-js .truncate-el {
   position: relative;
   max-height: 12em;
@@ -800,12 +813,6 @@ a:visited {
   }
 }
 /* Objects */
-.container {
-  max-width: 35em;
-  margin: 0 auto;
-  padding: 24px;
-  padding: 1.5rem;
-}
 .banner {
   padding: 0 0 16px;
   padding: 0 0 1rem;
@@ -897,11 +904,19 @@ a:visited {
   margin-top: 0;
   border-left: 16px solid;
   border-left: 1rem solid;
-  margin-left: -24px;
-  margin-left: -1.5rem;
   padding-left: 8px;
   padding-left: 0.5rem;
   color: #1A936F;
+  margin-left: -24px;
+  margin-left: -1.5rem;
+  border-left-width: 16px;
+  border-left-width: 1rem;
+}
+@media (min-width: 40em) {
+  .section-heading {
+    margin-left: -4rem;
+    border-left-width: 3.5rem;
+  }
 }
 .highlight {
   margin: 0 -24px;

@@ -74,51 +74,25 @@ layout: base
   {% endif %}
   
   
-  {% if page.description %}
-    <section class="container">
-      <h2 class="section-heading size-xlarge">The Course</h2>
-      <div class="prose">
-        {{ page.description | markdownify }}
-      </div>
-    </section>
-  {% endif %}
+  {%
+    include section.liquid
+    title="The Course"
+    body=page.description
+  %}
   
+  {%
+    include section.liquid
+    title="Audience"
+    body=page.audience
+    highlight_title='Pre-requisites'
+    highlight=page.prerequisites
+  %}
   
-  {% if page.audience or page.prerequisites %}
-    <section class="container">
-      {% if page.audience %}
-        <h2 class="section-heading size-xlarge">
-          Audience
-        </h2>
-        <div class="prose">
-          {{ page.audience | markdownify }}
-        </div>
-      {% endif %}
-      
-      {% if page.prerequisites %}
-        <div class="highlight">
-          <h3 class="highlight-heading size-small">
-            Pre-requisites
-          </h3>
-          <div class="prose">
-            {{ page.prerequisites | markdownify }}
-          </div>
-        </div>
-      {% endif %}
-    </section>
-  {% endif %}
-  
-  
-  {% if page.outline %}
-    <section class="container">
-      <h2 class="section-heading size-xlarge">
-        Course Outline
-      </h2>
-      <div class="prose">
-        {{ page.outline | markdownify }}
-      </div>
-    </section>
-  {% endif %}
+  {%
+    include section.liquid
+    title="Course Outline"
+    body=page.outline
+  %}
   
   
   {% if page.testimonials %}

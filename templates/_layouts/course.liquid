@@ -171,46 +171,48 @@ layout: base
   %}
   
   
-  <section id="trainers" class="container">
-    <h2 class="section-heading size-xlarge">
-      Trainers
-    </h2>
-    {% for tr_id in page.trainers %}
-      {% assign trainer = site.trainers | where: 'id', tr_id | first %}
-      {% if trainer %}
-        <article class="prose">
-          <h3 class="size-large">
-            {{ trainer.title }}
-          </h3>
-          
-          <ul class="links-list">
-            {% for link in trainer.links %}
-              <li>
-                {% if link[0] == 'twitter' %}
-                  <a href="https://twitter.com/{{ link[1] }}">
-                    @{{ link[1] }}
-                  </a>
-                {% else %}
-                  <a href="{{ link[1] }}">
-                    {{ link[0] | capitalize }}
-                  </a>
-                {% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-          
-          {% if trainer.photo %}
-            <figure class="profile-photo">
-              <img alt=" " src="{{ site.baseurl | append: trainer.photo }}">
-            </figure>
-          {% endif %}
-          
-          <div>
-            {{ trainer.bio | markdownify }}
-          </div>
-        </article>
-      {% endif %}
-    {% endfor %}
-  </section>
-  
+  {% if page.trainers %}
+    <section id="trainers" class="container">
+      {% assign trainers_count = include.trainers | size %}
+      <h2 class="section-heading size-xlarge">
+        Trainer{% if trainers_count > 1 %}s{% endif %}
+      </h2>
+      {% for tr_id in page.trainers %}
+        {% assign trainer = site.trainers | where: 'id', tr_id | first %}
+        {% if trainer %}
+          <article class="prose">
+            <h3 class="size-large">
+              {{ trainer.title }}
+            </h3>
+            
+            <ul class="links-list">
+              {% for link in trainer.links %}
+                <li>
+                  {% if link[0] == 'twitter' %}
+                    <a href="https://twitter.com/{{ link[1] }}">
+                      @{{ link[1] }}
+                    </a>
+                  {% else %}
+                    <a href="{{ link[1] }}">
+                      {{ link[0] | capitalize }}
+                    </a>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+            
+            {% if trainer.photo %}
+              <figure class="profile-photo">
+                <img alt=" " src="{{ site.baseurl | append: trainer.photo }}">
+              </figure>
+            {% endif %}
+            
+            <div>
+              {{ trainer.bio | markdownify }}
+            </div>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </section>
+  {% endif %}
 </article>

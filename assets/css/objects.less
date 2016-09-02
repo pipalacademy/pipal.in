@@ -1,10 +1,6 @@
 /* Objects */
 
-.container {
-    max-width: 35em;
-    margin: 0 auto;
-    padding: 1.5rem;
-}
+
 
 
 .banner {
@@ -62,9 +58,14 @@
 .section-heading {
     margin-top: 0;
     border-left: 1rem solid;
-    margin-left: -1.5rem;
     padding-left: 0.5rem;
     color: @brand-three;
+    
+    .container-values();
+    .recurse-rule-breakpoints({
+        margin-left: -1 * @value;
+        border-left-width: @value - 0.5rem;
+    }, @hpads, @breakpoints);
 }
 
 

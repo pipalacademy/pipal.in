@@ -43,6 +43,48 @@ img   { vertical-align: middle; }
 
 
 
+.container-values() {
+    @vpads:         1.5rem, 2rem;
+    @hpads:         1.5rem, 4rem;
+    @max-widths:    35rem,  50rem;
+    @breakpoints:   '',     @sm-min;
+}
+.container {
+    .container-values();
+    
+    margin: 0 auto;
+    
+    max-width: extract(@max-widths, 1);
+    padding: extract(@vpads, 1) extract(@hpads, 1);
+    @media (min-width: extract(@breakpoints, 2)) {
+        max-width: extract(@max-widths, 2);
+        padding: extract(@vpads, 2) extract(@hpads, 2);
+    }
+}
+
+
+.recurse-rule-breakpoints(@ruleset, @values, @breakpoints) {
+    .recurse-rule-breakpoints-loop(@ruleset, @values, @breakpoints, length(@breakpoints));
+    
+    .recurse-rule-breakpoints-loop(@ruleset, @values, @breakpoints, @index) when (@index > 0) {
+        .recurse-rule-breakpoints-loop(@ruleset, @values, @breakpoints, @index - 1);
+        @value: extract(@values, @index);
+        @breakpoint: extract(@breakpoints, @index);
+        .declare-rule-breakpoint(@ruleset, @value, @breakpoint);
+    }
+    .declare-rule-breakpoint(@ruleset, @value, @breakpoint) when (@breakpoint = '') {
+        @ruleset();
+    }
+    .declare-rule-breakpoint(@ruleset, @value, @breakpoint) when (default()) {
+        @media (min-width: @breakpoint) {
+            @ruleset();
+        }
+    }
+    
+}
+
+
+
 .truncate-el {
     .has-js & {
         position: relative;

@@ -35,7 +35,8 @@ defaults:
 
 
 # Site settings
-# permalink: :slug
+name: Pipal Academy
+permalink: :slug
 timezone: Asia/Kolkata
 baseurl: ""
 

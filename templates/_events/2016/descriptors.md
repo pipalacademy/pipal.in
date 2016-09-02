@@ -25,7 +25,7 @@ description: |
   - understand how descriptors work
   - create your own descriptors  and use them in your own classes
 
-trainer: anand
+trainer: /trainers/anand
 
 course: advanced-python
 

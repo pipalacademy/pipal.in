@@ -37,7 +37,7 @@ venue: |
 map:
   #
 
-trainer: anand
+trainer: /trainers/anand
 
 course: http-bottom-up
 

@@ -1,0 +1,23 @@
+{% if include.body or include.highlight %}
+  <section id="{{ include.title | slugify }}" class="container">
+    {% if include.body %}
+      <h2 class="section-heading size-xlarge">
+        {{ include.title }}
+      </h2>
+      <div class="prose">
+        {{ include.body | markdownify }}
+      </div>
+    {% endif %}
+    
+    {% if include.highlight %}
+      <div class="highlight">
+        <h3 class="highlight-heading size-small">
+          {{ include.highlight_title }}
+        </h3>
+        <div class="prose">
+          {{ include.highlight | markdownify }}
+        </div>
+      </div>
+    {% endif %}
+  </section>
+{% endif %}

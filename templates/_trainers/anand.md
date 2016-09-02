@@ -12,8 +12,11 @@ bio:
   He is co-author of [web.py](http://webpy.org), a micro web framework in Python.
 
 links:
+  twitter: anandology
   web: http://anandology.com/
-  twitter: https://twitter.com/anandology
   linkedin: https://www.linkedin.com/in/anandology
+
+photo:
+  /media/trainers/anand.jpeg
 
 ---

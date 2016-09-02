@@ -4,35 +4,46 @@
 
 
 .banner {
-    background-color: @brand-three;
-    background: linear-gradient(to right bottom, darken(@brand-three, 10%), lighten(@brand-three, 10%));
-    color: @brand-one;
     padding: 0 0 1rem;
     font-weight: 300;
     margin-bottom: 2rem;
+    background-color: @brand-three;
+    background: linear-gradient(to right bottom, darken(@brand-three, 10%), lighten(@brand-three, 10%));
+    color: @brand-one;
+    &.banner-listing {
+        color: @brand-two;
+        background: @brand-five;
+        margin-bottom: 0;
+    }
 }
 .banner-title {}
 
 
 .advert {
-    background-color: @brand-two;
-    background: linear-gradient(to right bottom, darken(@brand-two, 15%), lighten(@brand-two, 5%));
-    color: @brand-one;
     padding: 1rem 1.5rem 0;
     margin: 2rem 0 1rem;
     font-weight: 300;
+    background-color: @brand-two;
+    background: linear-gradient(to right bottom, darken(@brand-two, 15%), lighten(@brand-two, 5%));
+    color: @brand-one;
+    &.advert-course {
+        background-color: @brand-three;
+        background: linear-gradient(to right bottom, darken(@brand-three, 15%), lighten(@brand-three, 5%));
+    }
 }
 .advert-title {
     font-weight: 300;
     margin: 1.5rem 0 1rem;
-    b { margin-right: 0.5rem; }
+    b { display: block; margin-bottom: 0.25rem; }
 }
 .advert-subtitle {
     text-transform: uppercase;
     b {
         margin-right: 0.15rem;
         color: @brand-three;
+        .advert-course & { color: @brand-four; }
     }
+    b + b { margin-left: 0.35rem; }
     .label-pin { margin: 0; }
 }
 .advert-button,
@@ -43,6 +54,7 @@
     
     background: @brand-three;
     color: @brand-one;
+    .advert-course & { background: @brand-four; color: @brand-two; }
     
     font-weight: 300;
     text-decoration: none;
@@ -97,17 +109,77 @@
     padding-left: 1.25rem;
     line-height: @prose-leading;
     margin: 0 1rem 0.5rem 0;
+    
+    a {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+    }
 }
 .label-people { background-image: url(../img/people.svg); }
 .label-pin    { background-image: url(../img/pin.svg); }
 
 
+.person-list-title {
+    text-transform: uppercase;
+    margin: 0.5rem 0;
+    text-align: right;
+}
+.person-list {
+    margin: 2rem -1.5rem 0 0;
+}
+@photo-size: 4.5rem;
+@photo-pad: 0.5rem;
+.person {
+    padding-left: @photo-size + @photo-pad;
+    overflow: auto;
+    background-color: fade(@brand-five, 80%);
+    color: @brand-two;
+    border-radius: @photo-size 0 0 @photo-size;
+    position: relative;
+    margin-bottom: 1px;
+}
+.person-info {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.person-photo img:extend(.contain-width img) {}
+.person-photo {
+    float: left;
+    margin: 0;
+    margin-left: -1 * (@photo-size + @photo-pad);
+    height:@photo-size;
+    width: @photo-size;
+    border-radius: @photo-size;
+    overflow: hidden;
+}
+.person-name {
+    margin: 0;
+}
+.person-handle {
+    font-weight: 300;
+}
+.profile-photo {
+    &:extend(.person-photo all);
+    @photo-size: 6rem;
+    height:@photo-size;
+    width: @photo-size;
+    border-radius: @photo-size;
+    float: right;
+    margin: 0.25rem 0 0.25rem 0.25rem;
+}
+
 .speechbubble {
+    margin: 2rem 0 3rem;
+}
+.speechbubble-quote {
     background-color: lighten(@brand-five, 5%);
     background: linear-gradient(to bottom, lighten(@brand-five, 5%), @brand-five);
     border: 1px solid @brand-five;
     border-bottom: none;
-    margin-bottom: 0;
+    margin: 0 -1.5rem 1.5rem;
+    padding: 1.5rem;
     font-style: italic;
     font-weight: 300;
     line-height: 1.6;
@@ -124,8 +196,9 @@
     }
     p:last-of-type { margin-bottom: 0; }
     .truncate-el {
-        margin-bottom: -1.5rem;
-        @media (min-width: @md-min) { margin-bottom: 0; }
+        padding: 1.5rem;
+        margin: -1.5rem;
+        // @media (min-width: @md-min) { margin-bottom: 0; }
     }
 }
 .speechbubble-attribution {
@@ -134,7 +207,6 @@
     margin: 0.25rem 0;
 }
 .speechbubble-credentials {
-    // color: gray;
     margin-top: 0;
     font-weight: 300;
     line-height: 1.2;
@@ -143,3 +215,13 @@
 }
 
 
+.links-list {
+    margin: 0.5rem 0;
+    padding: 0 !important;
+    line-height: @title-leading;
+    li {
+        display: inline-block;
+        margin-right: 1rem;
+        padding: 0;
+    }
+}

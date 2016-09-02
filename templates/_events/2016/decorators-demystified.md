@@ -51,7 +51,7 @@ outline: |
 
 
 
-trainer: anand
+trainer: /trainers/anand
 
 course: advanced-python
 

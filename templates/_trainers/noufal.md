@@ -11,8 +11,11 @@ bio:
   He is the founder of PyCon India and the chair of the first two editions of the conference in 2009 and 2010.
 
 links:
+  twitter: noufalibrahim
   web: http://nibrahim.net.in/
-  twitter: https://twitter.com/noufalibrahim
   linkedin: https://www.linkedin.com/in/noufalibrahim
+
+photo:
+  /media/trainers/noufal.jpg
 
 ---

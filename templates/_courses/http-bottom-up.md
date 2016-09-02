@@ -89,7 +89,7 @@ format: |
 infrastructure:
 
 trainers:
-  - anand
+  - /trainers/anand
 
 testimonials:
 

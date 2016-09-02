@@ -8,12 +8,17 @@
 
 
 .banner {
-    background-color: @brand-three;
-    background: linear-gradient(to right bottom, darken(@brand-three, 10%), lighten(@brand-three, 10%));
-    color: @brand-one;
     padding: 0 0 1rem;
     font-weight: 300;
     margin-bottom: 2rem;
+    background-color: @brand-three;
+    background: linear-gradient(to right bottom, darken(@brand-three, 10%), lighten(@brand-three, 10%));
+    color: @brand-one;
+    &.banner-listing {
+        color: @brand-two;
+        background: @brand-five;
+        margin-bottom: 0;
+    }
 }
 .banner-title {}
 

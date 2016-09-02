@@ -807,15 +807,20 @@ a:visited {
   padding: 1.5rem;
 }
 .banner {
-  background-color: #1A936F;
-  background: -webkit-linear-gradient(left top, #12684e, #22be90);
-  background: linear-gradient(to right bottom, #12684e, #22be90);
-  color: #F3E9D2;
   padding: 0 0 16px;
   padding: 0 0 1rem;
   font-weight: 300;
   margin-bottom: 32px;
   margin-bottom: 2rem;
+  background-color: #1A936F;
+  background: -webkit-linear-gradient(left top, #12684e, #22be90);
+  background: linear-gradient(to right bottom, #12684e, #22be90);
+  color: #F3E9D2;
+}
+.banner.banner-listing {
+  color: #114B5F;
+  background: #C6DABF;
+  margin-bottom: 0;
 }
 .advert {
   padding: 16px 24px 0;

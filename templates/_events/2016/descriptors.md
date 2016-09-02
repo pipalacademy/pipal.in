@@ -9,8 +9,8 @@ event_type:
 dates:
   October 15, 2016
 
-schedule:
-  October 15, 2016
+schedule: |
+  October 15, 2016  
   4PM - 5PM
 
 brief:
@@ -27,7 +27,7 @@ description: |
 
 trainer: /trainers/anand
 
-course: advanced-python
+course: /courses/advanced-python
 
 tickets_url:
   #

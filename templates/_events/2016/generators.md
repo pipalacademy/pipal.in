@@ -10,7 +10,7 @@ dates:
   September 18, 2016
 
 schedule: |
-  September 18, 2016 (Sunday)
+  September 18, 2016 (Sunday)  
   9:00 AM to 4:00 PM
 
 description: |
@@ -22,9 +22,9 @@ city:
   Bangalore
   
 venue: |
-  The Energy & Resources Institute
-  4th Main, 2nd Cross
-  Domlur, 2nd Stage
+  The Energy & Resources Institute  
+  4th Main, 2nd Cross  
+  Domlur, 2nd Stage  
   Bangalore, Karnataka
 
 map:
@@ -32,7 +32,7 @@ map:
 
 trainer: /trainers/anand
 
-course: generators
+course: /courses/generators
 
 tickets_embed: |
   <div id="boxoffice-widget" style="padding-top: 0px;"><p class="text-center regular">Loading...</p></div>

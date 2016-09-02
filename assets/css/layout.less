@@ -1,0 +1,120 @@
+/* ========== */
+/* = Layout = */
+/* ========== */
+
+/* natural box layout model */
+*,
+input[type="search"] { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+
+/*  Base  */
+
+/* Ensure body stretches the full height of the page */
+html  { height: 100%; }
+body  { min-height: 100%; }
+
+body  { margin: 0 auto; }
+ul    { padding-left: 0; }
+ul    { list-style-type: none; }
+dl dd { margin-left: 0; }
+img   { vertical-align: middle; }
+
+// z-indices
+@layer-base: 0;
+@layer-one: 10;
+@layer-two: 20;
+
+
+
+.embed-fluid {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    padding-bottom: percentage(9/16);
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height:100% !important;
+    }
+}
+
+
+
+.container-values() {
+    @vpads:         1.5rem, 2rem;
+    @hpads:         1.5rem, 4rem;
+    @max-widths:    35rem,  50rem;
+    @breakpoints:   '',     @sm-min;
+}
+.container {
+    .container-values();
+    
+    margin: 0 auto;
+    
+    max-width: extract(@max-widths, 1);
+    padding: extract(@vpads, 1) extract(@hpads, 1);
+    @media (min-width: extract(@breakpoints, 2)) {
+        max-width: extract(@max-widths, 2);
+        padding: extract(@vpads, 2) extract(@hpads, 2);
+    }
+}
+
+
+.recurse-rule-breakpoints(@ruleset, @values, @breakpoints) {
+    .recurse-rule-breakpoints-loop(@ruleset, @values, @breakpoints, length(@breakpoints));
+    
+    .recurse-rule-breakpoints-loop(@ruleset, @values, @breakpoints, @index) when (@index > 0) {
+        .recurse-rule-breakpoints-loop(@ruleset, @values, @breakpoints, @index - 1);
+        @value: extract(@values, @index);
+        @breakpoint: extract(@breakpoints, @index);
+        .declare-rule-breakpoint(@ruleset, @value, @breakpoint);
+    }
+    .declare-rule-breakpoint(@ruleset, @value, @breakpoint) when (@breakpoint = '') {
+        @ruleset();
+    }
+    .declare-rule-breakpoint(@ruleset, @value, @breakpoint) when (default()) {
+        @media (min-width: @breakpoint) {
+            @ruleset();
+        }
+    }
+    
+}
+
+
+
+.truncate-el {
+    .has-js & {
+        position: relative;
+        max-height: 12em;
+        overflow: hidden;
+    }
+}
+.truncate-dismiss {
+    display: none;
+    .has-js & {
+        display: block;
+        position: absolute;
+        z-index: @layer-two;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 3rem 1.5rem 0.75rem;
+        text-align: right;
+        color: inherit;
+        background: linear-gradient(to bottom, fade(@brand-five, 1), @brand-five 70%);
+    }
+    text-decoration: none;
+}
+.truncate-button {
+    font-style: normal !important;
+    color: inherit !important;
+    text-transform: lowercase;
+    font-weight: bold;
+}
+@media (min-width: @md-min) {
+    .has-js .truncate-el { max-height: none; overflow: visible; }
+    .has-js .truncate-dismiss { display: none; }
+}

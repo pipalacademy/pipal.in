@@ -1,0 +1,171 @@
+---
+layout: base
+---
+
+<article class="">
+  <header class="banner clearfix">
+    <div class="container">
+      <h1 class="banner-title">
+        {{ page.title }}
+      </h1>
+      <div class="size-larges">
+        {{ page.brief | markdownify }}
+      </div>
+      
+      {% if page.duration or page.participants %}
+        <dl class="labels">
+          {% if page.duration %}
+            <dt class="visuallyhidden">Suggested Duration</dt>
+            <dd class="label-timer">
+              {{ page.duration }}
+            </dd>
+          {% endif %}
+          {% if page.participants %}
+            <dt class="visuallyhidden">Participants</dt>
+            <dd class="label-people">
+              Class of {{ page.participants }}
+            </dd>
+          {% endif %}
+        </dl>
+      {% endif %}
+    </div>
+  </header>
+  
+  
+  {% if page.video %}
+    <figure class="container">
+      <div class="embed-fluid">
+        {{ page.video }}
+      </div>
+    </figure>
+  {% endif %}
+  
+  
+  {% if page.events %}
+    <section class="container">
+      <h2 class="section-heading size-xlarge">
+        Upcoming Events
+      </h2>
+      
+      {% for e_path in page.events %}
+        {% assign event = site.events | where: 'id', e_path | first %}
+        {% if event %}
+          <article class="advert clearfix">
+            <h1 class="advert-subtitle size-xsmall">
+              <b>{{ event.event_type }}</b>
+              <span class="label-pin">
+                {{ event.city }}
+              </span>
+            </h1>
+            <h2 class="advert-title size-xlarge">
+              <b>{{ event.title }}</b>
+              {{ event.dates }}
+            </h2>
+            <div class="prose">
+              {{ event.brief | markdownify }}
+            </div>
+            <a class="advert-button size-small" href="{{ site.baseurl | append: event.url }}">
+              <span>Details &amp; Tickets &rarr;</span>
+            </a>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </section>
+  {% endif %}
+  
+  
+  {% if page.description %}
+    <section class="container">
+      <h2 class="section-heading size-xlarge">The Course</h2>
+      <div class="prose">
+        {{ page.description | markdownify }}
+      </div>
+    </section>
+  {% endif %}
+  
+  
+  {% if page.audience or page.prerequisites %}
+    <section class="container">
+      {% if page.audience %}
+        <h2 class="section-heading size-xlarge">
+          Audience
+        </h2>
+        <div class="prose">
+          {{ page.audience | markdownify }}
+        </div>
+      {% endif %}
+      
+      {% if page.prerequisites %}
+        <div class="highlight">
+          <h3 class="highlight-heading size-small">
+            Pre-requisites
+          </h3>
+          <div class="prose">
+            {{ page.prerequisites | markdownify }}
+          </div>
+        </div>
+      {% endif %}
+    </section>
+  {% endif %}
+  
+  
+  {% if page.outline %}
+    <section class="container">
+      <h2 class="section-heading size-xlarge">
+        Course Outline
+      </h2>
+      <div class="prose">
+        {{ page.outline | markdownify }}
+      </div>
+    </section>
+  {% endif %}
+  
+  
+  {% if page.testimonials %}
+    <section>
+      <header class="container">
+        <h2 class="section-heading size-xlarge">
+          Testimonials
+        </h2>
+      </header>
+      
+      {% for t_id in page.testimonials %}
+        {% assign testimonial = site.testimonials | where: 'id', t_id | first %}
+        {% assign t_id =  'testimonial-' | append: testimonial.slug %}
+        {% assign t_truncate =  testimonial.content | size %}
+        {% if testimonial %}
+          <aside id="{{ t_id }}">
+            <blockquote class="speechbubble container">
+              {% if t_truncate > 250 %}
+                <div class="truncate-el">
+              {% endif %}
+                  
+                  {{ testimonial.content | markdownify }}
+                  
+              {% if t_truncate > 250 %}
+                  <a
+                    class="truncate-dismiss"
+                    href="#{{ t_id }}">
+                    <span class="truncate-button">
+                      …Read More
+                    </span>
+                  </a>
+                </div>
+              {% endif %}
+            </blockquote>
+            <hgroup class="container">
+              <h4 class="speechbubble-attribution size-large">
+                {{ testimonial.title }}
+              </h4>
+              <h5 class="speechbubble-credentials size-small">
+                <b>{{ testimonial.org }}</b>
+                {{ testimonial.designation }}
+              </h5>
+            </hgroup>
+          </aside>
+        {% endif %}
+      {% endfor %}
+    </section>
+  {% endif %}
+  
+</article>

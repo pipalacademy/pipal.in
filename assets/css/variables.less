@@ -1,0 +1,77 @@
+/* ============= */
+/* = Variables = */
+/* ============= */
+
+
+
+// Type
+
+@prose-stack:                   Foco, sans-serif;
+@prose-webfont-stack:           @prose-stack;
+@prose-leading:                 1.45;
+
+@title-stack:                   Foco, sans-serif;
+@title-webfont-stack:           @title-stack;
+@title-leading:                 1;
+
+
+
+// Layout breakpoints
+
+@xxs-min:   0em;
+@xs-min:    25em;     /* 400px */
+@sm-min:    40em;     /* 640px */
+@md-min:    60em;     /* 960px */
+@lg-min:    85em;     /* 1360px */
+@xl-min:    100em;    /* 1600px */
+@xxl-min:   120em;    /* 1920px */
+
+@xxs-max:   (@xs-min - 0.01em);
+@xs-max:    (@sm-min - 0.01em);
+@sm-max:    (@md-min - 0.01em);
+@md-max:    (@lg-min - 0.01em);
+@lg-max:    (@xl-min - 0.01em);
+@xl-max:    (@xxl-min - 0.01em);
+
+@breakpoint_suffixes:  ~'-xs', ~'-sm', ~'-md', ~'-lg', ~'-xl';
+@breakpoint_widths: @xs-min, @sm-min, @md-min, @lg-min, @xl-min;
+
+
+
+// Function to recursively declare a set of rules
+// at every breakpoint, starting with the default
+// (no media query) breakpoint
+.recurse-breakpoints(@ruleset) {
+    .declare-breakpoint(@ruleset);
+    .declare-breakpoint(@ruleset, @xs-min, ~'-xs');
+    .declare-breakpoint(@ruleset, @sm-min, ~'-sm');
+    .declare-breakpoint(@ruleset, @md-min, ~'-md');
+    .declare-breakpoint(@ruleset, @lg-min, ~'-lg');
+    .declare-breakpoint(@ruleset, @xl-min, ~'-xl');
+}
+.declare-breakpoint(@ruleset, @suffix: ~'') {
+    @ruleset();
+}
+.declare-breakpoint(@ruleset, @min-width, @suffix) {
+    @media (min-width: @min-width) {
+        @ruleset();
+    }
+}
+
+
+
+// Colours
+
+// Default
+@brand-one:     white;
+@brand-two:     #111;
+@brand-three:   #008000;
+@brand-four:    #C6F;
+@brand-five:    #DDD;
+
+// Greens
+@brand-one:     #F3E9D2;
+@brand-two:     #114B5F;
+@brand-three:   #1A936F;
+@brand-four:    #88D498;
+@brand-five:    #C6DABF;

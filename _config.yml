@@ -1,0 +1,51 @@
+#
+# Jekyll Config
+# 
+
+
+# Data Model
+collections:
+  courses:
+    title: Courses
+    output: true
+  events:
+    title: Events
+    output: true
+  trainers:
+    title: Trainers
+    output: true
+  testimonials:
+    title: Testimonials
+
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: "_courses"
+      type: "courses"
+    values:
+      layout: "course"
+  -
+    scope:
+      path: "_events"
+      type: "events"
+    values:
+      layout: "course"
+
+
+# Site settings
+# permalink: :slug
+timezone: Asia/Kolkata
+baseurl: ""
+
+
+# Build settings
+source: ./templates
+destination: ./_site
+keep_files:
+  - build
+  - js
+  - img
+markdown_ext: "markdown,mkdown,mkdn,mkd,md,liquid"
+

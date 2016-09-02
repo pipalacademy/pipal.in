@@ -17,13 +17,17 @@ layout: base
           {% if page.duration %}
             <dt class="visuallyhidden">Suggested Duration</dt>
             <dd class="label-timer">
-              {{ page.duration }}
+              <a href="#duration-format">
+                {{ page.duration }}
+              </a>
             </dd>
           {% endif %}
           {% if page.participants %}
             <dt class="visuallyhidden">Participants</dt>
             <dd class="label-people">
-              Class of {{ page.participants }}
+              <a href="#duration-format">
+                Class of {{ page.participants }}
+              </a>
             </dd>
           {% endif %}
         </dl>
@@ -141,5 +145,14 @@ layout: base
       {% endfor %}
     </section>
   {% endif %}
+  
+  
+  {%
+    include section.liquid
+    title="Duration & Format"
+    body=page.format
+    highlight_title='Infrastructure'
+    highlight=page.infrastructure
+  %}
   
 </article>

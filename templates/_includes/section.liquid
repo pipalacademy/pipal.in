@@ -1,5 +1,5 @@
 {% if include.body or include.highlight %}
-  <section class="container">
+  <section id="{{ include.title | slugify }}" class="container">
     {% if include.body %}
       <h2 class="section-heading size-xlarge">
         {{ include.title }}

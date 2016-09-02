@@ -910,6 +910,13 @@ a:visited {
   margin: 0 16px 8px 0;
   margin: 0 1rem 0.5rem 0;
 }
+.label-people a,
+.label-pin a,
+.label-timer a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
 .label-people {
   background-image: url(../img/people.svg);
 }

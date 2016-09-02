@@ -1,0 +1,28 @@
+---
+layout: base
+
+title: Courses
+
+permalink: /courses/
+---
+
+<main>
+  
+  <header class="banner clearfix">
+    <div class="container">
+      <h1 class="banner-title">
+        Courses
+      </h1>
+    </div>
+  </header>
+  
+  <div class="container">
+    {% for course in site.courses %}
+      {%
+        include course_teaser.liquid
+        course=course
+      %}
+    {% endfor %}
+  </div>
+  
+</main>

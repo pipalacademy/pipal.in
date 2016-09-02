@@ -818,15 +818,20 @@ a:visited {
   margin-bottom: 2rem;
 }
 .advert {
-  background-color: #114B5F;
-  background: -webkit-linear-gradient(left top, #05181e, #155c75);
-  background: linear-gradient(to right bottom, #05181e, #155c75);
-  color: #F3E9D2;
   padding: 16px 24px 0;
   padding: 1rem 1.5rem 0;
   margin: 32px 0 16px;
   margin: 2rem 0 1rem;
   font-weight: 300;
+  background-color: #114B5F;
+  background: -webkit-linear-gradient(left top, #05181e, #155c75);
+  background: linear-gradient(to right bottom, #05181e, #155c75);
+  color: #F3E9D2;
+}
+.advert.advert-course {
+  background-color: #1A936F;
+  background: -webkit-linear-gradient(left top, #0f523e, #1ea97f);
+  background: linear-gradient(to right bottom, #0f523e, #1ea97f);
 }
 .advert-title {
   font-weight: 300;
@@ -845,6 +850,9 @@ a:visited {
   margin-right: 2.4px;
   margin-right: 0.15rem;
   color: #1A936F;
+}
+.advert-course .advert-subtitle b {
+  color: #88D498;
 }
 .advert-subtitle b + b {
   margin-left: 5.6px;
@@ -866,6 +874,11 @@ a:visited {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+}
+.advert-course .advert-button,
+.advert-course .advert-button:visited {
+  background: #88D498;
+  color: #114B5F;
 }
 .advert-button span,
 .advert-button:visited span {

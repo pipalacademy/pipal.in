@@ -1,0 +1,43 @@
+{% if include.course %}
+  {% assign course = include.course %}
+{% else %}
+  {% assign course = site.courses | where: 'id', include.id | first %}
+{% endif %}
+
+{% if course %}
+  {% assign course_link = site.baseurl | append: course.url %}
+  <article class="advert advert-course clearfix">
+    <h1 class="advert-title size-xlarge">
+      <b>{{ course.title }}</b>
+      {{ course.dates }}
+    </h1>
+    
+    <h3 class="advert-subtitle size-xsmall">
+      {% if course.duration %}
+        <b class="label-timer">
+          {{ course.duration }}
+        </b>
+      {% endif %}
+      
+      {% if course.participants %}
+        <b class="label-people">
+          Class of {{ course.participants }}
+        </b>
+      {% endif %}
+    </h3>
+    
+    <div class="prose">
+      {{ course.brief | markdownify }}
+    </div>
+    
+    {%
+      include trainers_list.liquid
+      trainers=course.trainers
+      link=course_link
+    %}
+    
+    <a class="advert-button size-small" href="{{ course_link }}">
+      <span>More Details &rarr;</span>
+    </a>
+  </article>
+{% endif %}

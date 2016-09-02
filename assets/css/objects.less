@@ -19,12 +19,16 @@
 
 
 .advert {
-    background-color: @brand-two;
-    background: linear-gradient(to right bottom, darken(@brand-two, 15%), lighten(@brand-two, 5%));
-    color: @brand-one;
     padding: 1rem 1.5rem 0;
     margin: 2rem 0 1rem;
     font-weight: 300;
+    background-color: @brand-two;
+    background: linear-gradient(to right bottom, darken(@brand-two, 15%), lighten(@brand-two, 5%));
+    color: @brand-one;
+    &.advert-course {
+        background-color: @brand-three;
+        background: linear-gradient(to right bottom, darken(@brand-three, 15%), lighten(@brand-three, 5%));
+    }
 }
 .advert-title {
     font-weight: 300;
@@ -36,6 +40,7 @@
     b {
         margin-right: 0.15rem;
         color: @brand-three;
+        .advert-course & { color: @brand-four; }
     }
     b + b { margin-left: 0.35rem; }
     .label-pin { margin: 0; }
@@ -48,6 +53,7 @@
     
     background: @brand-three;
     color: @brand-one;
+    .advert-course & { background: @brand-four; color: @brand-two; }
     
     font-weight: 300;
     text-decoration: none;
@@ -195,7 +201,6 @@
     margin: 0.25rem 0;
 }
 .speechbubble-credentials {
-    // color: gray;
     margin-top: 0;
     font-weight: 300;
     line-height: 1.2;

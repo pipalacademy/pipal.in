@@ -147,7 +147,7 @@ layout: base
   
   {% if page.trainers %}
     <section id="trainers" class="container">
-      {% assign trainers_count = include.trainers | size %}
+      {% assign trainers_count = page.trainers | size %}
       <h2 class="section-heading size-xlarge">
         Trainer{% if trainers_count > 1 %}s{% endif %}
       </h2>

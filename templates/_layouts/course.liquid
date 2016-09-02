@@ -51,14 +51,16 @@ layout: base
         {% assign event = site.events | where: 'id', e_path | first %}
         {% if event %}
           <article class="advert clearfix">
+            <h1 class="advert-subtitle size-xsmall">
+              <b>{{ event.event_type }}</b>
+              <span class="label-pin">
+                {{ event.city }}
+              </span>
+            </h1>
             <h2 class="advert-title size-xlarge">
-              <b>{{ event.city }}</b>
+              <b>{{ event.title }}</b>
               {{ event.dates }}
             </h2>
-            <h1 class="advert-title size-small">
-              <b>{{ event.title }}</b>
-              {{ event.event_type }}
-            </h1>
             <div class="prose">
               {{ event.brief | markdownify }}
             </div>

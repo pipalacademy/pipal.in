@@ -463,6 +463,12 @@ dl dd {
 img {
   vertical-align: middle;
 }
+.contain-width img,
+.person-photo img,
+.profile-photo img {
+  max-width: 100%;
+  height: auto;
+}
 .embed-fluid {
   position: relative;
   overflow: hidden;
@@ -923,6 +929,56 @@ a:visited {
 .label-pin {
   background-image: url(../img/pin.svg);
 }
+.person-list {
+  margin: 32px -24px 0 0;
+  margin: 2rem -1.5rem 0 0;
+}
+.person {
+  padding-left: 80px;
+  padding-left: 5rem;
+  overflow: auto;
+  background-color: rgba(198, 218, 191, 0.8);
+  color: #114B5F;
+  border-radius: 4.5rem 0 0 4.5rem;
+  position: relative;
+  margin-bottom: 1px;
+}
+.person-info {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.person-photo,
+.profile-photo {
+  float: left;
+  margin: 0;
+  margin-left: -80px;
+  margin-left: -5rem;
+  height: 72px;
+  height: 4.5rem;
+  width: 72px;
+  width: 4.5rem;
+  border-radius: 4.5rem;
+  overflow: hidden;
+}
+.person-name {
+  margin: 0;
+}
+.person-handle {
+  font-weight: 300;
+}
+.profile-photo {
+  height: 96px;
+  height: 6rem;
+  width: 96px;
+  width: 6rem;
+  border-radius: 6rem;
+  float: right;
+  margin: 4px 0 4px 4px;
+  margin: 0.25rem 0 0.25rem 0.25rem;
+}
 .speechbubble {
   background-color: #d4e3cf;
   background: -webkit-linear-gradient(top, #d4e3cf, #C6DABF);
@@ -983,6 +1039,17 @@ a:visited {
   .speechbubble-credentials b {
     font-weight: 800 ;
   }
+}
+.links-list {
+  margin: 0px;
+  margin: 0rem;
+  padding: 0 !important;
+}
+.links-list li {
+  display: inline-block;
+  margin-right: 16px;
+  margin-right: 1rem;
+  padding: 0;
 }
 /* ==|== print styles =======================================================
    Print styles.

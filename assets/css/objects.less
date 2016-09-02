@@ -107,6 +107,51 @@
 .label-pin    { background-image: url(../img/pin.svg); }
 
 
+.person-list {
+    margin: 2rem -1.5rem 0 0;
+}
+@photo-size: 4.5rem;
+@photo-pad: 0.5rem;
+.person {
+    padding-left: @photo-size + @photo-pad;
+    overflow: auto;
+    background-color: fade(@brand-five, 80%);
+    color: @brand-two;
+    border-radius: @photo-size 0 0 @photo-size;
+    position: relative;
+    margin-bottom: 1px;
+}
+.person-info {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.person-photo img:extend(.contain-width img) {}
+.person-photo {
+    float: left;
+    margin: 0;
+    margin-left: -1 * (@photo-size + @photo-pad);
+    height:@photo-size;
+    width: @photo-size;
+    border-radius: @photo-size;
+    overflow: hidden;
+}
+.person-name {
+    margin: 0;
+}
+.person-handle {
+    font-weight: 300;
+}
+.profile-photo {
+    &:extend(.person-photo all);
+    @photo-size: 6rem;
+    height:@photo-size;
+    width: @photo-size;
+    border-radius: @photo-size;
+    float: right;
+    margin: 0.25rem 0 0.25rem 0.25rem;
+}
+
 .speechbubble {
     background-color: lighten(@brand-five, 5%);
     background: linear-gradient(to bottom, lighten(@brand-five, 5%), @brand-five);
@@ -148,3 +193,12 @@
 }
 
 
+.links-list {
+    margin: 0rem;
+    padding: 0 !important;
+    li {
+        display: inline-block;
+        margin-right: 1rem;
+        padding: 0;
+    }
+}

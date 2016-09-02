@@ -1,0 +1,34 @@
+{% if include.trainers %}
+  {% assign trainers_count = include.trainers | size %}
+  <h4 class="size-xsmall hidden">
+    Trainer{% if trainers_count > 1 %}s{% endif %}
+  </h4>
+  <a href="{{ include.link }}">
+    <ul class="person-list">
+      {% for tr_id in include.trainers %}
+        {% assign trainer = site.trainers | where: 'id', tr_id | first %}
+        {% if trainer %}
+          <li class="person">
+            {% if trainer.photo %}
+              <figure class="person-photo">
+                <img alt=" " src="{{ site.baseurl | append: trainer.photo }}">
+              </figure>
+            {% endif %}
+          
+            <div class="person-info">
+              <h5 class="person-name size-regular">
+                {{ trainer.title }}
+              </h5>
+            
+              {% if trainer.links.twitter %}
+                <span class="person-handle size-small">
+                  @{{ trainer.links.twitter }}
+                </span>
+              {% endif %}
+            </div>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </a>
+{% endif %}

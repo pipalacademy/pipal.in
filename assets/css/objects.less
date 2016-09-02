@@ -127,6 +127,12 @@
 }
 .person-list {
     margin: 2rem -1.5rem 0 0;
+    .banner & {
+        .container-values();
+        .recurse-rule-breakpoints({
+            margin-right: -1 * @value;
+        }, @hpads, @breakpoints);
+    }
 }
 @photo-size: 4.5rem;
 @photo-pad: 0.5rem;

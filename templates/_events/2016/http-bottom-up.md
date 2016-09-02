@@ -7,7 +7,7 @@ event_type:
   Workshop
 
 dates:
-  September 16 & 17, 2016 (Friday & Saturday)
+  September 16 & 17, 2016
 
 schedule: |
   September 18, 2016 (Sunday)

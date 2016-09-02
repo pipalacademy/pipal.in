@@ -770,6 +770,23 @@ a:visited {
   color: #1A936F;
   text-decoration: underline;
 }
+/* Brand Styles */
+.fill-brand-two,
+.banner.banner-event,
+.advert {
+  color: #F3E9D2;
+  background: #114B5F;
+  background: -webkit-linear-gradient(left top, #05181e, #155c75);
+  background: linear-gradient(to right bottom, #05181e, #155c75);
+}
+.fill-brand-three,
+.banner,
+.advert.advert-course {
+  color: #F3E9D2;
+  background-color: #1A936F;
+  background: -webkit-linear-gradient(left top, #0f523e, #1ea97f);
+  background: linear-gradient(to right bottom, #0f523e, #1ea97f);
+}
 /* Animations */
 @-webkit-keyframes shiftRight {
   from {
@@ -812,10 +829,6 @@ a:visited {
   font-weight: 300;
   margin-bottom: 32px;
   margin-bottom: 2rem;
-  background-color: #1A936F;
-  background: -webkit-linear-gradient(left top, #12684e, #22be90);
-  background: linear-gradient(to right bottom, #12684e, #22be90);
-  color: #F3E9D2;
 }
 .banner.banner-listing {
   color: #114B5F;
@@ -828,15 +841,6 @@ a:visited {
   margin: 32px 0 16px;
   margin: 2rem 0 1rem;
   font-weight: 300;
-  background-color: #114B5F;
-  background: -webkit-linear-gradient(left top, #05181e, #155c75);
-  background: linear-gradient(to right bottom, #05181e, #155c75);
-  color: #F3E9D2;
-}
-.advert.advert-course {
-  background-color: #1A936F;
-  background: -webkit-linear-gradient(left top, #0f523e, #1ea97f);
-  background: linear-gradient(to right bottom, #0f523e, #1ea97f);
 }
 .advert-title {
   font-weight: 300;
@@ -929,9 +933,10 @@ a:visited {
 }
 .label-people,
 .label-pin,
-.label-timer {
+.label-timer,
+.label {
   display: inline-block;
-  background: url(../img/timer.svg) no-repeat scroll center left;
+  background: no-repeat scroll center left;
   background-size: contain;
   padding-left: 20px;
   padding-left: 1.25rem;
@@ -941,10 +946,17 @@ a:visited {
 }
 .label-people a,
 .label-pin a,
-.label-timer a {
+.label-timer a,
+.label a {
   display: block;
   color: inherit;
   text-decoration: none;
+}
+.label {
+  padding-left: 0;
+}
+.label-timer {
+  background-image: url(../img/timer.svg);
 }
 .label-people {
   background-image: url(../img/people.svg);

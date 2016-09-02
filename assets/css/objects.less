@@ -11,14 +11,13 @@
     padding: 0 0 1rem;
     font-weight: 300;
     margin-bottom: 2rem;
-    background-color: @brand-three;
-    background: linear-gradient(to right bottom, darken(@brand-three, 10%), lighten(@brand-three, 10%));
-    color: @brand-one;
+    &:extend(.fill-brand-three);
     &.banner-listing {
         color: @brand-two;
         background: @brand-five;
         margin-bottom: 0;
     }
+    &.banner-event:extend(.fill-brand-two) {}
 }
 .banner-title {}
 
@@ -27,13 +26,8 @@
     padding: 1rem 1.5rem 0;
     margin: 2rem 0 1rem;
     font-weight: 300;
-    background-color: @brand-two;
-    background: linear-gradient(to right bottom, darken(@brand-two, 15%), lighten(@brand-two, 5%));
-    color: @brand-one;
-    &.advert-course {
-        background-color: @brand-three;
-        background: linear-gradient(to right bottom, darken(@brand-three, 15%), lighten(@brand-three, 5%));
-    }
+    &:extend(.fill-brand-two);
+    &.advert-course:extend(.fill-brand-three) {}
 }
 .advert-title {
     font-weight: 300;
@@ -101,20 +95,22 @@
 }
 .label-people,
 .label-pin,
-.label-timer {
+.label-timer,
+.label {
     display: inline-block;
-    background: url(../img/timer.svg) no-repeat scroll center left;
+    background: no-repeat scroll center left;
     background-size: contain;
     padding-left: 1.25rem;
     line-height: @prose-leading;
     margin: 0 1rem 0.5rem 0;
-    
     a {
         display: block;
         color: inherit;
         text-decoration: none;
     }
 }
+.label { padding-left: 0; }
+.label-timer  { background-image: url(../img/timer.svg); }
 .label-people { background-image: url(../img/people.svg); }
 .label-pin    { background-image: url(../img/pin.svg); }
 

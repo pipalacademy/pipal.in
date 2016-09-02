@@ -31,7 +31,7 @@ defaults:
       path: "_events"
       type: "events"
     values:
-      layout: "course"
+      layout: "event"
 
 
 # Site settings

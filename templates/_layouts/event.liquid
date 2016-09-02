@@ -1,0 +1,103 @@
+---
+layout: base
+---
+
+<article class="">
+  <header class="banner banner-event clearfix">
+    <div class="container">
+      {% if page.event_type or page.city %}
+        <dl class="labels">
+          {% if page.event_type %}
+            <dt class="visuallyhidden">Event Type</dt>
+            <dd class="label">
+              {{ page.event_type }}
+            </dd>
+          {% endif %}
+          {% if page.city %}
+            <dt class="visuallyhidden">Location</dt>
+            <dd class="label-pin">
+              <a href="#venue">
+                {{ page.city }}
+              </a>
+            </dd>
+          {% endif %}
+        </dl>
+      {% endif %}
+      
+      <time class="size-large">
+        {{ page.dates }}
+      </time>
+      <h1 class="banner-title">
+        {{ page.title }}
+      </h1>
+      
+      <div>
+        {{ page.brief | markdownify }}
+      </div>
+      
+      {% assign trainers = '' | split:'' | push:page.trainer %}
+      {%
+        include trainers_list.liquid
+        trainers=trainers
+        title=true
+        link='#trainers'
+      %}
+    </div>
+  </header>
+  
+  
+  {% if page.video %}
+    <figure class="container">
+      <div class="embed-fluid">
+        {{ page.video }}
+      </div>
+    </figure>
+  {% endif %}
+  
+  {%
+    include section.liquid
+    body=page.description
+    highlight_title='Pre-requisites'
+    highlight=page.prerequisites
+  %}
+  
+  {%
+    include section.liquid
+    title="Schedule"
+    body=page.schedule
+    highlight_title='Venue'
+    highlight=page.venue
+  %}
+  
+  {%
+    include section.liquid
+    title="Outline"
+    body=page.outline
+  %}
+  
+  {% if page.trainer %}
+    <section id="trainers" class="container">
+      <h2 class="section-heading size-xlarge">
+        Trainer
+      </h2>
+      {%
+        include trainer_teaser.liquid
+        id=page.trainer
+      %}
+    </section>
+  {% endif %}
+  
+  {% if page.course %}
+    <section class="container">
+      <h2 class="section-heading size-xlarge">
+        Related Course
+      </h2>
+      
+      {%
+        include course_teaser.liquid
+        id=page.course
+      %}
+    </section>
+  {% endif %}
+  
+</article>

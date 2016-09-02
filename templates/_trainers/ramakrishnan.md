@@ -9,8 +9,11 @@ bio:
   He has made contributions to various projects and tinkers with functional programming in his free time.
 
 links:
+  twitter: vu3rdd
   web: https://rkrishnan.org/
-  twitter: https://twitter.com/vu3rdd
   linkedin: https://www.linkedin.com/in/vu3rdd
+
+photo:
+  /media/trainers/ramki.jpg
 
 ---

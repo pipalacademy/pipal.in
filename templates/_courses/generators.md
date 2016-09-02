@@ -39,9 +39,11 @@ duration:
 participants:
 format:
 infrastructure:
-trainers:
 testimonials:
 video:
+
+trainers:
+  - /trainers/ramakrishnan
 
 events:
   - /events/2016/generators

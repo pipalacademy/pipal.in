@@ -61,7 +61,8 @@ infrastructure: |
   Python 3.5 preinstalled.
 
 trainers:
-  - anand
+  - /trainers/anand
+  - /trainers/noufal
 
 testimonials:
   - /testimonials/arvind-kota

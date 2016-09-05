@@ -118,7 +118,7 @@ gulp.task(JS_TASK, js_task(JS_FILES, JS_DEST, JS_HASH_FILE));
 
 gulp.task(WATCH_TASK, function () {
     gulp.watch(CSS_WATCH_FILES, [CSS_TASK]);
-    // gulp.watch(JS_FILES, [JS_TASK]);
+    gulp.watch(JS_FILES, [JS_TASK]);
     gulp.watch(LINT_FILES, [LINT_TASK]);
 });
 

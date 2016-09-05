@@ -16,9 +16,13 @@ Install
         
         $ jekyll build
     
-3.  Access the generated ./_site folder from your browser
-
+3.  Create an Apache config file and update the `RewriteBase`
+    directive if required.
+        
+        $ cp templates/sample.htaccess templates/.htaccess
+        $ vi templates/.htaccess
     
+4.  Access the generated ./_site folder from your browser
 
 
 
@@ -29,7 +33,7 @@ Development
     if required (eg. to override `baseurl`):
     
         $ cp sample_env_config.yml _env_config.yml
-        $ vi _env_config.yml
+        $ vi _env_config.yml  
 
 2.  Install dev tools:
     - Node.js http://nodejs.org

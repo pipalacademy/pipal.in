@@ -22,6 +22,16 @@
 }());
 
 
+function isLocalStorageSupported() {
+    try {
+        var mod = 'test';
+        localStorage.setItem(mod, mod);
+        localStorage.removeItem(mod);
+        return true;
+    } catch(e) {
+        return false;
+    }
+}
 
 /*** place any jQuery/helper plugins in here. ***/
 

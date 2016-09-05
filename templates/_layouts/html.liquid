@@ -7,9 +7,14 @@
   <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.name }}</title>
   
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="{{ site.baseurl | append: '/fonts.css' }}" type="text/css">
   <link rel="stylesheet" href="{{ site.baseurl | append: '/build/style.css' }}" type="text/css">
   <script src="{{ site.baseurl | append:'/js/libs/modernizr-custom.js' }}"></script>
+  
+  <script
+    async       onload="try{Typekit.load({ async: true, classes: false, events: false })}catch(e){}"
+    onreadystatechange="try{Typekit.load({ async: true, classes: false, events: false })}catch(e){}"
+    src="https://use.typekit.net/bvn4ome.js"></script>
+  <script>try{Typekit.load({ async: true, classes: false, events: false });}catch(e){}</script>
   
   <!--
     

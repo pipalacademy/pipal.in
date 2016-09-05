@@ -773,7 +773,7 @@ a:visited {
 /* Brand Styles */
 .fill-brand-two,
 .banner.banner-event,
-.advert {
+.card {
   color: #F3E9D2;
   background: #114B5F;
   background: -webkit-linear-gradient(left top, #05181e, #155c75);
@@ -781,7 +781,7 @@ a:visited {
 }
 .fill-brand-three,
 .banner,
-.advert.advert-course {
+.card.card-course {
   color: #F3E9D2;
   background-color: #1A936F;
   background: -webkit-linear-gradient(left top, #0f523e, #1ea97f);
@@ -835,43 +835,43 @@ a:visited {
   background: #C6DABF;
   margin-bottom: 0;
 }
-.advert {
+.card {
   padding: 16px 24px 0;
   padding: 1rem 1.5rem 0;
   margin: 32px 0 16px;
   margin: 2rem 0 1rem;
   font-weight: 300;
 }
-.advert-title {
+.card-title {
   font-weight: 300;
   margin: 24px 0 16px;
   margin: 1.5rem 0 1rem;
 }
-.advert-title b {
+.card-title b {
   display: block;
   margin-bottom: 4px;
   margin-bottom: 0.25rem;
 }
-.advert-subtitle {
+.card-subtitle {
   text-transform: uppercase;
 }
-.advert-subtitle b {
+.card-subtitle b {
   margin-right: 2.4px;
   margin-right: 0.15rem;
   color: #1A936F;
 }
-.advert-course .advert-subtitle b {
+.card-course .card-subtitle b {
   color: #88D498;
 }
-.advert-subtitle b + b {
+.card-subtitle b + b {
   margin-left: 5.6px;
   margin-left: 0.35rem;
 }
-.advert-subtitle .label-pin {
+.card-subtitle .label-pin {
   margin: 0;
 }
-.advert-button,
-.advert-button:visited {
+.card-button,
+.card-button:visited {
   display: block;
   padding: 16px 24px;
   padding: 1rem 1.5rem;
@@ -884,16 +884,16 @@ a:visited {
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
-.advert-course .advert-button,
-.advert-course .advert-button:visited {
+.card-course .card-button,
+.card-course .card-button:visited {
   background: #88D498;
   color: #114B5F;
 }
-.advert-button span,
-.advert-button:visited span {
+.card-button span,
+.card-button:visited span {
   display: block;
 }
-.advert-button:hover span {
+.card-button:hover span {
   -webkit-animation: shiftRight 1s ease-in-out infinite;
           animation: shiftRight 1s ease-in-out infinite;
 }

@@ -6,13 +6,13 @@
 
 {% if course %}
   {% assign course_link = site.baseurl | append: course.url %}
-  <article class="advert advert-course clearfix">
-    <h1 class="advert-title size-xlarge">
+  <article class="card card-course clearfix">
+    <h1 class="card-title size-xlarge">
       <b>{{ course.title }}</b>
       {{ course.dates }}
     </h1>
     
-    <h3 class="advert-subtitle size-xsmall">
+    <h3 class="card-subtitle size-xsmall">
       {% if course.duration %}
         <b class="label-timer">
           {{ course.duration }}
@@ -36,7 +36,7 @@
       link=course_link
     %}
     
-    <a class="advert-button size-small" href="{{ course_link }}">
+    <a class="card-button size-small" href="{{ course_link }}">
       <span>More Details &rarr;</span>
     </a>
   </article>

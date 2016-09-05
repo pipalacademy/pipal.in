@@ -22,37 +22,37 @@
 .banner-title {}
 
 
-.advert {
+.card {
     padding: 1rem 1.5rem 0;
     margin: 2rem 0 1rem;
     font-weight: 300;
     &:extend(.fill-brand-two);
-    &.advert-course:extend(.fill-brand-three) {}
+    &.card-course:extend(.fill-brand-three) {}
 }
-.advert-title {
+.card-title {
     font-weight: 300;
     margin: 1.5rem 0 1rem;
     b { display: block; margin-bottom: 0.25rem; }
 }
-.advert-subtitle {
+.card-subtitle {
     text-transform: uppercase;
     b {
         margin-right: 0.15rem;
         color: @brand-three;
-        .advert-course & { color: @brand-four; }
+        .card-course & { color: @brand-four; }
     }
     b + b { margin-left: 0.35rem; }
     .label-pin { margin: 0; }
 }
-.advert-button,
-.advert-button:visited {
+.card-button,
+.card-button:visited {
     display: block;
     padding: 1rem 1.5rem;
     margin: 2.5rem -1.5rem 0;
     
     background: @brand-three;
     color: @brand-one;
-    .advert-course & { background: @brand-four; color: @brand-two; }
+    .card-course & { background: @brand-four; color: @brand-two; }
     
     font-weight: 300;
     text-decoration: none;
@@ -60,7 +60,7 @@
     letter-spacing: 0.1em;
     span { display: block; }
 }
-.advert-button:hover {
+.card-button:hover {
     span { animation: shiftRight 1s ease-in-out infinite; }
 }
 

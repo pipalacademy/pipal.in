@@ -18,6 +18,7 @@ var CSS_TASK = 'css',
     JS_TASK = 'js',
     JS_FILES = [
         'js/libs/fontfaceobserver.standalone.js',
+        'js/libs/instantclick.min.js',
         'js/plugins.js',
         'js/script.js'
     ],

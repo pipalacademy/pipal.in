@@ -67,12 +67,17 @@
 
 
 
+// Init Instantlinks
+InstantClick.init();
+
+
+
 // Truncate dismissal
 $(function () {
     var CONTAINER_CLASS = 'truncate-el',
         TRIGGER_SELECTOR = '.truncate-dismiss';
     
-    $(TRIGGER_SELECTOR).click(function (e) {
+    $('html').on('click', TRIGGER_SELECTOR, function (e) {
         $(this).closest('.' + CONTAINER_CLASS).removeClass(CONTAINER_CLASS);
         $(this).remove();
         e.preventDefault();

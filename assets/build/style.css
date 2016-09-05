@@ -1097,6 +1097,9 @@ a:visited {
   margin-right: 1rem;
   padding: 0;
 }
+#instantclick-bar {
+  background-color: #1A936F;
+}
 /* ==|== print styles =======================================================
    Print styles.
    Inlined to avoid required HTTP connection: h5bp.com/r

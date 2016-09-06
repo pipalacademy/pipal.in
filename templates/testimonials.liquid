@@ -1,0 +1,14 @@
+---
+layout: listing
+
+title: Testimonials
+
+permalink: /testimonials/
+---
+
+{% for testimonial in site.testimonials %}
+  {%
+    include testimonial.liquid
+    testimonial=testimonial
+  %}
+{% endfor %}

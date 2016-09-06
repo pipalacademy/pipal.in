@@ -465,6 +465,7 @@ img {
 }
 .contain-width img,
 .person-photo img,
+.banner-photo img,
 .profile-photo img {
   max-width: 100%;
   height: auto;
@@ -830,10 +831,23 @@ a:visited {
   margin-bottom: 32px;
   margin-bottom: 2rem;
 }
+.banner a {
+  color: inherit;
+}
 .banner.banner-listing {
   color: #114B5F;
   background: #C6DABF;
   margin-bottom: 0;
+}
+.banner-subtitle {
+  font-weight: 300;
+}
+.banner-subtitle a {
+  text-decoration: none;
+}
+.banner-title + .banner-subtitle {
+  margin: -8px 0 32px;
+  margin: -0.5rem 0 2rem;
 }
 .card {
   padding: 16px 24px 0;
@@ -1016,9 +1030,20 @@ a:visited {
   width: 96px;
   width: 6rem;
   border-radius: 6rem;
+  overflow: hidden;
   float: right;
   margin: 4px 0 4px 4px;
   margin: 0.25rem 0 0.25rem 0.25rem;
+}
+.banner-photo {
+  height: 160px;
+  height: 10rem;
+  width: 160px;
+  width: 10rem;
+  border-radius: 10rem;
+  overflow: hidden;
+  margin: 32px 0 0;
+  margin: 2rem 0 0;
 }
 .speechbubble {
   margin: 32px 0 48px;

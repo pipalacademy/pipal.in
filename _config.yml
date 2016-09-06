@@ -34,6 +34,12 @@ defaults:
       type: "events"
     values:
       layout: "event"
+  -
+    scope:
+      path: "_trainers"
+      type: "trainers"
+    values:
+      layout: "trainer"
 
 
 # Site settings

@@ -11,6 +11,8 @@
     padding: 0 0 1rem;
     font-weight: 300;
     margin-bottom: 2rem;
+    a { color: inherit; }
+    
     &:extend(.fill-brand-three);
     &.banner-listing {
         color: @brand-two;
@@ -20,6 +22,13 @@
     &.banner-event:extend(.fill-brand-two) {}
 }
 .banner-title {}
+.banner-subtitle {
+    font-weight: 300;
+    a { text-decoration: none; }
+    .banner-title + & {
+        margin: -0.5rem 0 2rem;
+    }
+}
 
 
 .card {
@@ -140,14 +149,17 @@
     transform: translateY(-50%);
 }
 .person-photo img:extend(.contain-width img) {}
-.person-photo {
-    float: left;
-    margin: 0;
-    margin-left: -1 * (@photo-size + @photo-pad);
+.rounded-photo(@photo-size) {
     height:@photo-size;
     width: @photo-size;
     border-radius: @photo-size;
     overflow: hidden;
+}
+.person-photo {
+    float: left;
+    margin: 0;
+    margin-left: -1 * (@photo-size + @photo-pad);
+    .rounded-photo(@photo-size);
 }
 .person-name {
     margin: 0;
@@ -157,13 +169,17 @@
 }
 .profile-photo {
     &:extend(.person-photo all);
-    @photo-size: 6rem;
-    height:@photo-size;
-    width: @photo-size;
-    border-radius: @photo-size;
+    .rounded-photo(6rem);
     float: right;
     margin: 0.25rem 0 0.25rem 0.25rem;
 }
+.banner-photo {
+    .rounded-photo(10rem);
+    // border-radius: 0;
+    margin: 2rem 0 0;
+}
+.banner-photo img:extend(.contain-width img) {}
+
 
 .speechbubble {
     margin: 2rem 0 3rem;

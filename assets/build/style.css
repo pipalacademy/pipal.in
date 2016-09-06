@@ -758,6 +758,13 @@ p {
 .prose ul ul:last-child {
   margin-bottom: 0;
 }
+.prose hr {
+  width: 48px;
+  width: 3rem;
+  border: 1px solid;
+  margin: 48px 0 24px;
+  margin: 3rem 0 1.5rem;
+}
 /* ========= */
 /* = Theme = */
 /* ========= */

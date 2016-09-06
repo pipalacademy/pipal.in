@@ -19,12 +19,14 @@
         background: @brand-five;
         margin-bottom: 0;
     }
-    &.banner-event:extend(.fill-brand-two) {}
-    &.banner-person:extend(.fill-brand-one) {}
+    .theme-event &:extend(.fill-brand-two) {}
+    .theme-trainer &:extend(.fill-brand-one) {}
 }
-.banner-title {}
+.banner-title {
+}
 .banner-subtitle {
     font-weight: 300;
+    .theme-trainer &:extend(.brand-three) {}
     a { text-decoration: none; }
     .banner-title + & {
         margin: -0.5rem 0 2rem;
@@ -81,6 +83,8 @@
     margin-left: -1.5rem;
     padding-left: 0.5rem;
     color: @brand-three;
+    .theme-event &:extend(.brand-two) {}
+    .theme-trainer &:extend(.brand-two) {}
 }
 
 
@@ -88,10 +92,12 @@
     margin: 0 -1.5rem;
     padding: 1rem 1.5rem;
     background: fade(@brand-four, 50%);
+    .theme-event & { background: fade(@brand-two, 15%); }
     color: @brand-two;
 }
 .highlight-heading {
     color: @brand-three;
+    .theme-event &:extend(.brand-two) {}
     text-transform: uppercase;
     margin: 1.5rem 0 0.5rem;
 }

@@ -98,39 +98,10 @@ layout: base
       </header>
       
       {% for t_id in page.testimonials %}
-        {% assign testimonial = site.testimonials | where: 'id', t_id | first %}
-        {% assign t_id =  'testimonial-' | append: testimonial.slug %}
-        {% assign t_truncate =  testimonial.content | size %}
-        {% if testimonial %}
-          <aside id="{{ t_id }}" class="speechbubble">
-            <blockquote class="speechbubble-quote">
-              {% if t_truncate > 250 %}
-                <div class="truncate-el">
-              {% endif %}
-                  
-                  {{ testimonial.content | markdownify }}
-                  
-              {% if t_truncate > 250 %}
-                  <a
-                    class="truncate-dismiss"
-                    href="#{{ t_id }}">
-                    <span class="truncate-button">
-                      …Read More
-                    </span>
-                  </a>
-                </div>
-              {% endif %}
-            </blockquote>
-            
-            <h4 class="speechbubble-attribution size-large">
-              {{ testimonial.title }}
-            </h4>
-            <h5 class="speechbubble-credentials size-small">
-              <b>{{ testimonial.org }}</b>
-              {{ testimonial.designation }}
-            </h5>
-          </aside>
-        {% endif %}
+        {%
+          include testimonial.liquid
+          id=t_id
+        %}
       {% endfor %}
     </section>
   {% endif %}

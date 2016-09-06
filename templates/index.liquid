@@ -21,12 +21,7 @@ layout: base
           {% endfor %}
         </ul>
       {% else %}
-        <dl>
-          {% for doc in collection.docs %}
-            <dt>{{ doc.title }}</dt>
-            <dd>{{ doc.content }}</dd>
-          {% endfor %}
-        </dl>
+        {{ collection.docs | map: 'title' | join: ', ' }}
       {% endif %}
     </dd>
   {% endfor %}

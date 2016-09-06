@@ -7,7 +7,9 @@
 {% if trainer %}
   <article class="prose">
     <h3 class="size-large">
-      {{ trainer.title }}
+      <a href="{{ site.baseurl | append: trainer.url }}">
+        {{ trainer.title }}
+      </a>
     </h3>
     
     <ul class="links-list">

@@ -1111,16 +1111,24 @@ a:visited {
   }
 }
 .links-list {
-  margin: 8px 0;
-  margin: 0.5rem 0;
+  font-size: 10.672px;
+  font-size: 0.667rem;
+  font-size: 12px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin: 12px 0 8px;
+  margin: 0.75rem 0 0.5rem;
   padding: 0 !important;
   line-height: 1;
 }
-.links-list li {
+.links-list > li {
   display: inline-block;
   margin-right: 16px;
   margin-right: 1rem;
   padding: 0;
+}
+.links-list > li > a {
+  text-decoration: none;
 }
 #instantclick-bar {
   background-color: #1A936F;

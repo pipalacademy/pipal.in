@@ -175,7 +175,6 @@
 }
 .banner-photo {
     .rounded-photo(10rem);
-    // border-radius: 0;
     margin: 2rem 0 0;
 }
 .banner-photo img:extend(.contain-width img) {}
@@ -227,13 +226,16 @@
 
 
 .links-list {
-    margin: 0.5rem 0;
+    .size-xsmall;
+    text-transform: uppercase;
+    margin: 0.75rem 0 0.5rem;
     padding: 0 !important;
     line-height: @title-leading;
-    li {
+    > li {
         display: inline-block;
         margin-right: 1rem;
         padding: 0;
+        > a { text-decoration: none; }
     }
 }
 #instantclick-bar {

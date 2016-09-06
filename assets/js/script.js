@@ -40,7 +40,7 @@
     }
     
     // if the fonts are already cached by the browser, activate them
-    if (isLocalStorageSupported() && localStorage.getItem(activeCookie)) {
+    if (isSessionStorageSupported() && sessionStorage.getItem(activeCookie)) {
         w.document.documentElement.className += ' ' + activeClass;
         return;
     }
@@ -59,8 +59,8 @@
             w.document.documentElement.className += ' ' + activeClass;
             
             // set a flag to optimise future visits
-            if (isLocalStorageSupported()) {
-                localStorage.setItem(activeCookie, true);
+            if (isSessionStorageSupported()) {
+                sessionStorage.setItem(activeCookie, true);
             }
         });
 }(this));

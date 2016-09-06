@@ -48,11 +48,11 @@ function(){var a=w(e.href);a!=k&&(a in h?(h[k].scrollY=pageYOffset,k=a,K(h[a].ti
 }());
 
 
-function isLocalStorageSupported() {
+function isSessionStorageSupported() {
     try {
         var mod = 'test';
-        localStorage.setItem(mod, mod);
-        localStorage.removeItem(mod);
+        sessionStorage.setItem(mod, mod);
+        sessionStorage.removeItem(mod);
         return true;
     } catch(e) {
         return false;
@@ -112,7 +112,7 @@ $.isClickEventRequestingNewTab = function(event) {
     }
     
     // if the fonts are already cached by the browser, activate them
-    if (isLocalStorageSupported() && localStorage.getItem(activeCookie)) {
+    if (isSessionStorageSupported() && sessionStorage.getItem(activeCookie)) {
         w.document.documentElement.className += ' ' + activeClass;
         return;
     }
@@ -131,8 +131,8 @@ $.isClickEventRequestingNewTab = function(event) {
             w.document.documentElement.className += ' ' + activeClass;
             
             // set a flag to optimise future visits
-            if (isLocalStorageSupported()) {
-                localStorage.setItem(activeCookie, true);
+            if (isSessionStorageSupported()) {
+                sessionStorage.setItem(activeCookie, true);
             }
         });
 }(this));

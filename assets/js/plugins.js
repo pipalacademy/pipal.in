@@ -22,11 +22,11 @@
 }());
 
 
-function isLocalStorageSupported() {
+function isSessionStorageSupported() {
     try {
         var mod = 'test';
-        localStorage.setItem(mod, mod);
-        localStorage.removeItem(mod);
+        sessionStorage.setItem(mod, mod);
+        sessionStorage.removeItem(mod);
         return true;
     } catch(e) {
         return false;

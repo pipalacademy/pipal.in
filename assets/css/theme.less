@@ -17,6 +17,11 @@ a:visited {
 }
 
 /* Brand Styles */
+.fill-brand-one {
+    color: @brand-two;
+    background: @brand-one;
+    background: linear-gradient(to bottom, darken(@brand-one, 20%), lighten(@brand-one, 0%));
+}
 .fill-brand-two {
     color: @brand-one;
     background: @brand-two;
@@ -26,6 +31,16 @@ a:visited {
     color: @brand-one;
     background-color: @brand-three;
     background: linear-gradient(to right bottom, darken(@brand-three, 15%), lighten(@brand-three, 5%));
+}
+.fill-brand-four {
+    color: @brand-one;
+    background-color: @brand-four;
+    background: linear-gradient(to right bottom, darken(@brand-four, 15%), lighten(@brand-four, 5%));
+}
+.fill-brand-five {
+    color: @brand-two;
+    background-color: @brand-five;
+    background: linear-gradient(to right bottom, darken(@brand-five, 15%), lighten(@brand-five, 5%));
 }
 
 

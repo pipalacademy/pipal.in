@@ -772,6 +772,13 @@ a:visited {
   text-decoration: underline;
 }
 /* Brand Styles */
+.fill-brand-one,
+.banner.banner-person {
+  color: #114B5F;
+  background: #F3E9D2;
+  background: -webkit-linear-gradient(top, #dec281, #f3e9d2);
+  background: linear-gradient(to bottom, #dec281, #f3e9d2);
+}
 .fill-brand-two,
 .banner.banner-event,
 .card {
@@ -787,6 +794,18 @@ a:visited {
   background-color: #1A936F;
   background: -webkit-linear-gradient(left top, #0f523e, #1ea97f);
   background: linear-gradient(to right bottom, #0f523e, #1ea97f);
+}
+.fill-brand-four {
+  color: #F3E9D2;
+  background-color: #88D498;
+  background: -webkit-linear-gradient(left top, #50c067, #9bdba8);
+  background: linear-gradient(to right bottom, #50c067, #9bdba8);
+}
+.fill-brand-five {
+  color: #114B5F;
+  background-color: #C6DABF;
+  background: -webkit-linear-gradient(left top, #9bbe8f, #d4e3cf);
+  background: linear-gradient(to right bottom, #9bbe8f, #d4e3cf);
 }
 /* Animations */
 @-webkit-keyframes shiftRight {

@@ -8,20 +8,19 @@
   {% assign course_link = site.baseurl | append: course.url %}
   <article class="card card-course clearfix">
     <h1 class="card-title size-xlarge">
-      <b>{{ course.title }}</b>
-      {{ course.dates }}
+      <b>{{ course.title | smartify }}</b>
     </h1>
     
     <h3 class="card-subtitle size-xsmall">
       {% if course.duration %}
         <b class="label-timer">
-          {{ course.duration }}
+          {{ course.duration | smartify }}
         </b>
       {% endif %}
       
       {% if course.participants %}
         <b class="label-people">
-          Class of {{ course.participants }}
+          Class of {{ course.participants | smartify }}
         </b>
       {% endif %}
     </h3>

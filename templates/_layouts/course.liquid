@@ -6,7 +6,7 @@ layout: base
   <header class="banner clearfix">
     <div class="container">
       <h1 class="banner-title">
-        {{ page.title }}
+        {{ page.title | smartify }}
       </h1>
       <div class="size-larges">
         {{ page.brief | markdownify }}
@@ -18,7 +18,7 @@ layout: base
             <dt class="visuallyhidden">Suggested Duration</dt>
             <dd class="label-timer">
               <a href="#duration-format">
-                {{ page.duration }}
+                {{ page.duration | smartify }}
               </a>
             </dd>
           {% endif %}
@@ -26,7 +26,7 @@ layout: base
             <dt class="visuallyhidden">Participants</dt>
             <dd class="label-people">
               <a href="#duration-format">
-                Class of {{ page.participants }}
+                Class of {{ page.participants | smartify }}
               </a>
             </dd>
           {% endif %}
@@ -54,7 +54,7 @@ layout: base
   
   {% if page.events %}
     <section class="container">
-      <h2 class="section-heading size-xlarge">
+      <h2 class="section-heading size-large">
         Upcoming Events
       </h2>
       

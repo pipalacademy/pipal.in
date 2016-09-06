@@ -12,7 +12,7 @@ layout: base
       {% endif %}
       
       <h1 class="banner-title">
-        {{ page.title }}
+        {{ page.title | smartify }}
       </h1>
       
       {% if page.links.twitter %}

@@ -10,14 +10,14 @@ layout: base
           {% if page.event_type %}
             <dt class="visuallyhidden">Event Type</dt>
             <dd class="label">
-              {{ page.event_type }}
+              {{ page.event_type | smartify }}
             </dd>
           {% endif %}
           {% if page.city %}
             <dt class="visuallyhidden">Location</dt>
             <dd class="label-pin">
               <a href="#venue">
-                {{ page.city }}
+                {{ page.city | smartify }}
               </a>
             </dd>
           {% endif %}
@@ -25,10 +25,10 @@ layout: base
       {% endif %}
       
       <time class="size-large">
-        {{ page.dates }}
+        {{ page.dates | smartify }}
       </time>
       <h1 class="banner-title">
-        {{ page.title }}
+        {{ page.title | smartify }}
       </h1>
       
       <div>
@@ -89,7 +89,7 @@ layout: base
   
   {% if page.course %}
     <section class="container">
-      <h2 class="section-heading size-xlarge">
+      <h2 class="section-heading size-large">
         Related Course
       </h2>
       

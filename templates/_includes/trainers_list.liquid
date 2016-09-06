@@ -13,7 +13,7 @@
             
             <div class="person-info">
               <h5 class="person-name size-regular">
-                {{ trainer.title }}
+                {{ trainer.title | smartify }}
               </h5>
               
               {% if trainer.links.twitter %}

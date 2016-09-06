@@ -16,6 +16,8 @@ collections:
     output: true
   testimonials:
     title: Testimonials
+  clients:
+    title: Clients
 
 
 # Defaults

@@ -18,6 +18,9 @@ collections:
     title: Testimonials
   clients:
     title: Clients
+  articles:
+    title: Articles
+    output: true
 
 
 # Defaults
@@ -40,6 +43,12 @@ defaults:
       type: "trainers"
     values:
       layout: "trainer"
+  -
+    scope:
+      path: "_articles"
+      type: "articles"
+    values:
+      layout: "article"
 
 
 # Site settings

@@ -912,7 +912,6 @@ FileETag None
 
 
 
-# Route requests through Craft
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /

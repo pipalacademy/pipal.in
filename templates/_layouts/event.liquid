@@ -48,7 +48,7 @@ layout: base
         include trainers_list.liquid
         trainers=trainers
         title=true
-        link='#trainers'
+        link='#trainer'
       %}
     </div>
   </header>
@@ -83,29 +83,21 @@ layout: base
     body=page.outline
   %}
   
-  {% if page.trainer %}
-    <section id="trainers" class="container">
-      <h2 class="section-heading size-xlarge">
-        Trainer
-      </h2>
-      {%
-        include trainer_teaser.liquid
-        id=page.trainer
-      %}
-    </section>
-  {% endif %}
+  {%
+    include section.liquid
+    title="Trainer"
+    teasers=trainers
+    teaser_template='trainer_teaser.liquid'
+  %}
   
   {% if page.course %}
-    <section class="container">
-      <h2 class="section-heading size-large">
-        Related Course
-      </h2>
-      
-      {%
-        include course_teaser.liquid
-        id=page.course
-      %}
-    </section>
+    {% assign courses = '' | split:'' | push:page.course %}
+    {%
+      include section.liquid
+      title="Related Course"
+      teasers=courses
+      teaser_template='course_teaser.liquid'
+    %}
   {% endif %}
   
 </article>

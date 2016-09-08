@@ -2,6 +2,15 @@
 layout: base
 ---
 
+{% assign trainers_size = page.trainers | size %}
+{% if trainers_size > 1 %}
+  {% assign trainers_title = 'Trainers' %}
+{% else %}
+  {% assign trainers_title = 'Trainer' %}
+{% endif %}
+{% assign trainers_id = trainers_title | slugify | prepend: '#' %}
+
+
 <article class="theme-course">
   <header class="banner clearfix">
     <div class="container">
@@ -37,7 +46,7 @@ layout: base
         include trainers_list.liquid
         trainers=page.trainers
         title=true
-        link='#trainers'
+        link=trainers_id
       %}
     </div>
   </header>
@@ -52,21 +61,12 @@ layout: base
   {% endif %}
   
   
-  {% if page.events %}
-    <section class="container">
-      <h2 class="section-heading size-large">
-        Upcoming Events
-      </h2>
-      
-      {% for e_id in page.events %}
-        {%
-          include event_teaser.liquid
-          id=e_id
-        %}
-      {% endfor %}
-    </section>
-  {% endif %}
-  
+  {%
+    include section.liquid
+    title="Upcoming Events"
+    teasers=page.events
+    teaser_template='event_teaser.liquid'
+  %}
   
   {%
     include section.liquid
@@ -88,24 +88,12 @@ layout: base
     body=page.outline
   %}
   
-  
-  {% if page.testimonials %}
-    <section class="container">
-      <header>
-        <h2 class="section-heading size-xlarge">
-          Testimonials
-        </h2>
-      </header>
-      
-      {% for t_id in page.testimonials %}
-        {%
-          include testimonial.liquid
-          id=t_id
-        %}
-      {% endfor %}
-    </section>
-  {% endif %}
-  
+  {%
+    include section.liquid
+    title="Testimonials"
+    teasers=page.testimonials
+    teaser_template='testimonial.liquid'
+  %}
   
   {%
     include section.liquid
@@ -116,18 +104,11 @@ layout: base
   %}
   
   
-  {% if page.trainers %}
-    <section id="trainers" class="container">
-      {% assign trainers_count = page.trainers | size %}
-      <h2 class="section-heading size-xlarge">
-        Trainer{% if trainers_count > 1 %}s{% endif %}
-      </h2>
-      {% for tr_id in page.trainers %}
-        {%
-          include trainer_teaser.liquid
-          id=tr_id
-        %}
-      {% endfor %}
-    </section>
-  {% endif %}
+  
+  {%
+    include section.liquid
+    title=trainers_title
+    teasers=page.trainers
+    teaser_template='trainer_teaser.liquid'
+  %}
 </article>

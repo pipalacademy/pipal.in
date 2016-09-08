@@ -85,6 +85,13 @@ layout: base
   
   {%
     include section.liquid
+    title="Testimonials"
+    teasers=page.testimonials
+    teaser_template='testimonial.liquid'
+  %}
+  
+  {%
+    include section.liquid
     title="Trainer"
     teasers=trainers
     teaser_template='trainer_teaser.liquid'

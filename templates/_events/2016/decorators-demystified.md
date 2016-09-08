@@ -54,6 +54,9 @@ outline: |
 
 
 
+testimonials:
+  - /testimonials/bargava-subramanian
+
 trainer: /trainers/anand
 
 course: /courses/advanced-python

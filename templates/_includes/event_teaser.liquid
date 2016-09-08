@@ -9,9 +9,11 @@
   <article class="card clearfix">
     <h1 class="card-subtitle">
       <b>{{ event.event_type | smartify }}</b>
-      <span class="label-pin">
-        {{ event.city | smartify }}
-      </span>
+      {% if event.city %}
+        <span class="label-pin">
+          {{ event.city | smartify }}
+        </span>
+      {% endif %}
     </h1>
     <h2 class="card-title size-xlarge">
       <b>{{ event.title | smartify }}</b>

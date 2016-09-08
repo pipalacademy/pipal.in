@@ -9,6 +9,9 @@ event_type:
 dates:
   October 21 & 22, 2016
 
+time:
+  9AM - 11AM
+
 schedule: |
   October 21 & 22, 2016  
   9AM - 11AM

@@ -9,6 +9,9 @@ event_type:
 dates:
   October 15, 2016
 
+time:
+  4PM - 5PM
+
 schedule: |
   October 15, 2016  
   4PM - 5PM

@@ -21,6 +21,14 @@ layout: base
               </a>
             </dd>
           {% endif %}
+          {% if page.time %}
+            <dt class="visuallyhidden">Time</dt>
+            <dd class="label-timer">
+              <a href="#schedule">
+                {{ page.time | smartify }}
+              </a>
+            </dd>
+          {% endif %}
         </dl>
       {% endif %}
       

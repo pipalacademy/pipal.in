@@ -53,6 +53,17 @@ layout: base
     </div>
   </header>
   
+  <section class="container">
+    <div class="action-container">
+      <button class="button action-toggle" data-toggle="#register">
+        Register for&nbsp;Event
+      </button>
+      <div id="register" class="action-body prose clearfix">
+        {{ page.tickets_embed | replace: '<site.baseurl>', site.baseurl }}
+      </div>
+    </div>
+  </section>
+  
   
   {% if page.video %}
     <figure class="container">

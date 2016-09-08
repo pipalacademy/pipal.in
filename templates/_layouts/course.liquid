@@ -1,5 +1,12 @@
 ---
 layout: base
+
+action: |
+  Sales pitch goes here. Currently using placeholder text from
+  the old <http://pipal.in/contact> page. Best way to reach us is by email.
+  
+  Please write to us at <hello@pipal.in>.
+
 ---
 
 {% assign trainers_size = page.trainers | size %}
@@ -51,6 +58,20 @@ layout: base
     </div>
   </header>
   
+  <section class="container">
+    <div class="action-container">
+      <button class="button button-multiline action-toggle" data-toggle="#action">
+        Request Course
+        <i>
+          Get it conducted at your org
+        </i>
+      </button>
+      <div id="action" class="action-body prose clearfix">
+        {{ layout.action | markdownify }}
+      </div>
+    </div>
+  </section>
+  
   
   {% if page.video %}
     <figure class="container">
@@ -59,7 +80,6 @@ layout: base
       </div>
     </figure>
   {% endif %}
-  
   
   {%
     include section.liquid

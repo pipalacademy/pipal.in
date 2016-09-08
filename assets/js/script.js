@@ -74,6 +74,8 @@ InstantClick.init();
 
 // Truncate dismissal
 $(function () {
+    'use strict';
+    
     var CONTAINER_CLASS = 'truncate-el',
         TRIGGER_SELECTOR = '.truncate-dismiss';
     
@@ -81,5 +83,34 @@ $(function () {
         $(this).closest('.' + CONTAINER_CLASS).removeClass(CONTAINER_CLASS);
         $(this).remove();
         e.preventDefault();
+    });
+});
+
+
+
+// Show/hide toggles
+$(function () {
+    'use strict';
+    
+    var TRIGGER_SELECTOR = '.action-toggle',
+        CONTAINER_SELECTOR = '.action-container',
+        ACTIVE_CLASS = 'action-explode';
+    
+    // JS Hide/Show Toggles
+    $('html').on('click', TRIGGER_SELECTOR, function (e) {
+        var $toggle = $(this),
+            $dropdown = $($toggle.data('toggle')),
+            $container = $toggle.closest(CONTAINER_SELECTOR);
+        
+        if ($toggle.data('toggle') && $dropdown.length) {
+            if ($dropdown.is(':visible')) {
+                $container.removeClass(ACTIVE_CLASS);
+            } else {
+                $container.addClass(ACTIVE_CLASS);
+            }
+            $dropdown.slideToggle('fast');
+            
+            e.preventDefault();
+        }
     });
 });

@@ -1,9 +1,10 @@
 /* Objects */
 
+@container-hpad-xxs: 1.5rem;
 .container {
     max-width: 35rem;
     margin: 0 auto;
-    padding: 1.5rem;
+    padding: @container-hpad-xxs;
 }
 
 
@@ -79,7 +80,7 @@
 .section-heading {
     margin-top: 0;
     border-left: 1rem solid;
-    margin-left: -1.5rem;
+    margin-left: -@container-hpad-xxs;
     padding-left: 0.5rem;
     color: @brand-three;
     .theme-event &:extend(.brand-two) {}
@@ -88,8 +89,8 @@
 
 
 .highlight {
-    margin: 0 -1.5rem;
-    padding: 1rem 1.5rem;
+    margin: 0 -@container-hpad-xxs;
+    padding: 1rem @container-hpad-xxs;
     background: fade(@brand-four, 50%);
     .theme-event & { background: fade(@brand-two, 15%); }
     color: @brand-two;
@@ -134,7 +135,7 @@
     text-align: right;
 }
 .person-list {
-    margin: 2rem -1.5rem 0 0;
+    margin: 2rem -@container-hpad-xxs 0 0;
 }
 @photo-size: 4.5rem;
 @photo-pad: 0.5rem;
@@ -192,8 +193,8 @@
     background: linear-gradient(to bottom, lighten(@brand-five, 5%), @brand-five);
     border: 1px solid @brand-five;
     border-bottom: none;
-    margin: 0 -1.5rem 1.5rem;
-    padding: 1.5rem;
+    margin: 0 -@container-hpad-xxs 1.5rem;
+    padding: @container-hpad-xxs;
     font-style: italic;
     font-weight: 300;
     line-height: 1.6;
@@ -210,8 +211,8 @@
     }
     p:last-of-type { margin-bottom: 0; }
     .truncate-el {
-        padding: 1.5rem;
-        margin: -1.5rem;
+        padding: @container-hpad-xxs;
+        margin: -@container-hpad-xxs;
         // @media (min-width: @md-min) { margin-bottom: 0; }
     }
 }
@@ -248,7 +249,7 @@
 
 
 .logos-list {
-    margin: 0 -1.5rem 1.5rem;
+    margin: 0 -@container-hpad-xxs 1.5rem;
     background: white;
     > li {
         float: left;
@@ -316,11 +317,11 @@
     .action-toggle { transition: all 0.3s; }
     .has-no-js &,
     &.action-explode {
-        margin-left: -1.5rem;
-        margin-right: -1.5rem;
+        margin-left: -@container-hpad-xxs;
+        margin-right: -@container-hpad-xxs;
         border-radius: 0;
         border-width: 0 0 1px 0;
-        padding: 2rem 1.5rem;
+        padding: 2rem @container-hpad-xxs;
         .action-toggle {
             &:extend(.size-xlarge);
             padding-left: 0;
@@ -330,8 +331,8 @@
 }
 .action-body {
     .has-js & { display: none; }
-    margin: 0 -1.5rem;
-    padding: 2rem 1.5rem 0.5rem;
+    margin: 0 -@container-hpad-xxs;
+    padding: 2rem @container-hpad-xxs 0.5rem;
     iframe {
         width: 100%;
         background: white;

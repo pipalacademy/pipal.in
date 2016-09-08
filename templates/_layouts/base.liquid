@@ -1,5 +1,14 @@
 ---
 layout: html
+
+about_links:
+  - title: Team
+    url: /trainers
+  - title: Articles
+    url: /articles
+  - title: Contact
+    url: /contact
+
 ---
 
 <header class="container">
@@ -27,32 +36,24 @@ layout: html
 
 <footer class="container">
   <hr>
-  
   <dl>
-    {% assign sitemap = site.collections | where: 'output', true %}
-    {% for collection in sitemap %}
-      <dt>
-        {% assign slug = collection.title | slugify %}
-        <a href="{{ site.baseurl | append: '/' | append: slug }}">
-          {{ collection.title }}
-        </a>
-      </dt>
-      <dd>
-        {% if collection.output %}
-          <ul>
-            {% for doc in collection.docs %}
-              <li>
-                <a href="{{ site.baseurl | append: doc.url }}">
-                  {{ doc.title }}
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        {% else %}
-          {{ collection.docs | map: 'title' | join: ', ' }}
-        {% endif %}
-      </dd>
-    {% endfor %}
+    {%
+      include footer_links.liquid
+      title="About"
+      list=layout.about_links
+    %}
+    
+    {%
+      include footer_links.liquid
+      title="Courses"
+      list=site.courses
+    %}
+    
+    {%
+      include footer_links.liquid
+      title="Events"
+      list=site.events
+    %}
   </dl>
   
   <hr>

@@ -32,7 +32,7 @@ trainer: /trainers/anand
 
 course: /courses/advanced-python
 
-tickets_url:
-  #
+tickets_embed: |
+  <iframe width="100%" height="600px" src="<site.baseurl>/media/boxoffice.html" frameborder="0"></iframe>
 
 ---

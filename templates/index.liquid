@@ -64,18 +64,20 @@ testimonials:
     Our Clients
   </h2>
   
-  {% for client in site.clients %}
-    <div>
-      <a href="{{ client.links.web }}">
-        <figure class="contain-width">
-          <img alt=" " src="{{ site.baseurl | append: client.logo }}">
-        </figure>
-        <h4>
-          {{ client.title }}
-        </h4>
-      </a>
-    </div>
-  {% endfor %}
+  <ul class="logos-list clearfix">
+    {% for client in site.clients %}
+      <li>
+        <a href="{{ client.links.web }}">
+          <figure class="logo-hold contain-width" style="background-image: url('{{ site.baseurl | append: client.logo }}')">
+            <img class="hidden" alt=" " src="{{ site.baseurl | append: client.logo }}">
+          </figure>
+          <h4 class="logo-title visuallyhidden">
+            {{ client.title }}
+          </h4>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
 </div>
 
 

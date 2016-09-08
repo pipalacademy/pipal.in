@@ -470,7 +470,8 @@ img {
   max-width: 100%;
   height: auto;
 }
-.embed-fluid {
+.embed-fluid,
+.logos-list .logo-hold {
   position: relative;
   overflow: hidden;
   height: 0;
@@ -1185,6 +1186,39 @@ a:visited {
 }
 #instantclick-bar {
   background-color: #1A936F;
+}
+.logos-list {
+  margin: 0 -24px 24px;
+  margin: 0 -1.5rem 1.5rem;
+  background: white;
+}
+.logos-list > li {
+  float: left;
+  width: 50%;
+  border: 1px solid #F3E9D2;
+}
+.logos-list > li > a {
+  display: block;
+  position: relative;
+  outline: 0 solid white;
+  -webkit-transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.logos-list > li > a:hover {
+  z-index: 10;
+  outline-width: 4px;
+  outline-width: 0.25rem;
+  box-shadow: 0 0.5rem 2.5rem -0.25rem rgba(0, 0, 0, 0.4);
+}
+.logos-list .logo-hold {
+  padding-bottom: 35%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: solid transparent;
+  border-width: 24px;
+  border-width: 1.5rem;
+  margin: 0;
 }
 /* ==|== print styles =======================================================
    Print styles.

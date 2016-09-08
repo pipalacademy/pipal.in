@@ -98,13 +98,13 @@ code {
 
 
 /* 1.5 */
-    .size-huge     { font-size: 5.063rem; }
-h1, .size-xxlarge  { font-size: 3.375rem; }
-h2, .size-xlarge   { font-size: 2.25rem; }
-h3, .size-large    { font-size: 1.5rem; }
-body,.size-regular { font-size: 1.125rem; }
-    .size-small    { font-size: 1rem; }
-    .size-xsmall   { font-size: 0.667rem; }
+//     .size-huge     { font-size: 5.063rem; }
+// h1, .size-xxlarge  { font-size: 3.375rem; }
+// h2, .size-xlarge   { font-size: 2.25rem; }
+// h3, .size-large    { font-size: 1.5rem; }
+// body,.size-regular { font-size: 1.125rem; }
+//     .size-small    { font-size: 1rem; }
+//     .size-xsmall   { font-size: 0.667rem; }
 
 /* 1.414 */
     .size-huge     { font-size: 3.998rem; }
@@ -116,14 +116,14 @@ body,.size-regular { font-size: 1.125rem; }
     .size-xsmall   { font-size: 0.75rem; }
 
 /* 1.333 */
-/*    .size-huge     { font-size: 3.157rem; }
-h1, .size-xxlarge  { font-size: 2.369rem; }
-h2, .size-xlarge   { font-size: 1.777rem; }
-h3, .size-large    { font-size: 1.333rem; }
-body,.size-regular { font-size: 1.125rem; }
-    .size-small    { font-size: 1rem; }
-    .size-xsmall   { font-size: 0.75rem; }
-*/
+//     .size-huge     { font-size: 3.157rem; }
+// h1, .size-xxlarge  { font-size: 2.369rem; }
+// h2, .size-xlarge   { font-size: 1.777rem; }
+// h3, .size-large    { font-size: 1.333rem; }
+// body,.size-regular { font-size: 1.125rem; }
+//     .size-small    { font-size: 1rem; }
+//     .size-xsmall   { font-size: 0.75rem; }
+
 
 
 /* Defaults */
@@ -140,6 +140,17 @@ blockquote,
 pre,
 figure,
 p { margin: 0 0 1.5rem; }
+
+
+
+/* Styles */
+
+.title-label {
+    &:extend(.size-xsmall);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.025em;
+}
 
 .prose {
     h3 { margin-bottom: 0.25rem; }

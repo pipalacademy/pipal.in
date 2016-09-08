@@ -46,7 +46,7 @@
     b { display: block; margin-bottom: 0.25rem; }
 }
 .card-subtitle {
-    text-transform: uppercase;
+    &:extend(.title-label);
     b {
         margin-right: 0.15rem;
         color: @brand-three;
@@ -103,10 +103,8 @@
 
 
 .labels {
-    .size-xsmall;
+    &:extend(.title-label);
     margin: 2.5rem 0 -0.25rem;
-    text-transform: uppercase;
-    font-weight: bold;
 }
 .label-people,
 .label-pin,
@@ -131,7 +129,7 @@
 
 
 .person-list-title {
-    text-transform: uppercase;
+    &:extend(.title-label);
     margin: 0.5rem 0;
     text-align: right;
 }

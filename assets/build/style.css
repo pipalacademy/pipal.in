@@ -634,38 +634,6 @@ html {
   }
 }
 /* 1.5 */
-.size-huge {
-  font-size: 81.008px;
-  font-size: 5.063rem;
-}
-h1,
-.size-xxlarge {
-  font-size: 54px;
-  font-size: 3.375rem;
-}
-h2,
-.size-xlarge {
-  font-size: 36px;
-  font-size: 2.25rem;
-}
-h3,
-.size-large {
-  font-size: 24px;
-  font-size: 1.5rem;
-}
-body,
-.size-regular {
-  font-size: 18px;
-  font-size: 1.125rem;
-}
-.size-small {
-  font-size: 16px;
-  font-size: 1rem;
-}
-.size-xsmall {
-  font-size: 10.672px;
-  font-size: 0.667rem;
-}
 /* 1.414 */
 .size-huge {
   font-size: 63.968px;
@@ -695,19 +663,15 @@ body,
   font-size: 16px;
   font-size: 1rem;
 }
-.size-xsmall {
+.size-xsmall,
+.title-label,
+.card-subtitle,
+.labels,
+.person-list-title {
   font-size: 12px;
   font-size: 0.75rem;
 }
 /* 1.333 */
-/*    .size-huge     { font-size: 3.157rem; }
-h1, .size-xxlarge  { font-size: 2.369rem; }
-h2, .size-xlarge   { font-size: 1.777rem; }
-h3, .size-large    { font-size: 1.333rem; }
-body,.size-regular { font-size: 1.125rem; }
-    .size-small    { font-size: 1rem; }
-    .size-xsmall   { font-size: 0.75rem; }
-*/
 /* Defaults */
 h1,
 h2,
@@ -725,6 +689,15 @@ figure,
 p {
   margin: 0 0 24px;
   margin: 0 0 1.5rem;
+}
+/* Styles */
+.title-label,
+.card-subtitle,
+.labels,
+.person-list-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.025em;
 }
 .prose h3 {
   margin-bottom: 4px;
@@ -917,9 +890,6 @@ a:visited {
   margin-bottom: 4px;
   margin-bottom: 0.25rem;
 }
-.card-subtitle {
-  text-transform: uppercase;
-}
 .card-subtitle b {
   margin-right: 2.4px;
   margin-right: 0.15rem;
@@ -990,14 +960,8 @@ a:visited {
   margin: 1.5rem 0 0.5rem;
 }
 .labels {
-  font-size: 10.672px;
-  font-size: 0.667rem;
-  font-size: 12px;
-  font-size: 0.75rem;
   margin: 40px 0 -4px;
   margin: 2.5rem 0 -0.25rem;
-  text-transform: uppercase;
-  font-weight: bold;
 }
 .label-people,
 .label-pin,
@@ -1033,7 +997,6 @@ a:visited {
   background-image: url(../img/pin.svg);
 }
 .person-list-title {
-  text-transform: uppercase;
   margin: 8px 0;
   margin: 0.5rem 0;
   text-align: right;
@@ -1165,8 +1128,6 @@ a:visited {
   }
 }
 .links-list {
-  font-size: 10.672px;
-  font-size: 0.667rem;
   font-size: 12px;
   font-size: 0.75rem;
   text-transform: uppercase;

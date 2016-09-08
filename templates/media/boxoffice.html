@@ -1,0 +1,637 @@
+
+<div id="boxoffice-widget" style="padding-top: 0px;"><script src="https://checkout.razorpay.com/v1/checkout.js"></script> <div class="payment-progress-wrapper payment-stages-bg" id="payment-stages"><ul class="progress-indicator"><li class="indicator active "><span class="bubble"></span>Select Tickets<br></li><li class="indicator  "><span class="bubble"></span>Payment<br></li><li class="indicator  "><span class="bubble"></span>Confirm<br></li></ul></div> <div class="payment-stages-wrapper"><div id="boxoffice-selectItems" class="boxoffice-section ticket-selection-content clearfix"><div id="workshop"><div><h1 class="category-heading">Workshop</h1></div> <div><div class="ticket-booking clearfix " id="python-generators-inside-out"><div class="ticket-details"><p class="ticket-title">Python Generators Inside Out</p> <div class="ticket-description"><p><i class="fa fa-calendar"></i>18 September 2016</p><p><i class="fa fa-map-marker ticket-venue"></i>TERI, Domlur, Bangalore</p><p><i class="fa fa-info" aria-hidden="true"></i>This is a hands-on workshop that provides in-depth introduction to generators in Python</p><p><i class="fa fa-refresh" aria-hidden="true"></i>This ticket is fully refundable until the day before the event</p></div> </div> <div class="ticket-price-qty"><div class="ticket-description"><p class="few-ticket"></p></div> <div class="price-details-wrapper"><div class="ticket-qty-wrapper"><button class="decrement">-</button> <input type="number" class="ticket-qty" name="quantity" min="0" max="14" disabled="" value="0"> <button class="increment">+</button></div> <span class="multiplier">√ó</span> <div class="ticket-price-wrapper"> <p class="ticket-price "><i class="fa fa-inr rupee-sign"></i>3500</p></div></div> <div class="item-amount"> </div> <p class="valid-upto"><i class="fa fa-fw fa-long-arrow-up"></i>Price goes up after September 2, 2016</p></div></div></div></div> <hr class="separator"> <div class="ticket-total  clearfix"> <p class="price">Total <span class="pull-right"><i class="fa fa-inr rupee-sign"></i>0</span></p></div>   </div></div> <style>  #boxoffice-widget {
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 50px;
+  }
+  .boxoffice-button {
+    border-width: 0px 0px 3px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 6px 12px;
+    color: #fff;
+    font-size: 15px;
+    display: inline-block;
+  }
+  .boxoffice-button-action {
+    background-color: #5CB85C;
+    border-color: #4CAE4C;
+  }
+  .boxoffice-button-info {
+    background-color: #5BC0DE;
+    border-color: #46B8DA;
+  }
+  @media (min-width: 768px) {
+    .box-widget-button,
+    .box-widget-button-info {
+      font-size: 17px;
+    } 
+  }
+  .payment-progress-wrapper {
+    background-color: #eee;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 15px 15px 0 0;
+  }
+  .progress-indicator {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      font-size: 80%;
+      text-transform: uppercase
+  }
+  .progress-indicator>li {
+      -ms-flex: 1;
+      -webkit-flex: 1;
+      -moz-flex: 1;
+      flex: 1;
+      list-style: none;
+      text-align: center;
+      width: auto;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      text-overflow: ellipsis;
+      color: #333;
+      display: block
+  }
+  .progress-indicator>li.completed,
+  .progress-indicator>li.completed .bubble {
+      color: #65d074
+  }
+  .progress-indicator>li .bubble {
+      border-radius: 1000px;
+      width: 20px;
+      height: 20px;
+      background-color: #bbb;
+      display: block;
+      margin: 0 auto .5em;
+      border-bottom: 1px solid #888
+  }
+  .progress-indicator>li .bubble:after,
+  .progress-indicator>li .bubble:before {
+      display: block;
+      position: absolute;
+      top: 9px;
+      width: 100%;
+      height: 3px;
+      content: '';
+      background-color: #bbb
+  }
+  .progress-indicator>li.completed .bubble,
+  .progress-indicator>li.completed .bubble:after,
+  .progress-indicator>li.completed .bubble:before {
+      background-color: #65d074;
+      border-color: #247830
+  }
+  .progress-indicator>li .bubble:before {
+      left: 0
+  }
+  .progress-indicator>li .bubble:after {
+      right: 0
+  }
+  .progress-indicator>li.active,
+  .progress-indicator>li.active .bubble {
+      color: #337AB7
+  }
+  .progress-indicator>li.active .bubble,
+  .progress-indicator>li.active .bubble:after,
+  .progress-indicator>li.active .bubble:before {
+      background-color: #337AB7;
+      border-color: #122a3f
+  }
+  .payment-stages-wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+  .boxoffice-section {
+    padding: 40px 20px;
+    border: 2px solid #ccc;
+    border-top-width: 0;
+    min-height: 450px;
+  }
+  .category-heading {
+    background-color: #ccc;
+    border-bottom: 3px solid #aaa;
+    color: #333;
+    position: relative;
+    font-size: 18px;
+    width: 100%;
+    margin: 0 0 0 -22px;
+    padding: 10px 20px;
+    z-index: 1;
+    text-transform: uppercase;
+  }
+  .category-heading:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-style: solid;
+    border-color: #CCC transparent #CCC #CCC;
+    border-width: 19px;
+    z-index: 2;
+    background-color: #fff;
+  }
+  @media (min-width: 480px) {
+    .category-heading {
+      font-size: 20px;
+      width: 55%;
+    }
+    .category-heading:after {
+      border-width: 21px;
+    }
+  }
+  .ticket-booking {
+    padding: 20px;
+    margin: 0 -20px;
+  }
+  .ticket-selected {
+    background-color: #f7f6ec;
+  }
+  .ticket-details {
+    float: left;
+    width: 100%;
+    word-break: break-word;
+    margin-top: 10px;
+    width: 100%;
+  }
+  .ticket-title {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #428bca;
+  }
+  @media (min-width: 768px) {
+    .ticket-title {
+      font-size: 23px;
+      font-weight: 500;
+    }
+  }
+  .discount {
+    font-size: 15px;
+    margin: 5px 0;
+    font-style: italic;
+    color: #e42c42;
+  }
+  .discount.applied {
+    color: #008000;
+  }
+  .valid-upto {
+    font-size: 15px;
+    font-style: italic;
+    margin: 5px 0;
+    text-align: right;
+  }
+  .ticket-description {
+    font-size: 15px;
+  }
+  .ticket-description p {
+    margin: 7px 0;
+  }
+  .ticket-description .fa {
+    padding-right: 5px;
+  }
+  .ticket-description .few-ticket {
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: -30px;
+    width: 200px;
+    text-align: right;
+    font-size: 13px;
+    font-style: italic;
+  }
+  .available-count {
+    color: #e42c42;
+  }
+  .ticket-price-qty {
+    float: right;
+    margin-top: 40px;
+    position: relative;
+    min-width: 190px;
+    width: 100%;
+  }
+  @media (min-width: 1024px) {
+    .ticket-details {
+      width: 60%;
+    }
+    .ticket-price-qty {
+      width: 40%;
+      margin-top: 20px;
+    }
+  }
+  .price-details-wrapper {
+    float: right;
+    margin: 0 0 10px;
+  }
+  .ticket-price-wrapper {
+    float: right;
+    margin-top: 4px;
+    position: relative;
+  }
+  .ticket-price {
+    font-size: 18px;
+    margin: 0;
+    padding-right: 20px;
+  }
+  .ticket-price .rupee-sign {
+    font-size: 16px;
+  }
+  .discount-price {
+    position: absolute;
+    bottom: 23px;
+    padding: 0;
+    line-height: 1;
+  }
+  .strike {
+    text-decoration: line-through;
+    color: #aaa;
+  }
+  .ticket-qty-wrapper {
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    outline: medium none;
+    color: #333;
+    padding: 0;
+    height: 30px;
+    overflow: hidden;
+    background: #f6f3c2;
+    font-size: 18px;
+    float: right;
+  }
+  .ticket-qty {
+    width: 32px;
+    border: 0px none;
+    background: #f6f3c2;
+    -webkit-text-fill-color:#333;
+    color: #333;
+    line-height: 1;
+    display: inline-block;
+    padding-left: 8px;
+    font-size: 18px;
+  }
+  @media (min-width: 768px) {
+    .ticket-price,
+    .ticket-qty {
+      font-size: 20px;
+    }
+    .ticket-price .rupee-sign {
+      font-size: 18px;
+    }
+  }
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+  .increment, .decrement {
+    line-height: 1;
+    font-size: 20px;
+    background-color: #eee;
+    height: 100%;
+    border: 0;
+    padding: 0 5px;
+  }
+  .increment:focus, .decrement:focus {
+    outline:0;
+  }
+  .multiplier {
+    padding-right: 20px;
+    font-size: 20px;
+    margin-top: 2px;
+    float: right;
+  }
+  .discount-amount, .subtotal {
+    margin: 5px 0;
+  }
+  .sold-out-wrapper {
+    float: right;
+  }
+  .sold-out {
+    font-size: 15px;
+    color: #fff;
+    background: #e42c42;
+    width: 100px;
+    border-radius: 0 10px 0 10px;
+    padding: 5px;
+    margin: 0;
+    text-align: center;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    font-weight: bold;
+  }
+  @media (min-width: 600px) and (max-width: 1023px) {
+    .category-heading {
+      font-size: 30px;
+    }
+    .category-heading:after {
+      border-width: 26px;
+    }
+    .ticket-title,
+    .ticket-price,
+    .multiplier,
+    .ticket-qty {
+     font-size: 25px;
+    }
+    .sold-out {
+      font-size: 18px;
+      width: 105px;
+      margin-top: 4px;
+    }
+    .ticket-price .rupee-sign {
+      font-size: 22px;
+    }
+    .increment, .decrement {
+      font-size: 35px;
+    }
+    .ticket-qty-wrapper {
+      height: 37px;
+    }
+    .ticket-qty {
+      top: -4px;
+      width: 40px;
+    }
+    .discount-price {
+      bottom: 34px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .discount-price {
+      bottom: 24px;
+    }
+    .ticket-price-wrapper {
+      margin-top: 2px;
+    }
+  }
+  .item-amount {
+    clear: both;
+    font-size: 15px;
+    color: #888;
+    margin: 10px 0 0;
+    text-align: right;
+  }
+  .item-amount .rupee-sign {
+    font-size: 13px;
+    padding-left: 5px;
+  }
+  .separator {
+    height: 1px;
+    margin: 0 -20px 20px;
+  }
+  .ticket-total {
+    clear: both;
+    width: 100%;
+    max-width: 259px;
+    float: right;
+    border: 2px solid #ccc;
+    margin: 15px 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #f6f3c2;
+    position: relative;
+  }
+  .grey-out {
+    opacity: 0.5;
+  }
+  .policy {
+    clear: both;
+    padding-top: 10px;
+    font-size: 18px;
+  }
+  .policy p {
+    margin: 5px 0;
+  }
+  .loader {
+    position: absolute;
+    right: 0px;
+    z-index: 1000;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: rgba(255, 255, 255, 0.8);
+  }
+  .ticket-total .loader .fa-spin {
+    position: relative;
+    color: #000;
+    top: 20%;
+    left: 48%;
+  }
+  .stage-error-msg {
+    font-size: 15px;
+    clear: both;
+    float: right;
+    margin: 0px 0 10px;
+    color: #b94a48;
+  }
+  .buyer-details {
+    max-width: 650px;
+    margin: auto;
+  }
+  .buyer-details .group {
+    position: relative;
+    margin-bottom: 45px;
+  }
+  .buyer-details .group-input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #757575;
+    box-shadow: none;
+  }
+  .buyer-details .group-input:focus {
+    outline:none;
+  }
+  .buyer-details .group-label {
+    color: #999;
+    font-size: 16px;
+    margin: 0;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  .buyer-details .group-input:focus ~ .group-label,
+  .buyer-details .group-input.filled ~ .group-label {
+    top: -20px;
+    color: #800080;
+  }
+  .buyer-details .bar {
+    position: relative;
+    display:block;
+    width: 100%;
+  }
+  .buyer-details .bar:before,
+  .buyer-details .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: -1px;
+    position: absolute;
+    background: #800080;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  .buyer-details .bar:before {
+    left: 50%;
+  }
+  .buyer-details .bar:after {
+    right: 50%;
+  }
+  .buyer-details .group-input:focus ~ .bar:before,
+  .buyer-details .group-input:focus ~ .bar:after {
+    width: 50%;
+  }
+  .form-error-msg {
+    color: white;
+    font-size: 12px;
+    border-radius: 3px;
+    border: 1px solid #b94a48;
+    background: #b94a48;
+    margin: 10px 0 0;
+    padding: 5px;
+    position: relative;
+    display: inline-block;
+  }
+  .form-error-msg::before {
+    display: block;
+    content: "";
+    position: absolute;
+    border: 6px solid transparent;
+    border-bottom: 6px solid #b94a48;
+    top: -13px;
+    left: 20px;
+  }
+  .buyer-form-title, .summary {
+    text-align: center;
+    font-size: 20px;
+    margin: 20px 0;
+  }
+  .checkout-confirmation {
+    padding: 0;
+  }
+  @media(min-width: 768px) {
+    .checkout-confirmation {
+      padding: 0px 15px;
+    }
+  }
+  .item-summary {
+    border-bottom: 1px dotted #CCC;
+    padding: 5px 0;
+  }
+  .booked-ticket-title {
+    font-size: 16px;
+  }
+  .booked-ticket-title .fa-ticket {
+    padding-right: 10px;
+  }
+  .booked-ticket-qty,  
+  .discount-applied {
+    font-size: 13px;
+    text-align: right;
+    margin-bottom: 5px;
+  }
+  .booked-ticket-qty .rupee-sign {
+    font-size: 11px;
+  }
+  .discount-applied {
+    color: green;
+  }
+  .final-amount{
+    float: right;
+  }
+  .price {
+    font-size: 15px;
+    margin: 10px 0;
+  }
+  .price .rupee-sign {
+    font-size: 13px;
+  }
+  .proceed-button-wrapper {
+    clear: both;
+    margin: 15px 0 10px;
+    float: right;
+  }
+  .edit-order {
+    margin-right: 10px;
+  }
+  .loader.payment-confirmation .fa-spin {
+    position: relative;
+    color: #000;
+    top: 43%;
+    left: 48%;
+  }
+  .confirmation-icon {
+    font-size: 50px;
+    color: green;
+    text-align: center;
+    line-height: 1;
+    margin: 20px 0 0;
+  }
+  .confirmation-header {
+    font-size: 24px;
+    color: green;
+    text-align: center;
+    margin: 20px 0;
+  }
+  .confirmation-msg {
+    font-size: 16px;
+    text-align: center;
+  }
+  @media (min-width: 768px) {
+    .confirmation-icon {
+      font-size: 75px;
+    }
+    .confirmation-header {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+    .confirmation-msg {
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 800px;
+      margin: auto;
+    }
+  }
+  .name {
+    text-align: left;
+    margin: 0;
+  }
+  .receipt-button {
+    margin: 10px;
+    display: inline-block;
+  }
+  .receipt-button:hover,
+  .receipt-button:focus {
+    background-color: inherit;
+    color: inherit;
+    border-color: inherit;
+    border-bottom: 3px solid;
+  }
+  .receipt-btn-wrapper, .social-icons {
+    text-align: center;
+  }
+  .fb-share-button {
+    display: inline-block;
+    line-height: 1;
+    padding: 0px 0px 0px 10px !important;
+    top: -2px;
+  }
+  .tweet-button {
+    line-height: 1;
+    position: relative;
+    top: 2px;
+  }</style></div>

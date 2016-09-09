@@ -1,14 +1,5 @@
 ---
 layout: html
-
-about_links:
-  - title: Team
-    url: /trainers
-  - title: Articles
-    url: /articles
-  - title: Contact
-    url: /contact
-
 ---
 
 <header class="container">
@@ -34,29 +25,24 @@ about_links:
 
 
 
-<footer class="container">
-  <hr>
-  <dl>
-    {%
-      include footer_links.liquid
-      title="About"
-      list=layout.about_links
-    %}
+<footer class="footer">
+  <div class="container">
+    <div class="prose">
+      <p>
+        In-depth <a href="{{ site.baseurl | append: '/courses' }}">courses</a>
+        and <a href="{{ site.baseurl | append: '/events' }}">workshops</a>
+        by <a href="{{  site.baseurl | append: '/trainers' }}">expert trainers</a>
+        on niche technical topics.
+        Learn more <a href="{{ site.baseurl | append: '/about' }}">about us</a>
+        or
+        <a href="{{ site.baseurl | append: '/contact' }}">contact us</a>.
+      </p>
+    </div>
     
-    {%
-      include footer_links.liquid
-      title="Courses"
-      list=site.courses
-    %}
-    
-    {%
-      include footer_links.liquid
-      title="Events"
-      list=site.events
-    %}
-  </dl>
-  
-  <hr>
-  
-  <p>&copy; Pipal Academy</p>
+    <ul class="footer-links size-small">
+      <li>&copy; {{ site.time | date: "%Y" }} {{ site.name }}</li>
+      <li><a href="https://twitter.com/pipalacademy">Twitter</a></li>
+      <li><a href="https://github.com/pipalacademy">GitHub</a></li>
+    </ul>
+  </div>
 </footer>

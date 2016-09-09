@@ -755,7 +755,12 @@ p {
 /* = Theme = */
 /* ========= */
 /* Base Styles */
+html,
 body {
+  background: #114B5F;
+  color: #F3E9D2;
+}
+#page {
   background-color: #F3E9D2;
   color: #114B5F;
 }
@@ -1258,6 +1263,26 @@ a:visited {
 .action-body iframe {
   width: 100%;
   background: white;
+}
+.footer {
+  color: #F3E9D2;
+  background-color: #114B5F;
+  padding-top: 16px;
+  padding-top: 1rem;
+}
+.footer a {
+  color: #88D498;
+}
+.footer-links {
+  margin-top: 32px;
+  margin-top: 2rem;
+}
+.footer-links > li {
+  display: inline-block;
+}
+.footer-links > li > a {
+  padding: 8px 4px;
+  padding: 0.5rem 0.25rem;
 }
 /* ==|== print styles =======================================================
    Print styles.

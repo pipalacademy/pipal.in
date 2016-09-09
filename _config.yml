@@ -16,6 +16,11 @@ collections:
     output: true
   testimonials:
     title: Testimonials
+  clients:
+    title: Clients
+  articles:
+    title: Articles
+    output: true
 
 
 # Defaults
@@ -31,11 +36,24 @@ defaults:
       path: "_events"
       type: "events"
     values:
-      layout: "course"
+      layout: "event"
+  -
+    scope:
+      path: "_trainers"
+      type: "trainers"
+    values:
+      layout: "trainer"
+  -
+    scope:
+      path: "_articles"
+      type: "articles"
+    values:
+      layout: "article"
 
 
 # Site settings
-# permalink: :slug
+name: Pipal Academy
+permalink: :slug
 timezone: Asia/Kolkata
 baseurl: ""
 

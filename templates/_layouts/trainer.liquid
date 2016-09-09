@@ -1,0 +1,62 @@
+---
+layout: base
+---
+
+<article class="theme-trainer">
+  <header class="banner clearfix">
+    <div class="container">
+      {% if page.photo %}
+        <figure class="banner-photo">
+          <img alt=" " src="{{ site.baseurl | append: page.photo }}">
+        </figure>
+      {% endif %}
+      
+      <h1 class="banner-title">
+        {{ page.title | smartify }}
+      </h1>
+      
+      {% if page.links.twitter %}
+        <h2 class="banner-subtitle size-large">
+          <a href="https://twitter.com/{{ page.links.twitter }}">
+            @{{ page.links.twitter }}
+          </a>
+        </h2>
+      {% endif %}
+      
+      <div class="prose">
+        {{ page.bio | markdownify }}
+      </div>
+      
+      <ul class="labels">
+        {% for link in page.links %}
+          {% if link[0] == 'twitter' %}
+            {% assign link_url = 'https://twitter.com/' | append: link[1] %}
+          {% else %}
+            {% assign link_url = link[1] %}
+          {% endif %}
+          <li class="label">
+            <a href="{{ link_url }}">
+              {{ link[0] | capitalize }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </header>
+  
+  <section class="container">
+    <h2 class="section-heading size-large">
+      Courses Conducted
+    </h2>
+    
+    {% for course in site.courses %}
+      {% if course.trainers contains page.id %}
+        {%
+          include course_teaser.liquid
+          course=course
+          show_trainers=false
+        %}
+      {% endif %}
+    {% endfor %}
+  </section>
+</article>

@@ -1,12 +1,28 @@
 ---
 layout: base
+
+action: |
+  Sales pitch goes here. Currently using placeholder text from
+  the old <http://pipal.in/contact> page. Best way to reach us is by email.
+  
+  Please write to us at <hello@pipal.in>.
+
 ---
 
-<article class="">
+{% assign trainers_size = page.trainers | size %}
+{% if trainers_size > 1 %}
+  {% assign trainers_title = 'Trainers' %}
+{% else %}
+  {% assign trainers_title = 'Trainer' %}
+{% endif %}
+{% assign trainers_id = trainers_title | slugify | prepend: '#' %}
+
+
+<article class="theme-course">
   <header class="banner clearfix">
     <div class="container">
       <h1 class="banner-title">
-        {{ page.title }}
+        {{ page.title | smartify }}
       </h1>
       <div class="size-larges">
         {{ page.brief | markdownify }}
@@ -18,7 +34,7 @@ layout: base
             <dt class="visuallyhidden">Suggested Duration</dt>
             <dd class="label-timer">
               <a href="#duration-format">
-                {{ page.duration }}
+                {{ page.duration | smartify }}
               </a>
             </dd>
           {% endif %}
@@ -26,7 +42,7 @@ layout: base
             <dt class="visuallyhidden">Participants</dt>
             <dd class="label-people">
               <a href="#duration-format">
-                Class of {{ page.participants }}
+                Class of {{ page.participants | smartify }}
               </a>
             </dd>
           {% endif %}
@@ -37,10 +53,24 @@ layout: base
         include trainers_list.liquid
         trainers=page.trainers
         title=true
-        link='#trainers'
+        link=trainers_id
       %}
     </div>
   </header>
+  
+  <section class="container">
+    <div class="action-container">
+      <button class="button button-multiline action-toggle" data-toggle="#action">
+        Request Course
+        <i>
+          Get it conducted at your org
+        </i>
+      </button>
+      <div id="action" class="action-body prose clearfix">
+        {{ layout.action | markdownify }}
+      </div>
+    </div>
+  </section>
   
   
   {% if page.video %}
@@ -51,22 +81,12 @@ layout: base
     </figure>
   {% endif %}
   
-  
-  {% if page.events %}
-    <section class="container">
-      <h2 class="section-heading size-xlarge">
-        Upcoming Events
-      </h2>
-      
-      {% for e_id in page.events %}
-        {%
-          include event_teaser.liquid
-          id=e_id
-        %}
-      {% endfor %}
-    </section>
-  {% endif %}
-  
+  {%
+    include section.liquid
+    title="Upcoming Events"
+    teasers=page.events
+    teaser_template='event_teaser.liquid'
+  %}
   
   {%
     include section.liquid
@@ -88,53 +108,12 @@ layout: base
     body=page.outline
   %}
   
-  
-  {% if page.testimonials %}
-    <section class="container">
-      <header>
-        <h2 class="section-heading size-xlarge">
-          Testimonials
-        </h2>
-      </header>
-      
-      {% for t_id in page.testimonials %}
-        {% assign testimonial = site.testimonials | where: 'id', t_id | first %}
-        {% assign t_id =  'testimonial-' | append: testimonial.slug %}
-        {% assign t_truncate =  testimonial.content | size %}
-        {% if testimonial %}
-          <aside id="{{ t_id }}" class="speechbubble">
-            <blockquote class="speechbubble-quote">
-              {% if t_truncate > 250 %}
-                <div class="truncate-el">
-              {% endif %}
-                  
-                  {{ testimonial.content | markdownify }}
-                  
-              {% if t_truncate > 250 %}
-                  <a
-                    class="truncate-dismiss"
-                    href="#{{ t_id }}">
-                    <span class="truncate-button">
-                      …Read More
-                    </span>
-                  </a>
-                </div>
-              {% endif %}
-            </blockquote>
-            
-            <h4 class="speechbubble-attribution size-large">
-              {{ testimonial.title }}
-            </h4>
-            <h5 class="speechbubble-credentials size-small">
-              <b>{{ testimonial.org }}</b>
-              {{ testimonial.designation }}
-            </h5>
-          </aside>
-        {% endif %}
-      {% endfor %}
-    </section>
-  {% endif %}
-  
+  {%
+    include section.liquid
+    title="Testimonials"
+    teasers=page.testimonials
+    teaser_template='testimonial.liquid'
+  %}
   
   {%
     include section.liquid
@@ -145,48 +124,11 @@ layout: base
   %}
   
   
-  {% if page.trainers %}
-    <section id="trainers" class="container">
-      {% assign trainers_count = page.trainers | size %}
-      <h2 class="section-heading size-xlarge">
-        Trainer{% if trainers_count > 1 %}s{% endif %}
-      </h2>
-      {% for tr_id in page.trainers %}
-        {% assign trainer = site.trainers | where: 'id', tr_id | first %}
-        {% if trainer %}
-          <article class="prose">
-            <h3 class="size-large">
-              {{ trainer.title }}
-            </h3>
-            
-            <ul class="links-list">
-              {% for link in trainer.links %}
-                <li>
-                  {% if link[0] == 'twitter' %}
-                    <a href="https://twitter.com/{{ link[1] }}">
-                      @{{ link[1] }}
-                    </a>
-                  {% else %}
-                    <a href="{{ link[1] }}">
-                      {{ link[0] | capitalize }}
-                    </a>
-                  {% endif %}
-                </li>
-              {% endfor %}
-            </ul>
-            
-            {% if trainer.photo %}
-              <figure class="profile-photo">
-                <img alt=" " src="{{ site.baseurl | append: trainer.photo }}">
-              </figure>
-            {% endif %}
-            
-            <div>
-              {{ trainer.bio | markdownify }}
-            </div>
-          </article>
-        {% endif %}
-      {% endfor %}
-    </section>
-  {% endif %}
+  
+  {%
+    include section.liquid
+    title=trainers_title
+    teasers=page.trainers
+    teaser_template='trainer_teaser.liquid'
+  %}
 </article>

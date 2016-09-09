@@ -1,5 +1,6 @@
 # Environment
 ^_env_config.yml
+^templates/\.htaccess$
 
 # Jekyll
 ^_site

@@ -18,6 +18,7 @@ var CSS_TASK = 'css',
     JS_TASK = 'js',
     JS_FILES = [
         'js/libs/fontfaceobserver.standalone.js',
+        'js/libs/instantclick.min.js',
         'js/plugins.js',
         'js/script.js'
     ],
@@ -28,9 +29,10 @@ var CSS_TASK = 'css',
     CSS_WATCH_FILES = 'css/**/*.{less,css}',
     MINIFY_SUFFIX = '.min',
     HASHFILE_SUFFIX = '.hashsum',
-    CSS_HASH_FILE = '',
-    JS_HASH_FILE = '',
-    BUILD_DIR = 'build';
+    CSS_HASH_FILE = 'css_hashsum.yml',
+    JS_HASH_FILE = 'js_hashsum.yml',
+    BUILD_DIR = 'build',
+    HASH_DIR = '../templates/_data';
 
 
 
@@ -47,15 +49,6 @@ var gulp = require('gulp'),
     hashsum = require('gulp-hashsum'),
     concat = require('gulp-concat');
 
-// Build CSS & JS Hash file names
-var hashnames = [CSS_DEST, JS_DEST].map(function (filename) {
-    filename = filename.split('.');
-    filename.splice(-1, 0, MINIFY_SUFFIX.replace('.', ''));
-    filename = filename.join('.') + HASHFILE_SUFFIX;
-    return filename;
-});
-CSS_HASH_FILE = hashnames[0];
-JS_HASH_FILE = hashnames[1];
 
 
 var errorhandler = function (error) {
@@ -79,10 +72,10 @@ gulp.task(CSS_TASK, function () {
         .pipe(gulp.dest(BUILD_DIR))
         
         // Hash for cachebusting
-        .pipe(rename('1')) // the name is appended to the generated hash
+        .pipe(rename('../' + HASH_DIR + '/1')) // normalize path so name appended to hash is '1'
         .pipe(hashsum({
             filename: CSS_HASH_FILE,
-            dest: BUILD_DIR,
+            dest: HASH_DIR,
             delimiter: ''
         }));
 });
@@ -105,10 +98,10 @@ function js_task(JS_FILES, JS_DEST, JS_HASH_FILE) {
             .pipe(gulp.dest(BUILD_DIR))
             
             // Hash for cachebusting
-            .pipe(rename('1')) // the name is appended to the generated hash
+            .pipe(rename('../' + HASH_DIR + '/1')) // normalize path so name appended to hash is '1'
             .pipe(hashsum({
                 filename: JS_HASH_FILE,
-                dest: BUILD_DIR,
+                dest: HASH_DIR,
                 delimiter: ''
         }));
     };
@@ -118,7 +111,7 @@ gulp.task(JS_TASK, js_task(JS_FILES, JS_DEST, JS_HASH_FILE));
 
 gulp.task(WATCH_TASK, function () {
     gulp.watch(CSS_WATCH_FILES, [CSS_TASK]);
-    // gulp.watch(JS_FILES, [JS_TASK]);
+    gulp.watch(JS_FILES, [JS_TASK]);
     gulp.watch(LINT_FILES, [LINT_TASK]);
 });
 

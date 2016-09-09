@@ -46,10 +46,10 @@ img   { vertical-align: middle; }
 }
 
 
-
+@container-hpad-xxs: 1.5rem;
 .container-values() {
     @vpads:         1.5rem, 2rem;
-    @hpads:         1.5rem, 6rem;
+    @hpads:         @container-hpad-xxs, 6rem;
     @max-widths:    35rem,  50rem;
     @breakpoints:   '',     @sm-min;
 }

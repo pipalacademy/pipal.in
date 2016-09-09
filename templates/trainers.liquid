@@ -1,0 +1,14 @@
+---
+layout: listing
+
+title: Trainers
+
+permalink: /trainers/
+---
+
+{% for trainer in site.trainers %}
+  {%
+    include trainer_teaser.liquid
+    trainer=trainer
+  %}
+{% endfor %}

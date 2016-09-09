@@ -2,21 +2,20 @@
 layout: html
 ---
 
-<header class="container">
-  <h1 class="size-large">
-    <a href="{{ site.baseurl }}">
+<header class="header container">
+  <h1 class="header-logo size-xlarge">
+    <a href="{{ site.baseurl | append: '/' }}">
       Pipal Academy
     </a>
   </h1>
-  {% comment %}
-  <nav>
+  <nav class="header-nav">
     <ul>
+      <li><a href="{{ site.baseurl | append:'/' }}">Home</a></li>
       <li><a href="{{ site.baseurl | append:'/courses' }}">Courses</a></li>
       <li><a href="{{ site.baseurl | append:'/about' }}">About</a></li>
       <li><a href="{{ site.baseurl | append:'/contact' }}">Contact</a></li>
     </ul>
   </nav>
-  {% endcomment %}
 </header>
 
 
@@ -25,6 +24,24 @@ layout: html
 
 
 
-<footer class="container">
-  <p>&copy; Pipal Academy</p>
+<footer class="footer">
+  <div class="container">
+    <div class="prose">
+      <p>
+        In-depth <a href="{{ site.baseurl | append: '/courses' }}">courses</a>
+        and <a href="{{ site.baseurl | append: '/events' }}">workshops</a>
+        by <a href="{{  site.baseurl | append: '/trainers' }}">expert trainers</a>
+        on niche technical topics.
+        Learn more <a href="{{ site.baseurl | append: '/about' }}">about us</a>
+        or
+        <a href="{{ site.baseurl | append: '/contact' }}">contact us</a>.
+      </p>
+    </div>
+    
+    <ul class="footer-links size-small">
+      <li>&copy; {{ site.time | date: "%Y" }} {{ site.name }}</li>
+      <li><a href="https://twitter.com/pipalacademy">Twitter</a></li>
+      <li><a href="https://github.com/pipalacademy">GitHub</a></li>
+    </ul>
+  </div>
 </footer>

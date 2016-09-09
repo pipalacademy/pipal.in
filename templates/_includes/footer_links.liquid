@@ -1,0 +1,17 @@
+<dt>
+  {% assign slug = include.title | slugify %}
+  <a href="{{ site.baseurl | append: '/' | append: slug }}">
+    {{ include.title }}
+  </a>
+</dt>
+<dd>
+  <ul>
+    {% for link in include.list %}
+      <li>
+        <a href="{{ site.baseurl | append: link.url }}">
+          {{ link.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</dd>

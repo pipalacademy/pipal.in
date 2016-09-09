@@ -4,7 +4,7 @@ title:
   Generators Inside Out
 
 brief:
-  A hands-on workshop that provides in-depth introduction to generators in Python.
+  A hands-on course that provides in-depth introduction to generators in Python.
 
 description: |
   This is a hands-on workshop that provides in-depth introduction to generators in Python.
@@ -35,8 +35,9 @@ outline: |
   
   Understanding how libraries like asyncio works by building a simple async library from scratch.
 
-duration:
-participants:
+duration: 1 day
+participants: 12 or less
+
 format:
 infrastructure:
 testimonials:

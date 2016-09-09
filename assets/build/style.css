@@ -486,15 +486,53 @@ img {
 }
 .container {
   margin: 0 auto;
-  max-width: 560px;
-  max-width: 35rem;
-  padding: 24px 24px;
-  padding: 1.5rem 1.5rem;
+  padding-left: 24px;
+  padding-left: 1.5rem;
+  padding-right: 24px;
+  padding-right: 1.5rem;
 }
-@media (min-width: 40em) {
+@media (min-width: 47em) {
   .container {
-    max-width: 50rem;
-    padding: 2rem 6rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+@media (min-width: 70em) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+.container {
+  padding-top: 24px;
+  padding-top: 1.5rem;
+  padding-bottom: 24px;
+  padding-bottom: 1.5rem;
+}
+@media (min-width: 47em) {
+  .container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+@media (min-width: 70em) {
+  .container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+.container {
+  max-width: 480px;
+  max-width: 30rem;
+}
+@media (min-width: 47em) {
+  .container {
+    max-width: 52rem;
+  }
+}
+@media (min-width: 70em) {
+  .container {
+    max-width: 60rem;
   }
 }
 .has-js .truncate-el {
@@ -526,7 +564,7 @@ img {
   text-transform: lowercase;
   font-weight: bold;
 }
-@media (min-width: 60em) {
+@media (min-width: 70em) {
   .has-js .truncate-el {
     max-height: none;
     overflow: visible;
@@ -626,29 +664,6 @@ code {
   display: inline-block;
 }
 /*  Scale  */
-html {
-  font-size: 16px;
-  line-height: 1.45;
-}
-@media (min-width: 40em) {
-  html {
-    font-size: 18px;
-    line-height: 1.45;
-  }
-}
-@media (min-width: 60em) {
-  html {
-    font-size: 21px;
-    line-height: 1.45;
-  }
-}
-@media (min-width: 100em) {
-  html {
-    font-size: 24px;
-    line-height: 1.45;
-  }
-}
-/* 1.5 */
 /* 1.414 */
 .size-huge {
   font-size: 63.968px;
@@ -693,6 +708,63 @@ body,
 .header-nav {
   font-size: 12px;
   font-size: 0.75rem;
+}
+html {
+  font-size: 16px;
+  line-height: 1.45;
+}
+@media (min-width: 25em) {
+  html {
+    font-size: 18px;
+    line-height: 1.45;
+  }
+}
+@media (min-width: 47em) {
+  html {
+    font-size: 16px;
+    line-height: 1.45;
+  }
+}
+@media (min-width: 70em) {
+  html {
+    font-size: 18px;
+    line-height: 1.45;
+  }
+  /* 1.5 */
+  .size-huge {
+    font-size: 5.063rem;
+  }
+  h1,
+  .size-xxlarge {
+    font-size: 3.375rem;
+  }
+  h2,
+  .size-xlarge,
+  .has-no-js .action-container .action-toggle,
+  .action-container.action-explode .action-toggle {
+    font-size: 2.25rem;
+  }
+  h3,
+  .size-large,
+  .button:visited,
+  .button {
+    font-size: 1.5rem;
+  }
+  body,
+  .size-regular {
+    font-size: 1.125rem;
+  }
+  .size-small,
+  .button:visited.button-multiline > i,
+  .button.button-multiline > i {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 100em) {
+  html {
+    font-size: 24px;
+    line-height: 1.45;
+  }
 }
 /* 1.333 */
 /* Defaults */
@@ -899,20 +971,57 @@ a:visited {
   margin: -8px 0 32px;
   margin: -0.5rem 0 2rem;
 }
-.card {
-  display: block;
-  text-decoration: none;
-  padding: 16px 24px;
-  padding: 1rem 1.5rem;
+@media (min-width: 47em) {
+  .cards-container {
+    margin: 1rem -0.5rem;
+  }
+  .cards-container .card-container {
+    float: left;
+    width: 50%;
+    padding: 0 0.5rem;
+    margin: 0.5rem 0;
+  }
+  .cards-container .card-container:nth-child(odd) {
+    clear: both;
+  }
+  .cards-container .card {
+    min-height: 33rem;
+  }
+}
+.card-container {
   margin: 32px 0 16px;
   margin: 2rem 0 1rem;
-  font-weight: 300;
-  color: #F3E9D2 !important;
 }
-.card:hover .card-button {
+.card-mask {
+  overflow: hidden;
+  -webkit-transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-property: padding, margin;
+  transition-property: padding, margin;
+}
+.card-mask:hover {
+  z-index: 10;
+  padding: 6.4px;
+  padding: 0.4rem;
+  margin: -6.4px;
+  margin: -0.4rem;
+  box-shadow: 0 0.5rem 2.5rem -0.25rem rgba(0, 0, 0, 0.7);
+}
+.card-mask:hover .card-button {
   opacity: 1;
   -webkit-animation: shiftRight 1s ease-in-out;
           animation: shiftRight 1s ease-in-out;
+}
+.card {
+  display: block;
+  padding: 24px 32px 56px;
+  padding: 1.5rem 2rem 3.5rem;
+  margin: -8px;
+  margin: -0.5rem;
+  position: relative;
+  font-weight: 300;
+  text-decoration: none;
+  color: #F3E9D2 !important;
 }
 .card-title {
   font-weight: 300;
@@ -940,10 +1049,12 @@ a:visited {
   margin: 0;
 }
 .card-button {
-  display: block;
+  position: absolute;
+  bottom: 24px;
+  bottom: 1.5rem;
+  left: 24px;
+  left: 1.5rem;
   opacity: 0;
-  margin: 24px 0 8px;
-  margin: 1.5rem 0 0.5rem;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
@@ -962,12 +1073,22 @@ a:visited {
   padding-left: 8px;
   padding-left: 0.5rem;
 }
-@media (min-width: 40em) {
+@media (min-width: 47em) {
   .section-heading {
-    margin-left: -6rem;
-    border-left-width: 4rem;
-    padding-left: 2rem;
+    margin-left: -4rem;
+    border-left-width: 2.66666667rem;
+    padding-left: 1.33333333rem;
   }
+}
+@media (min-width: 70em) {
+  .section-heading {
+    margin-left: -2rem;
+    border-left-width: 1.33333333rem;
+    padding-left: 0.66666667rem;
+  }
+}
+.collection-heading a {
+  text-decoration: none;
 }
 .highlight {
   margin: 0 -24px;
@@ -1036,10 +1157,19 @@ a:visited {
   margin-right: -24px;
   margin-right: -1.5rem;
 }
-@media (min-width: 40em) {
+@media (min-width: 47em) {
   .banner .person-list {
-    margin-right: -6rem;
+    margin-right: -4rem;
   }
+}
+@media (min-width: 70em) {
+  .banner .person-list {
+    margin-right: -2rem;
+  }
+}
+.card .person-list {
+  margin-right: -32px;
+  margin-right: -2rem;
 }
 .person {
   padding-left: 80px;
@@ -1194,6 +1324,11 @@ a:visited {
   width: 50%;
   border: 1px solid #F3E9D2;
 }
+@media (min-width: 47em) {
+  .logos-list > li {
+    width: 25%;
+  }
+}
 .logos-list > li > a {
   display: block;
   position: relative;
@@ -1216,6 +1351,11 @@ a:visited {
   border-width: 24px;
   border-width: 1.5rem;
   margin: 0;
+}
+@media (min-width: 70em) {
+  .logos-list .logo-hold {
+    border-width: 2rem;
+  }
 }
 .button:visited,
 .button {
@@ -1299,6 +1439,23 @@ a:visited {
   margin: 0 0 16px;
   margin: 0 0 1rem;
 }
+@media (min-width: 47em) {
+  .header-logo {
+    float: left;
+    margin: 1rem 0;
+  }
+}
+@media (min-width: 47em) {
+  .header-nav {
+    float: right;
+    margin: 1.75rem 0 0;
+  }
+}
+@media (min-width: 70em) {
+  .header-nav {
+    font-size: 1rem;
+  }
+}
 .header-nav > ul {
   margin: 0 0 0 -8px;
   margin: 0 0 0 -0.5rem;
@@ -1310,7 +1467,13 @@ a:visited {
   padding: 8px;
   padding: 0.5rem;
 }
+@media (min-width: 47em) {
+  .header-nav li > a {
+    padding: 1rem;
+  }
+}
 .footer {
+  clear: both;
   margin-top: 64px;
   margin-top: 4rem;
   color: #F3E9D2;

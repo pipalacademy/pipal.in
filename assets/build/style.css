@@ -675,7 +675,8 @@ body,
 .title-label,
 .card-subtitle,
 .labels,
-.person-list-title {
+.person-list-title,
+.header-nav {
   font-size: 12px;
   font-size: 0.75rem;
 }
@@ -702,7 +703,8 @@ p {
 .title-label,
 .card-subtitle,
 .labels,
-.person-list-title {
+.person-list-title,
+.header-nav {
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 0.025em;
@@ -780,7 +782,8 @@ a:visited {
   color: #114B5F;
 }
 .brand-three,
-.theme-trainer .banner-subtitle {
+.theme-trainer .banner-subtitle,
+.header-nav li > a {
   color: #1A936F;
 }
 .brand-four {
@@ -1264,7 +1267,34 @@ a:visited {
   width: 100%;
   background: white;
 }
+.header {
+  padding-top: 32px;
+  padding-top: 2rem;
+  padding-bottom: 32px;
+  padding-bottom: 2rem;
+}
+.header a {
+  text-decoration: none;
+  color: inherit;
+}
+.header-logo {
+  margin: 0 0 16px;
+  margin: 0 0 1rem;
+}
+.header-nav > ul {
+  margin: 0 0 0 -8px;
+  margin: 0 0 0 -0.5rem;
+}
+.header-nav li {
+  display: inline-block;
+}
+.header-nav li > a {
+  padding: 8px;
+  padding: 0.5rem;
+}
 .footer {
+  margin-top: 64px;
+  margin-top: 4rem;
   color: #F3E9D2;
   background-color: #114B5F;
   padding-top: 16px;

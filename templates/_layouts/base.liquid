@@ -2,21 +2,20 @@
 layout: html
 ---
 
-<header class="container">
-  <h1 class="size-large">
+<header class="header container">
+  <h1 class="header-logo size-xlarge">
     <a href="{{ site.baseurl | append: '/' }}">
       Pipal Academy
     </a>
   </h1>
-  {% comment %}
-  <nav>
+  <nav class="header-nav">
     <ul>
+      <li><a href="{{ site.baseurl | append:'/' }}">Home</a></li>
       <li><a href="{{ site.baseurl | append:'/courses' }}">Courses</a></li>
       <li><a href="{{ site.baseurl | append:'/about' }}">About</a></li>
       <li><a href="{{ site.baseurl | append:'/contact' }}">Contact</a></li>
     </ul>
   </nav>
-  {% endcomment %}
 </header>
 
 

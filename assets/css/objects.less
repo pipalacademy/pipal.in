@@ -339,7 +339,33 @@
     }
 }
 
+.header {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    a { text-decoration: none; color: inherit }
+}
+.header-logo {
+    // text-transform: uppercase;
+    // font-weight:normal;
+    margin: 0 0 1rem;
+}
+.header-nav {
+    &:extend(.title-label);
+    @navhpad: 0.5rem;
+    > ul {
+        margin: 0 0 0 -@navhpad;
+    }
+    li {
+        display: inline-block;
+        > a {
+            // display: block;
+            padding: @navhpad;
+            &:extend(.brand-three);
+        }
+    }
+}
 .footer {
+    margin-top: 4rem;
     color: @brand-one;
     background-color: @brand-two;
     padding-top: 1rem;

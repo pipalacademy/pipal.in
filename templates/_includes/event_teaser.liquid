@@ -6,33 +6,35 @@
 
 {% if event %}
   {% assign event_link = site.baseurl | append: event.url %}
-  <article class="clearfix">
-    <a class="card" href="{{ event_link }}">
-      <h1 class="card-subtitle">
-        <b>{{ event.event_type | smartify }}</b>
-        {% if event.city %}
-          <span class="label-pin">
-            {{ event.city | smartify }}
-          </span>
-        {% endif %}
-      </h1>
-      <h2 class="card-title size-xlarge">
-        <b>{{ event.title | smartify }}</b>
-        <time>{{ event.dates | smartify }}</time>
-      </h2>
-      <div class="prose">
-        {{ event.brief | markdownify }}
-      </div>
-      
-      {% assign event_trainers = '' | split: '' | push: event.trainer %}
-      {%
-        include trainers_list.liquid
-        trainers=event_trainers
-      %}
-      
-      <span class="card-button">
-        Register or Learn more &rarr;
-      </span>
-    </a>
+  <article class="card-container clearfix">
+    <div class="card-mask">
+      <a class="card" href="{{ event_link }}">
+        <h1 class="card-subtitle">
+          <b>{{ event.event_type | smartify }}</b>
+          {% if event.city %}
+            <span class="label-pin">
+              {{ event.city | smartify }}
+            </span>
+          {% endif %}
+        </h1>
+        <h2 class="card-title size-xlarge">
+          <b>{{ event.title | smartify }}</b>
+          <time>{{ event.dates | smartify }}</time>
+        </h2>
+        <div class="prose">
+          {{ event.brief | markdownify }}
+        </div>
+        
+        {% assign event_trainers = '' | split: '' | push: event.trainer %}
+        {%
+          include trainers_list.liquid
+          trainers=event_trainers
+        %}
+        
+        <span class="card-button">
+          Register or Learn more &rarr;
+        </span>
+      </a>
+    </div>
   </article>
 {% endif %}

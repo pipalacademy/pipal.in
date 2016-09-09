@@ -48,25 +48,35 @@ img   { vertical-align: middle; }
 
 @container-hpad-xxs: 1.5rem;
 .container-values() {
-    @vpads:         1.5rem, 2rem;
-    @hpads:         @container-hpad-xxs, 6rem;
-    @max-widths:    35rem,  50rem;
-    @breakpoints:   '',     @sm-min;
+    @vpads:         1.5rem, 2rem, 2rem;
+    @hpads:         @container-hpad-xxs, 4rem, 2rem;
+    @max-widths:    30rem, 52rem, 60rem;
+    @breakpoints:   '',    @sm-min, @md-min;
+}
+.container {
+    margin: 0 auto;
+    .container-values();
+    .recurse-rule-breakpoints({
+        padding-left: @value;
+        padding-right:@value;
+    }, @hpads, @breakpoints);
 }
 .container {
     .container-values();
-    
-    margin: 0 auto;
-    
-    max-width: extract(@max-widths, 1);
-    padding: extract(@vpads, 1) extract(@hpads, 1);
-    @media (min-width: extract(@breakpoints, 2)) {
-        max-width: extract(@max-widths, 2);
-        padding: extract(@vpads, 2) extract(@hpads, 2);
-    }
+    .recurse-rule-breakpoints({
+        padding-top:   @value;
+        padding-bottom:@value;
+    }, @vpads, @breakpoints);
+}
+.container {
+    .container-values();
+    .recurse-rule-breakpoints({
+        max-width: @value;
+    }, @max-widths, @breakpoints);
 }
 
 
+// Responsive helpers
 .recurse-rule-breakpoints(@ruleset, @values, @breakpoints) {
     .recurse-rule-breakpoints-loop(@ruleset, @values, @breakpoints, length(@breakpoints));
     
@@ -84,8 +94,9 @@ img   { vertical-align: middle; }
             @ruleset();
         }
     }
-    
 }
+.sm-plus(@rules) { @media (min-width: @sm-min) { @rules(); } }
+.md-plus(@rules) { @media (min-width: @md-min) { @rules(); } }
 
 
 

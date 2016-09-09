@@ -24,34 +24,44 @@ testimonials:
 
 
 <div class="container">
-  <h2>
-    Upcoming Sessions
+  <h2 class="collection-heading">
+    <a href="{{ site.baseurl | append: '/events' }}">
+      Upcoming Sessions
+    </a>
   </h2>
-  {% for event in site.events limit:2 %}
-    {%
-      include event_teaser.liquid
-      event=event
-    %}
-  {% endfor %}
-  
-  {%
-    include testimonial.liquid
-    id=page.testimonials.one
-  %}
+  <div class="cards-container clearfix">
+    {% for event in site.events limit:2 %}
+      {%
+        include event_teaser.liquid
+        event=event
+      %}
+    {% endfor %}
+  </div>
 </div>
 
 
 <div class="container">
-  <h2>
-    Our Courses
+  <h2 class="collection-heading">
+    <a href="{{ site.baseurl | append: '/courses' }}">
+      Our Courses
+    </a>
   </h2>
-  {% for course in site.courses limit:3 %}
-    {%
-      include course_teaser.liquid
-      course=course
-    %}
-  {% endfor %}
-  
+  <div class="cards-container clearfix">
+    {% for course in site.courses limit:4 %}
+      {%
+        include course_teaser.liquid
+        course=course
+      %}
+    {% endfor %}
+  </div>
+</div>
+
+
+<div class="container">
+  {%
+    include testimonial.liquid
+    id=page.testimonials.one
+  %}
   {%
     include testimonial.liquid
     id=page.testimonials.two

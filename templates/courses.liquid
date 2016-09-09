@@ -6,9 +6,11 @@ title: Courses
 permalink: /courses/
 ---
 
-{% for course in site.courses %}
-  {%
-    include course_teaser.liquid
-    course=course
-  %}
-{% endfor %}
+<div class="cards-container clearfix">
+  {% for course in site.courses %}
+    {%
+      include course_teaser.liquid
+      course=course
+    %}
+  {% endfor %}
+</div>

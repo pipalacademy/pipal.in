@@ -6,39 +6,40 @@
 
 {% if course %}
   {% assign course_link = site.baseurl | append: course.url %}
-  <article class="card card-course clearfix">
-    <h1 class="card-title size-xlarge">
-      <b>{{ course.title | smartify }}</b>
-    </h1>
-    
-    <h3 class="card-subtitle">
-      {% if course.duration %}
-        <b class="label-timer">
-          {{ course.duration | smartify }}
-        </b>
-      {% endif %}
+  <article class="clearfix">
+    <a class="card card-course" href="{{ course_link }}">
+      <h1 class="card-title size-xlarge">
+        <b>{{ course.title | smartify }}</b>
+      </h1>
       
-      {% if course.participants %}
-        <b class="label-people">
-          Class of {{ course.participants | smartify }}
-        </b>
-      {% endif %}
-    </h3>
-    
-    <div class="prose">
-      {{ course.brief | markdownify }}
-    </div>
-    
-    {% unless include.show_trainers == false %}
-      {%
-        include trainers_list.liquid
-        trainers=course.trainers
-        link=course_link
-      %}
-    {% endunless %}
-    
-    <a class="card-button size-small" href="{{ course_link }}">
-      <span>More Details &rarr;</span>
+      <h3 class="card-subtitle">
+        {% if course.duration %}
+          <b class="label-timer">
+            {{ course.duration | smartify }}
+          </b>
+        {% endif %}
+        
+        {% if course.participants %}
+          <b class="label-people">
+            Class of {{ course.participants | smartify }}
+          </b>
+        {% endif %}
+      </h3>
+      
+      <div class="prose">
+        {{ course.brief | markdownify }}
+      </div>
+      
+      {% unless include.show_trainers == false %}
+        {%
+          include trainers_list.liquid
+          trainers=course.trainers
+        %}
+      {% endunless %}
+      
+      <span class="card-button">
+        Learn more &rarr;
+      </span>
     </a>
   </article>
 {% endif %}

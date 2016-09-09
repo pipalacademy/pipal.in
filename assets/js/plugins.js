@@ -22,6 +22,16 @@
 }());
 
 
+function isSessionStorageSupported() {
+    try {
+        var mod = 'test';
+        sessionStorage.setItem(mod, mod);
+        sessionStorage.removeItem(mod);
+        return true;
+    } catch(e) {
+        return false;
+    }
+}
 
 /*** place any jQuery/helper plugins in here. ***/
 

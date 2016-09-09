@@ -1,30 +1,89 @@
 ---
 layout: base
+
+brief: |
+  Pipal academy is a collective of experienced technologists, who care deeply about the art of software development.
+  
+  We offer in-depth courses on niche technical topics.
+
+testimonials:
+  one:    /testimonials/arvind-kota
+  two:    /testimonials/anurag-mathur
+  three:  /testimonials/bargava-subramanian
+
 ---
-<dl class="container">
-  {% for collection in site.collections %}
-    <dt>
-      {{ collection.title }}
-    </dt>
-    <dd>
-      {% if collection.output %}
-        <ul>
-          {% for doc in collection.docs %}
-            <li>
-              <a href="{{ site.baseurl | append: doc.url }}">
-                {{ doc.title }}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      {% else %}
-        <dl>
-          {% for doc in collection.docs %}
-            <dt>{{ doc.title }}</dt>
-            <dd>{{ doc.content }}</dd>
-          {% endfor %}
-        </dl>
-      {% endif %}
-    </dd>
+
+<header class="banner">
+  <div class="container prose size-large">
+    {{ page.brief | markdownify }}
+    <a href="{{ site.baseurl | append: '/about' }}">
+      More&nbsp;about&nbsp;us<span class="no-underline">&nbsp;&rarr;</span>
+    </a>
+  </div>
+</header>
+
+
+<div class="container">
+  <h2>
+    Upcoming Sessions
+  </h2>
+  {% for event in site.events limit:2 %}
+    {%
+      include event_teaser.liquid
+      event=event
+    %}
   {% endfor %}
-</dl>
+  
+  {%
+    include testimonial.liquid
+    id=page.testimonials.one
+  %}
+</div>
+
+
+<div class="container">
+  <h2>
+    Our Courses
+  </h2>
+  {% for course in site.courses limit:3 %}
+    {%
+      include course_teaser.liquid
+      course=course
+    %}
+  {% endfor %}
+  
+  {%
+    include testimonial.liquid
+    id=page.testimonials.two
+  %}
+</div>
+
+
+<div class="container">
+  <h2>
+    Our Clients
+  </h2>
+  
+  <ul class="logos-list clearfix">
+    {% for client in site.clients %}
+      <li>
+        <a href="{{ client.links.web }}">
+          <figure class="logo-hold contain-width" style="background-image: url('{{ site.baseurl | append: client.logo }}')">
+            <img class="hidden" alt=" " src="{{ site.baseurl | append: client.logo }}">
+          </figure>
+          <h4 class="logo-title visuallyhidden">
+            {{ client.title }}
+          </h4>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+
+<div class="container">
+  {%
+    include testimonial.liquid
+    id=page.testimonials.three
+  %}
+</div>

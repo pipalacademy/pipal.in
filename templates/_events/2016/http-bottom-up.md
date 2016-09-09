@@ -10,7 +10,7 @@ dates:
   September 16 & 17, 2016
 
 schedule: |
-  September 18, 2016 (Sunday)
+  September 18, 2016 (Sunday)  
   9:00 AM to 4:00 PM
 
 brief:
@@ -29,9 +29,9 @@ city:
   Bangalore
   
 venue: |
-  The Energy & Resources Institute
-  4th Main, 2nd Cross
-  Domlur, 2nd Stage
+  The Energy & Resources Institute  
+  4th Main, 2nd Cross  
+  Domlur, 2nd Stage  
   Bangalore, Karnataka
 
 map:
@@ -39,32 +39,9 @@ map:
 
 trainer: /trainers/anand
 
-course: http-bottom-up
+course: /courses/http-bottom-up
 
 tickets_embed: |
-  <div id="boxoffice-widget" style="padding-top: 0px;"><p class="text-center regular">Loading...</p></div>
-  <script type="text/javascript">
-    $(function(){
-      // Boxoffice widget
-      var boxofficeUrl = "https://boxoffice.hasgeek.com";
-      $.get({
-        url: boxofficeUrl+"/api/1/boxoffice.js",
-        crossDomain: true
-      }).done(function(data) {
-        var boxofficeScript = document.createElement('script');
-        boxofficeScript.innerHTML = data.script;
-        document.getElementsByTagName('body')[0].appendChild(boxofficeScript);
-        window.Boxoffice.init({
-          org: 'Pipal Academy',
-          razorpayBanner: 'https://pipal.in/static/images/dummy-logo.png',
-          itemCollection: '176580a1-6885-11e6-871c-253c1946f3fe',
-          paymentDesc: 'HTTP Bottom Up'
-        });
-        
-      }).fail(function(response) {
-        $('#boxoffice-widget p').html('Unable to connect. Please try again.');
-      });
-    });
-  </script>
+  <iframe width="100%" height="600px" src="<site.baseurl>/media/boxoffice.html" frameborder="0"></iframe>
 
 ---

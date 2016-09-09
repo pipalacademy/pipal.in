@@ -4,12 +4,17 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ siteName }}</title>
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.name }}</title>
   
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="{{ site.baseurl | append: '/fonts.css' }}" type="text/css">
-  <link rel="stylesheet" href="{{ site.baseurl | append: '/build/style.css' }}" type="text/css">
-  <script src="{{ site.baseurl | append:'/js/libs/modernizr-custom.js' }}"></script>
+  <link rel="stylesheet" href="{{ site.baseurl | append: '/build/style.min.' | append: site.data.css_hashsum | append: '.css' }}" type="text/css" data-instant-track>
+  <script src="{{ site.baseurl | append:'/js/libs/modernizr-custom.js' }}" data-no-instant data-instant-track></script>
+  
+  <script
+    async       onload="try{Typekit.load({ async: true, classes: false, events: false })}catch(e){}"
+    onreadystatechange="try{Typekit.load({ async: true, classes: false, events: false })}catch(e){}"
+    src="https://use.typekit.net/bvn4ome.js" data-no-instant></script>
+  <script data-no-instant>try{Typekit.load({ async: true, classes: false, events: false });}catch(e){}</script>
   
   <!--
     
@@ -26,11 +31,11 @@
   </div><!-- #page -->
   
   <!--[if (!IE)|(gt IE 8)]><!-->
-  <script src="{{ site.baseurl | append:'/js/libs/jquery-2.2.0.min.js' }}"></script>
+  <script src="{{ site.baseurl | append:'/js/libs/jquery-2.2.0.min.js' }}" data-no-instant data-instant-track></script>
   <!--<![endif]-->
   <!--[if lte IE 8]>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" data-no-instant data-instant-track></script>
   <![endif]-->
-  <script src="{{ site.baseurl | append:'/build/app.js' }}"></script>
+  <script src="{{ site.baseurl | append:'/build/app.min.' | append: site.data.js_hashsum | append: '.js' }}" data-no-instant data-instant-track></script>
 </body>
 </html>

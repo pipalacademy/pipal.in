@@ -9,8 +9,11 @@ event_type:
 dates:
   October 21 & 22, 2016
 
-schedule:
-  October 21 & 22, 2016
+time:
+  9AM - 11AM
+
+schedule: |
+  October 21 & 22, 2016  
   9AM - 11AM
 
 
@@ -29,7 +32,7 @@ description: |
   - build beautiful abstractions using decorators
   - improve code readability and reusability using techniques learnt
 
-prerequisities: |
+prerequisites: |
   - Ability to write functions in Python
   - Good knowledge of basic data types in Python (int, str, lists, tuples)
   - Exposure to classes in Python
@@ -51,11 +54,14 @@ outline: |
 
 
 
+testimonials:
+  - /testimonials/bargava-subramanian
+
 trainer: /trainers/anand
 
-course: advanced-python
+course: /courses/advanced-python
 
-tickets_url:
-  #
+tickets_embed: |
+  <iframe width="100%" height="600px" src="<site.baseurl>/media/boxoffice.html" frameborder="0"></iframe>
 
 ---

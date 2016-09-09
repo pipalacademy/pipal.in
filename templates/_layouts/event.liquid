@@ -1,0 +1,121 @@
+---
+layout: base
+---
+
+<article class="theme-event">
+  <header class="banner clearfix">
+    <div class="container">
+      {% if page.event_type or page.city %}
+        <dl class="labels">
+          {% if page.event_type %}
+            <dt class="visuallyhidden">Event Type</dt>
+            <dd class="label">
+              {{ page.event_type | smartify }}
+            </dd>
+          {% endif %}
+          {% if page.city %}
+            <dt class="visuallyhidden">Location</dt>
+            <dd class="label-pin">
+              <a href="#venue">
+                {{ page.city | smartify }}
+              </a>
+            </dd>
+          {% endif %}
+          {% if page.time %}
+            <dt class="visuallyhidden">Time</dt>
+            <dd class="label-timer">
+              <a href="#schedule">
+                {{ page.time | smartify }}
+              </a>
+            </dd>
+          {% endif %}
+        </dl>
+      {% endif %}
+      
+      <time class="size-large">
+        {{ page.dates | smartify }}
+      </time>
+      <h1 class="banner-title">
+        {{ page.title | smartify }}
+      </h1>
+      
+      <div>
+        {{ page.brief | markdownify }}
+      </div>
+      
+      {% assign trainers = '' | split:'' | push:page.trainer %}
+      {%
+        include trainers_list.liquid
+        trainers=trainers
+        title=true
+        link='#trainer'
+      %}
+    </div>
+  </header>
+  
+  <section class="container">
+    <div class="action-container">
+      <button class="button action-toggle" data-toggle="#register">
+        Register for&nbsp;Event
+      </button>
+      <div id="register" class="action-body prose clearfix">
+        {{ page.tickets_embed | replace: '<site.baseurl>', site.baseurl }}
+      </div>
+    </div>
+  </section>
+  
+  
+  {% if page.video %}
+    <figure class="container">
+      <div class="embed-fluid">
+        {{ page.video }}
+      </div>
+    </figure>
+  {% endif %}
+  
+  {%
+    include section.liquid
+    body=page.description
+    highlight_title='Pre-requisites'
+    highlight=page.prerequisites
+  %}
+  
+  {%
+    include section.liquid
+    title="Schedule"
+    body=page.schedule
+    highlight_title='Venue'
+    highlight=page.venue
+  %}
+  
+  {%
+    include section.liquid
+    title="Outline"
+    body=page.outline
+  %}
+  
+  {%
+    include section.liquid
+    title="Testimonials"
+    teasers=page.testimonials
+    teaser_template='testimonial.liquid'
+  %}
+  
+  {%
+    include section.liquid
+    title="Trainer"
+    teasers=trainers
+    teaser_template='trainer_teaser.liquid'
+  %}
+  
+  {% if page.course %}
+    {% assign courses = '' | split:'' | push:page.course %}
+    {%
+      include section.liquid
+      title="Related Course"
+      teasers=courses
+      teaser_template='course_teaser.liquid'
+    %}
+  {% endif %}
+  
+</article>

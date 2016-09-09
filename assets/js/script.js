@@ -19,10 +19,7 @@
                 { 'weight': 300, 'style': 'italic' },
                 { 'weight': 400 },
                 { 'weight': 400, 'style': 'italic' },
-                { 'weight': 700 },
-                { 'weight': 700, 'style': 'italic' },
-                { 'weight': 900 },
-                { 'weight': 900, 'style': 'italic' }
+                { 'weight': 700 }
             ]
         },
         activeClass = 'wf-active',
@@ -42,18 +39,16 @@
         return;
     }
     
-    // if the fonts have already been downloaded, activate them
-    // (this becomes redundant once `activeCookie` presence is
-    // detected on the server side)
-    // if (cookie(activeCookie)) {
-    //     w.document.documentElement.className += ' ' + activeClass;
-    //     return;
-    // }
+    // if the fonts are already cached by the browser, activate them
+    if (isSessionStorageSupported() && sessionStorage.getItem(activeCookie)) {
+        w.document.documentElement.className += ' ' + activeClass;
+        return;
+    }
     
     Object.keys(fonts).forEach(function (fontFamily) {
         fonts[fontFamily].forEach(function (fontProperties) {
             var new_observer = new w.FontFaceObserver(fontFamily, fontProperties);
-            observers.push(new_observer.check());
+            observers.push(new_observer.load(null, 5*60*1000)); // give it 5 mins before timing out
         });
     });
     
@@ -63,21 +58,59 @@
             // add a class to the document indicating the fonts have loaded
             w.document.documentElement.className += ' ' + activeClass;
             
-            // set a cookie to optimise future visits
-            // cookie(activeCookie, 'true', 7);
+            // set a flag to optimise future visits
+            if (isSessionStorageSupported()) {
+                sessionStorage.setItem(activeCookie, true);
+            }
         });
 }(this));
 
 
 
+// Init Instantlinks
+InstantClick.init();
+
+
+
 // Truncate dismissal
 $(function () {
+    'use strict';
+    
     var CONTAINER_CLASS = 'truncate-el',
         TRIGGER_SELECTOR = '.truncate-dismiss';
     
-    $(TRIGGER_SELECTOR).click(function (e) {
+    $('html').on('click', TRIGGER_SELECTOR, function (e) {
         $(this).closest('.' + CONTAINER_CLASS).removeClass(CONTAINER_CLASS);
         $(this).remove();
         e.preventDefault();
+    });
+});
+
+
+
+// Show/hide toggles
+$(function () {
+    'use strict';
+    
+    var TRIGGER_SELECTOR = '.action-toggle',
+        CONTAINER_SELECTOR = '.action-container',
+        ACTIVE_CLASS = 'action-explode';
+    
+    // JS Hide/Show Toggles
+    $('html').on('click', TRIGGER_SELECTOR, function (e) {
+        var $toggle = $(this),
+            $dropdown = $($toggle.data('toggle')),
+            $container = $toggle.closest(CONTAINER_SELECTOR);
+        
+        if ($toggle.data('toggle') && $dropdown.length) {
+            if ($dropdown.is(':visible')) {
+                $container.removeClass(ACTIVE_CLASS);
+            } else {
+                $container.addClass(ACTIVE_CLASS);
+            }
+            $dropdown.slideToggle('fast');
+            
+            e.preventDefault();
+        }
     });
 });

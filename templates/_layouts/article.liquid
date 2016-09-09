@@ -1,0 +1,24 @@
+---
+layout: base
+---
+
+<main>
+  <header class="banner banner-listing clearfix">
+    <div class="container">
+      <h1 class="banner-title size-xlarge">
+        {{ page.title }}
+      </h1>
+      
+      {% assign trainers = '' | split:'' | push:page.author %}
+      {%
+        include trainers_list.liquid
+        trainers=trainers
+        title=false
+      %}
+    </div>
+  </header>
+  
+  <div class="prose container">
+    {{ content }}
+  </div>
+</main>

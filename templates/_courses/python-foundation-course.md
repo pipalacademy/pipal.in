@@ -67,6 +67,6 @@ trainers:
 testimonials:
   - /testimonials/arvind-kota
   - /testimonials/anurag-mathur
-  - /testimonials/bargava-subramanian
+  - /testimonials/bhaktavatsalan-raghavan
 
 ---

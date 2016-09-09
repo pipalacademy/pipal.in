@@ -6,7 +6,12 @@
 
 /* Base Styles */
 
+html,
 body {
+    background: @brand-two;
+    color: @brand-one;
+}
+#page {
     background-color: @brand-one;
     color: @brand-two;
 }
@@ -18,7 +23,44 @@ a:visited {
 
 
 
+/* Brand Styles */
+
+.brand-one  { color: @brand-one; }
+.brand-two  { color: @brand-two; }
+.brand-three{ color: @brand-three; }
+.brand-four { color: @brand-four; }
+.brand-five { color: @brand-five; }
+
+.fill-brand-one {
+    color: @brand-two;
+    background: @brand-one;
+    background: linear-gradient(to bottom, darken(@brand-one, 20%), lighten(@brand-one, 0%));
+}
+.fill-brand-two {
+    color: @brand-one;
+    background: @brand-two;
+    background: linear-gradient(to right bottom, darken(@brand-two, 15%), lighten(@brand-two, 5%));
+}
+.fill-brand-three {
+    color: @brand-one;
+    background-color: @brand-three;
+    background: linear-gradient(to right bottom, darken(@brand-three, 15%), lighten(@brand-three, 5%));
+}
+.fill-brand-four {
+    color: @brand-one;
+    background-color: @brand-four;
+    background: linear-gradient(to right bottom, darken(@brand-four, 15%), lighten(@brand-four, 5%));
+}
+.fill-brand-five {
+    color: @brand-two;
+    background-color: @brand-five;
+    background: linear-gradient(to right bottom, darken(@brand-five, 15%), lighten(@brand-five, 5%));
+}
+
+
+
 /* Animations */
+
 @keyframes shiftRight {
     from { transform: translateX(0); }
     50%  { transform: translateX(0.5rem); }

@@ -28,12 +28,24 @@
 }
 
 
+.card-container {
+    
+}
 .card {
-    padding: 1rem 1.5rem 0;
+    display: block;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
     margin: 2rem 0 1rem;
     font-weight: 300;
+    color: @brand-one !important;
     &:extend(.fill-brand-two);
     &.card-course:extend(.fill-brand-three) {}
+    &:hover {
+        .card-button {
+            opacity: 1;
+            animation: shiftRight 1s ease-in-out;
+        }
+    }
 }
 .card-title {
     font-weight: 300;
@@ -50,24 +62,13 @@
     b + b { margin-left: 0.35rem; }
     .label-pin { margin: 0; }
 }
-.card-button,
-.card-button:visited {
+.card-button {
+    &:extend(.title-label);
     display: block;
-    padding: 1rem 1.5rem;
-    margin: 2.5rem -1.5rem 0;
-    
-    background: @brand-three;
-    color: @brand-one;
-    .card-course & { background: @brand-four; color: @brand-two; }
-    
-    font-weight: 300;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    span { display: block; }
-}
-.card-button:hover {
-    span { animation: shiftRight 1s ease-in-out infinite; }
+    opacity: 0;
+    margin: 1.5rem 0 0.5rem;
+    transition: opacity 0.3s;
+    .card-course & { color: @brand-four; }
 }
 
 
@@ -80,7 +81,8 @@
     .container-values();
     .recurse-rule-breakpoints({
         margin-left: -1 * @value;
-        border-left-width: @value - 0.5rem;
+        border-left-width: @value * 2/3;
+        padding-left: @value * 1/3;
     }, @hpads, @breakpoints);
     .theme-event &:extend(.brand-two) {}
     .theme-trainer &:extend(.brand-two) {}

@@ -1,5 +1,8 @@
 {% if include.trainers %}
-  <a href="{{ include.link }}">
+  {% if include.link %}
+    <a href="{{ include.link }}">
+  {% endif %}
+    
     <ul class="person-list">
       {% for tr_id in include.trainers %}
         {% assign trainer = site.trainers | where: 'id', tr_id | first %}
@@ -26,7 +29,10 @@
         {% endif %}
       {% endfor %}
     </ul>
-  </a>
+    
+  {% if include.link %}
+    </a>
+  {% endif %}
     
   {% unless include.title == false %}
     {% assign trainers_count = include.trainers | size %}

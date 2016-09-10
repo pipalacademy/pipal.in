@@ -27,7 +27,7 @@ sections:
 {% assign trainers_id = trainers_title | slugify | prepend: '#' %}
 
 
-<article class="theme-course clearfix">
+<article class="theme-course page-entity clearfix">
   <header class="banner clearfix">
     <div class="container clearfix">
       {% if page.duration or page.participants %}
@@ -89,7 +89,7 @@ sections:
         include toc.liquid
         sections=layout.sections
         page=page
-        trainer_title=trainer_title
+        trainers_title=trainers_title
       %}
     </nav>
   </section>

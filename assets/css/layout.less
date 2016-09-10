@@ -125,6 +125,7 @@ hr    { clear: both; }
         }
     }
 }
+.xs-plus(@rules) { @media (min-width: @xs-min) { @rules(); } }
 .sm-plus(@rules) { @media (min-width: @sm-min) { @rules(); } }
 .md-plus(@rules) { @media (min-width: @md-min) { @rules(); } }
 

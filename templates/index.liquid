@@ -16,7 +16,7 @@ testimonials:
 <header class="banner">
   <div class="container prose size-large">
     {{ page.brief | markdownify }}
-    <a href="{{ site.baseurl | append: '/about' }}">
+    <a class="title-label size-regular no-underline" href="{{ site.baseurl | append: '/about' }}">
       More&nbsp;about&nbsp;us<span class="no-underline">&nbsp;&rarr;</span>
     </a>
   </div>
@@ -37,6 +37,9 @@ testimonials:
       %}
     {% endfor %}
   </div>
+  <a class="title-label size-small no-underline" href="{{ site.baseurl | append: '/events' }}">
+    View all events &rarr;
+  </a>
 </div>
 
 
@@ -54,6 +57,9 @@ testimonials:
       %}
     {% endfor %}
   </div>
+  <a class="title-label size-regular no-underline" href="{{ site.baseurl | append: '/courses' }}">
+    View all courses &rarr;
+  </a>
 </div>
 
 

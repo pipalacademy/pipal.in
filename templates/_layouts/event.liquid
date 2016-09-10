@@ -1,10 +1,18 @@
 ---
 layout: base
+
+sections:
+  schedule: Schedule
+  outline: Outline
+  testimonials: Testimonials
+  trainer: Trainer
+  course: Related Course
+
 ---
 
-<article class="theme-event">
+<article class="theme-event clearfix">
   <header class="banner clearfix">
-    <div class="container">
+    <div class="container clearfix">
       {% if page.event_type or page.city %}
         <dl class="labels">
           {% if page.event_type %}
@@ -35,40 +43,54 @@ layout: base
       <time class="size-large">
         {{ page.dates | smartify }}
       </time>
+        
       <h1 class="banner-title">
         {{ page.title | smartify }}
       </h1>
-      
-      <div>
+        
+      <div class="sidebar prose">
         {{ page.brief | markdownify }}
       </div>
       
-      {% assign trainers = '' | split:'' | push:page.trainer %}
-      {%
-        include trainers_list.liquid
-        trainers=trainers
-        title=true
-        link='#trainer'
-      %}
+      <div class="mainbar">
+        {% assign trainers = '' | split:'' | push:page.trainer %}
+        {%
+          include trainers_list.liquid
+          trainers=trainers
+          title=true
+          link='#trainer'
+        %}
+      </div>
     </div>
   </header>
   
   <section class="container">
-    <div class="action-container">
-      <button class="button action-toggle" data-toggle="#register">
-        Register for&nbsp;Event
-      </button>
-      <div id="register" class="action-body prose clearfix">
-        {{ page.tickets_embed | replace: '<site.baseurl>', site.baseurl }}
+    <div class="mainbar">
+      <div class="action-container">
+        <button class="button action-toggle" data-toggle="#register">
+          Register for&nbsp;Event
+        </button>
+        <div id="register" class="action-body prose clearfix">
+          {{ page.tickets_embed | replace: '<site.baseurl>', site.baseurl }}
+        </div>
       </div>
     </div>
+    <nav class="sidebar">
+      {%
+        include toc.liquid
+        sections=layout.sections
+        page=page
+      %}
+    </nav>
   </section>
   
   
   {% if page.video %}
     <figure class="container">
-      <div class="embed-fluid">
-        {{ page.video }}
+      <div class="mainbar">
+        <div class="embed-fluid">
+          {{ page.video }}
+        </div>
       </div>
     </figure>
   {% endif %}
@@ -79,6 +101,8 @@ layout: base
     highlight_title='Pre-requisites'
     highlight=page.prerequisites
   %}
+  
+  <hr class="invisible">
   
   {%
     include section.liquid

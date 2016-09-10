@@ -6,6 +6,7 @@
     padding: 0 0 1rem;
     font-weight: 300;
     margin-bottom: 2rem;
+    overflow: hidden;
     a { color: inherit; }
     
     &:extend(.fill-brand-three);
@@ -17,7 +18,9 @@
     .theme-event &:extend(.fill-brand-two) {}
     .theme-trainer &:extend(.fill-brand-one) {}
 }
-.banner-title {}
+.banner-title {
+    .sm-plus({ margin-bottom: 2.5rem; });
+}
 .banner-subtitle {
     font-weight: 300;
     .theme-trainer &:extend(.brand-three) {}
@@ -29,8 +32,9 @@
 
 
 .cards-container {
+    clear: both;
     .sm-plus({
-        @gap: 0.5rem;
+        @gap: 0.25rem;
         margin: 1rem -@gap;
         .card-container {
             float: left;
@@ -45,7 +49,7 @@
     });
 }
 .card-container {
-    margin: 2rem 0 1rem;
+    margin: 0 0 1rem;
 }
 .card-mask {
     overflow: hidden;
@@ -99,7 +103,17 @@
 }
 
 
+.section {
+    &:extend(.container);
+    .mainbar {
+                   margin-top: 2.0rem;
+        .sm-plus({ margin-top: 0.5rem; });
+        .md-plus({ margin-top: 0.65rem; });
+    }
+    .md-plus({ margin-bottom: 4rem; });
+}
 .section-heading {
+    clear: both;
     margin-top: 0;
     border-left: 1rem solid;
     padding-left: 0.5rem;
@@ -166,12 +180,11 @@
     text-align: right;
 }
 .person-list {
-    margin: 2rem -1.5rem 0 0;
+    margin: 2rem -1.5rem 0 auto;
     .banner & {
-        .container-values();
-        .recurse-rule-breakpoints({
-            margin-right: -1 * @value;
-        }, @hpads, @breakpoints);
+        margin: 2rem -40rem 0 auto;
+        .sm-plus({ margin-top: 0.5rem; });
+        .person { padding-right: 40rem; }
     }
     .card & {
         margin-right: -2rem;
@@ -226,7 +239,7 @@
 
 
 .speechbubble {
-    margin: 2rem 0 3rem;
+    margin: 0 0 3rem;
 }
 .speechbubble-quote {
     background-color: lighten(@brand-five, 5%);
@@ -418,6 +431,7 @@
 .footer {
     clear: both;
     margin-top: 4rem;
+    .md-plus({ margin-top: 6rem; });
     color: @brand-one;
     background-color: @brand-two;
     padding-top: 1rem;

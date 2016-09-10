@@ -1,0 +1,20 @@
+<h4 class="title-label">
+  Jump to
+</h4>
+<ul class="size-small">
+  {% for section in include.sections %}
+    {% assign key = section[0] %}
+    {% assign title = section[1] %}
+    {% if section[0] == 'trainers' %}
+      {% assign title = include.trainers_title %}
+    {% endif %}
+    
+    {% if include.page[key] %}
+      <li>
+        <a href="#{{ title | slugify }}">
+          {{ title }}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

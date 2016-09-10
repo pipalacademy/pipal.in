@@ -20,6 +20,8 @@ ul    { list-style-type: none; }
 dl dd { margin-left: 0; }
 img   { vertical-align: middle; }
 
+hr    { clear: both; }
+
 // z-indices
 @layer-base: 0;
 @layer-one: 10;
@@ -73,6 +75,34 @@ img   { vertical-align: middle; }
     .recurse-rule-breakpoints({
         max-width: @value;
     }, @max-widths, @breakpoints);
+}
+
+.sidebar {
+    .sm-plus({
+        float: left;
+        clear: left;
+        width: 35%;
+        padding-right: 1rem;
+    });
+}
+.sidebar, .sidebar-md {
+    .md-plus({
+        float: left;
+        clear: left;
+        width: 30%;
+        padding-right: 1rem;
+    });
+}
+.mainbar {
+    .sm-plus({
+        float: right;
+        clear: right;
+        width: 65%;
+        padding-left: 1rem;
+    });
+    .md-plus({
+        width: 70%;
+    });
 }
 
 

@@ -19,7 +19,7 @@
         </h1>
         <h2 class="card-title size-xlarge">
           <b>{{ event.title | smartify }}</b>
-          <time>{{ event.dates | smartify }}</time>
+          <time class="size-large">{{ event.dates | smartify }}</time>
         </h2>
         <div class="prose">
           {{ event.brief | markdownify }}

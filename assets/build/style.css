@@ -487,6 +487,9 @@ hr {
   width: 100% !important;
   height: 100% !important;
 }
+.measure-10words {
+  max-width: 28em;
+}
 .container,
 .page-entity .section {
   margin: 0 auto;
@@ -551,30 +554,28 @@ hr {
   .sidebar {
     float: left;
     clear: left;
-    width: 35%;
+    width: 40%;
     padding-right: 1rem;
   }
 }
 @media (min-width: 70em) {
-  .sidebar,
-  .sidebar-md {
-    float: left;
-    clear: left;
+  .sidebar {
     width: 30%;
-    padding-right: 1rem;
+    padding-right: 1.5rem;
   }
 }
 @media (min-width: 47em) {
   .mainbar {
     float: right;
     clear: right;
-    width: 65%;
+    width: 60%;
     padding-left: 1rem;
   }
 }
 @media (min-width: 70em) {
   .mainbar {
     width: 70%;
+    padding-left: 2.5rem;
   }
 }
 .has-js .truncate-el {
@@ -726,6 +727,7 @@ h2,
 }
 h3,
 .size-large,
+.collection-heading,
 .button:visited,
 .button {
   font-size: 22.624px;
@@ -794,6 +796,7 @@ html {
   }
   h3,
   .size-large,
+  .collection-heading,
   .button:visited,
   .button {
     font-size: 1.5rem;
@@ -941,11 +944,12 @@ a:visited {
 .theme-trainer .banner {
   color: #114B5F;
   background: #F3E9D2;
-  background: -webkit-linear-gradient(top, #dec281, #f3e9d2);
-  background: linear-gradient(to bottom, #dec281, #f3e9d2);
+  background: -webkit-linear-gradient(left top, #dec281, #f3e9d2);
+  background: linear-gradient(to right bottom, #dec281, #f3e9d2);
 }
 .fill-brand-two,
 .theme-event .banner,
+.theme-textual .banner,
 .card,
 .action-container {
   color: #F3E9D2;
@@ -969,11 +973,17 @@ a:visited {
   background: linear-gradient(to right bottom, #50c067, #9bdba8);
 }
 .fill-brand-five,
-.banner.banner-listing {
+.theme-listing .banner {
   color: #114B5F;
   background-color: #C6DABF;
-  background: -webkit-linear-gradient(left top, #b8d1af, #e3eddf);
-  background: linear-gradient(to right bottom, #b8d1af, #e3eddf);
+  background: -webkit-linear-gradient(left top, #a9c79f, #e3eddf);
+  background: linear-gradient(to right bottom, #a9c79f, #e3eddf);
+}
+.fill-drop-one {
+  color: #114B5F;
+  background: #F3E9D2;
+  background: -webkit-linear-gradient(top, #dec281, #f3e9d2);
+  background: linear-gradient(to bottom, #dec281, #f3e9d2);
 }
 /* Animations */
 @-webkit-keyframes shiftRight {
@@ -1150,7 +1160,7 @@ a:visited {
 }
 @media (min-width: 70em) {
   .page-page .section {
-    margin: 4rem 0 6rem;
+    margin: 1rem 0 4rem;
   }
 }
 .section-heading {
@@ -1187,6 +1197,7 @@ a:visited {
 }
 .collection-heading a {
   text-decoration: none;
+  color: inherit;
 }
 @media (min-width: 47em) {
   .page-primary {

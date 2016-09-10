@@ -7,6 +7,15 @@ action: |
   
   Please write to us at <hello@pipal.in>.
 
+sections:
+  events: Upcoming Events
+  description: The Course
+  audience: Audience
+  outline: Course Outline
+  testimonials: Testimonials
+  format: Duration & Format
+  trainers: Trainers
+
 ---
 
 {% assign trainers_size = page.trainers | size %}
@@ -18,16 +27,9 @@ action: |
 {% assign trainers_id = trainers_title | slugify | prepend: '#' %}
 
 
-<article class="theme-course">
+<article class="theme-course clearfix">
   <header class="banner clearfix">
-    <div class="container">
-      <h1 class="banner-title">
-        {{ page.title | smartify }}
-      </h1>
-      <div class="size-larges">
-        {{ page.brief | markdownify }}
-      </div>
-      
+    <div class="container clearfix">
       {% if page.duration or page.participants %}
         <dl class="labels">
           {% if page.duration %}
@@ -49,37 +51,61 @@ action: |
         </dl>
       {% endif %}
       
-      {%
-        include trainers_list.liquid
-        trainers=page.trainers
-        title=true
-        link=trainers_id
-      %}
+      <h1 class="banner-title">
+        {{ page.title | smartify }}
+      </h1>
+      
+      <div class="sidebar prose">
+        {{ page.brief | markdownify }}
+      </div>
+      
+      <div class="mainbar">
+        {%
+          include trainers_list.liquid
+          trainers=page.trainers
+          title=true
+          link=trainers_id
+        %}
+      </div>
     </div>
   </header>
   
-  <section class="container">
-    <div class="action-container">
-      <button class="button button-multiline action-toggle" data-toggle="#action">
-        Request Course
-        <i>
-          Get it conducted at your org
-        </i>
-      </button>
-      <div id="action" class="action-body prose clearfix">
-        {{ layout.action | markdownify }}
+  <section class="container clearfix">
+    <div class="mainbar">
+      <div class="action-container">
+        <button class="button button-multiline action-toggle" data-toggle="#action">
+          Request Course
+          <i>
+            Get it conducted at your org
+          </i>
+        </button>
+        <div id="action" class="action-body prose clearfix">
+          {{ layout.action | markdownify }}
+        </div>
       </div>
     </div>
+    <nav class="sidebar">
+      {%
+        include toc.liquid
+        sections=layout.sections
+        page=page
+        trainer_title=trainer_title
+      %}
+    </nav>
   </section>
   
   
   {% if page.video %}
     <figure class="container">
-      <div class="embed-fluid">
-        {{ page.video }}
+      <div class="mainbar">
+        <div class="embed-fluid">
+          {{ page.video }}
+        </div>
       </div>
     </figure>
   {% endif %}
+  
+  <hr class="invisible">
   
   {%
     include section.liquid

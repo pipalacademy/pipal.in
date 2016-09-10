@@ -1,32 +1,64 @@
 {% if include.body or include.highlight or include.teasers %}
-  <section id="{{ include.title | slugify }}" class="container">
-    {% if include.body or include.teasers %}
-      <h2 class="section-heading size-xlarge">
-        {{ include.title | smartify }}
-      </h2>
-    {% endif %}
+  <section id="{{ include.title | slugify }}" class="section clearfix">
+    <div class="sidebar">
+      {% if include.body or include.teasers %}
+        <h2 class="section-heading size-xlarge">
+          {{ include.title | smartify }}
+        </h2>
+      {% endif %}
+    </div>
     
-    {% if include.body %}
-      <div class="prose">
-        {{ include.body | markdownify }}
-      </div>
-    {% endif %}
-    
-    {% if include.teasers %}
-      {% for t_id in include.teasers %}
-       {% include {{ include.teaser_template }} id=t_id %}
-      {% endfor %}
-    {% endif %}
-    
-    {% if include.highlight %}
-      <div id="{{ include.highlight_title | slugify }}" class="highlight">
-        <h3 class="highlight-heading size-small">
-          {{ include.highlight_title }}
-        </h3>
+    <div class="mainbar">
+      {% if include.body %}
         <div class="prose">
-          {{ include.highlight | markdownify }}
+          {{ include.body | markdownify }}
         </div>
-      </div>
-    {% endif %}
+      {% endif %}
+      
+      {% if include.teasers %}
+        {% comment %}
+          Ugh, Liquid has the poorest
+          handling of booleans.
+        {% endcomment %}
+        {% assign teasers_count = include.teasers | size %}
+        {% if include.teaser_template contains "course_" or include.teaser_template contains "event_" %}
+          {% assign show_as_grid = true %}
+        {% else %}
+          {% assign show_as_grid = false %}
+        {% endif %}
+        {% if show_as_grid == true and teasers_count > 1 %}
+          {% assign show_as_grid = true %}
+        {% else %}
+          {% assign show_as_grid = false %}
+        {% endif %}
+        
+        {% if show_as_grid == true %}
+          </div>
+          
+          <div class="cards-container">
+        {% endif %}
+          
+          {% for t_id in include.teasers %}
+           {% include {{ include.teaser_template }} id=t_id %}
+          {% endfor %}
+          
+        {% if show_as_grid == true %}
+          </div>
+          
+          <div class="mainbar">
+        {% endif %}
+      {% endif %}
+      
+      {% if include.highlight %}
+        <div id="{{ include.highlight_title | slugify }}" class="highlight">
+          <h3 class="highlight-heading size-small">
+            {{ include.highlight_title }}
+          </h3>
+          <div class="prose">
+            {{ include.highlight | markdownify }}
+          </div>
+        </div>
+      {% endif %}
+    </div>
   </section>
 {% endif %}

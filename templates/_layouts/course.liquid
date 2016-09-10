@@ -8,8 +8,8 @@ action: |
   Please write to us at <hello@pipal.in>.
 
 sections:
+  video: Preview
   events: Upcoming Events
-  description: The Course
   audience: Audience
   outline: Course Outline
   testimonials: Testimonials
@@ -70,7 +70,7 @@ sections:
     </div>
   </header>
   
-  <section class="container clearfix">
+  <section class="container">
     <div class="mainbar">
       <div class="action-container">
         <button class="button button-multiline action-toggle" data-toggle="#action">
@@ -94,30 +94,25 @@ sections:
     </nav>
   </section>
   
-  
-  {% if page.video %}
-    <figure class="container">
-      <div class="mainbar">
-        <div class="embed-fluid">
-          {{ page.video }}
-        </div>
-      </div>
-    </figure>
-  {% endif %}
+  {%
+    include section.liquid
+    body=page.description
+  %}
   
   <hr class="invisible">
+  
+  {%
+    include section.liquid
+    title='Preview'
+    body=page.video
+    video=true
+  %}
   
   {%
     include section.liquid
     title="Upcoming Events"
     teasers=page.events
     teaser_template='event_teaser.liquid'
-  %}
-  
-  {%
-    include section.liquid
-    title="The Course"
-    body=page.description
   %}
   
   {%
@@ -148,8 +143,6 @@ sections:
     highlight_title='Infrastructure'
     highlight=page.infrastructure
   %}
-  
-  
   
   {%
     include section.liquid

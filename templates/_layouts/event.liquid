@@ -2,6 +2,7 @@
 layout: base
 
 sections:
+  video: Preview
   schedule: Schedule
   outline: Outline
   testimonials: Testimonials
@@ -84,17 +85,6 @@ sections:
     </nav>
   </section>
   
-  
-  {% if page.video %}
-    <figure class="container">
-      <div class="mainbar">
-        <div class="embed-fluid">
-          {{ page.video }}
-        </div>
-      </div>
-    </figure>
-  {% endif %}
-  
   {%
     include section.liquid
     body=page.description
@@ -103,6 +93,13 @@ sections:
   %}
   
   <hr class="invisible">
+  
+  {%
+    include section.liquid
+    title='Preview'
+    body=page.video
+    video=true
+  %}
   
   {%
     include section.liquid

@@ -52,6 +52,9 @@ outline: |
   - Decorator Patterns (20 minutes)
   - Building a simple web framework using decorators (40 minutes)
 
+video: |
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/I_oZv55j0EU?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
 
 
 testimonials:

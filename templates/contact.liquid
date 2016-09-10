@@ -1,5 +1,5 @@
 ---
-layout: listing
+layout: page
 
 title: Contact Us
 
@@ -7,11 +7,52 @@ permalink: /contact/
 
 body: |
   Best way to reach us is by email. Please write to us at hello@pipal.in
+
+sections:
+  - title: Address
+    
+    body: |
+      Mos Eisley Cantina  
+      Space Port 42  
+      Tatooine  
+      Outer Rim
+  
+  - title: Social Media
+    
+    intro: |
+      Follow us to stay up to
+      date with our latest courses
+      and workshops.
+      
+    body: |
+      - [Twitter](#)
+      - [GitHub](#)
+      - [Facebook](#)
+  
   
 ---
 
 
+<section class="section clearfix">
+  <div class="prose page-primary">
+    {{ page.body | markdownify }}
+  </div>
+</section>
 
-<div class="prose">
-  {{ page.body | markdownify }}
-</div>
+{% for section in page.sections %}
+  <section class="section clearfix">
+    <div class="sidebar">
+      <h2 class="page-heading">
+        {{ section.title }}
+      </h2>
+      {% if section.intro %}
+        <div class="prose page-caption">
+          {{ section.intro | markdownify }}
+        </div>
+      {% endif %}
+    </div>
+    <div class="mainbar prose page-primary">
+      {{ section.body | markdownify }}
+    </div>
+  </section>
+{% endfor %}

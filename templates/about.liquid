@@ -1,5 +1,5 @@
 ---
-layout: listing
+layout: page
 
 title: About Us
 
@@ -16,25 +16,29 @@ team: |
 ---
 
 
+<section class="section clearfix">
+  <div class="prose page-primary">
+    {{ page.about | markdownify }}
+  </div>
+</section>
 
-<div class="prose">
-  {{ page.about | markdownify }}
-</div>
-
-
-<section>
-  <h2 class="section-headings size-xlarge">
-    Our Team
-  </h2>
-  
-  <div class="prose">
-    {{ page.team | markdownify }}
+<section class="section clearfix">
+  <div class="sidebar">
+    <h2 class="page-heading">
+      Our Team
+    </h2>
+    
+    <div class="prose page-caption">
+      {{ page.team | markdownify }}
+    </div>
   </div>
   
-  {% for trainer in site.trainers %}
-    {%
-      include trainer_teaser.liquid
-      trainer=trainer
-    %}
-  {% endfor %}
+  <div class="mainbar">
+    {% for trainer in site.trainers %}
+      {%
+        include trainer_teaser.liquid
+        trainer=trainer
+      %}
+    {% endfor %}
+  </div>
 </section>

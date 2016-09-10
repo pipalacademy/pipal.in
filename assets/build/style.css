@@ -737,6 +737,7 @@ body,
   font-size: 1.125rem;
 }
 .size-small,
+.listing-nav,
 .inpage-nav,
 .button:visited.button-multiline > i,
 .button.button-multiline > i {
@@ -747,6 +748,7 @@ body,
 .title-label,
 .card-subtitle,
 .card-button,
+.listing-nav,
 .inpage-nav-title,
 .labels,
 .person-list-title,
@@ -801,6 +803,7 @@ html {
     font-size: 1.125rem;
   }
   .size-small,
+  .listing-nav,
   .inpage-nav,
   .button:visited.button-multiline > i,
   .button.button-multiline > i {
@@ -836,6 +839,7 @@ p {
 .title-label,
 .card-subtitle,
 .card-button,
+.listing-nav,
 .inpage-nav-title,
 .labels,
 .person-list-title,
@@ -964,11 +968,12 @@ a:visited {
   background: -webkit-linear-gradient(left top, #50c067, #9bdba8);
   background: linear-gradient(to right bottom, #50c067, #9bdba8);
 }
-.fill-brand-five {
+.fill-brand-five,
+.banner.banner-listing {
   color: #114B5F;
   background-color: #C6DABF;
-  background: -webkit-linear-gradient(left top, #9bbe8f, #d4e3cf);
-  background: linear-gradient(to right bottom, #9bbe8f, #d4e3cf);
+  background: -webkit-linear-gradient(left top, #b8d1af, #e3eddf);
+  background: linear-gradient(to right bottom, #b8d1af, #e3eddf);
 }
 /* Animations */
 @-webkit-keyframes shiftRight {
@@ -1012,9 +1017,8 @@ a:visited {
   color: inherit;
 }
 .banner.banner-listing {
-  color: #114B5F;
-  background: #C6DABF;
-  margin-bottom: 0;
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 @media (min-width: 47em) {
   .banner .mainbar,
@@ -1141,8 +1145,8 @@ a:visited {
   }
 }
 .page-page .section {
-  margin: 32px 0 48px;
-  margin: 2rem 0 3rem;
+  margin: 0px 0 48px;
+  margin: 0rem 0 3rem;
 }
 @media (min-width: 70em) {
   .page-page .section {
@@ -1178,6 +1182,9 @@ a:visited {
     padding-left: 0.66666667rem;
   }
 }
+.collection-heading {
+  margin-top: 0;
+}
 .collection-heading a {
   text-decoration: none;
 }
@@ -1194,6 +1201,28 @@ a:visited {
 }
 .page-heading {
   margin-top: 0;
+}
+.listing-nav {
+  color: #1A936F;
+  margin: 40px 0 0 -16px;
+  margin: 2.5rem 0 0 -1rem;
+}
+.listing-nav > li {
+  display: inline-block;
+  margin-top: -8px;
+  margin-top: -0.5rem;
+}
+.listing-nav > li > a {
+  display: block;
+  padding: 8px 16px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+.listing-nav > li > a.active {
+  color: inherit;
+  color: #C6DABF;
+  background: #1A936F;
+  border-radius: 3rem;
 }
 .inpage-nav-title {
   margin-bottom: 8px;
@@ -1624,6 +1653,9 @@ a:visited {
   .header-nav li > a {
     padding: 1rem;
   }
+}
+.header-nav li > a.active {
+  color: #114B5F;
 }
 .footer {
   clear: both;

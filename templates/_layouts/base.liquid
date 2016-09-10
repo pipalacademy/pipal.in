@@ -1,5 +1,16 @@
 ---
 layout: html
+
+global_nav:
+  - title: Home
+    url: /
+  - title: Courses
+    url: /courses/
+  - title: About
+    url: /about/
+  - title: Contact
+    url: /contact/
+
 ---
 
 <header class="header container clearfix">
@@ -10,10 +21,18 @@ layout: html
   </h1>
   <nav class="header-nav">
     <ul>
-      <li><a href="{{ site.baseurl | append:'/' }}">Home</a></li>
-      <li><a href="{{ site.baseurl | append:'/courses' }}">Courses</a></li>
-      <li><a href="{{ site.baseurl | append:'/about' }}">About</a></li>
-      <li><a href="{{ site.baseurl | append:'/contact' }}">Contact</a></li>
+      {% for item in layout.global_nav %}
+        {% if page.url == item.url %}
+          {% assign attr = 'class="active"' %}
+        {% else %}
+          {% assign attr = '' %}
+        {% endif %}
+        <li>
+          <a {{ attr }} href="{{ site.baseurl | append: item.url }}">
+            {{ item.title }}
+          </a>
+        </li>
+      {% endfor %}
     </ul>
   </nav>
 </header>

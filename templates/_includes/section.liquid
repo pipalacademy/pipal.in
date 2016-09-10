@@ -1,13 +1,15 @@
 {% assign teasers_count = include.teasers | size %}
 {% if include.body or include.highlight or teasers_count > 0 %}
   <section id="{{ include.title | slugify }}" class="section clearfix">
-    <div class="sidebar">
-      {% if include.body or include.teasers %}
-        <h2 class="section-heading size-xlarge">
-          {{ include.title | smartify }}
-        </h2>
-      {% endif %}
-    </div>
+    {% if include.title %}
+      <div class="sidebar">
+        {% if include.body or include.teasers %}
+          <h2 class="section-heading size-xlarge">
+            {{ include.title | smartify }}
+          </h2>
+        {% endif %}
+      </div>
+    {% endif %}
     
     <div class="mainbar">
       {% if include.body %}

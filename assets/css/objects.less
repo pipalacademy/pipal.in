@@ -8,16 +8,13 @@
     margin-bottom: 2rem;
     overflow: hidden;
     a { color: inherit; }
+    &.banner-listing { margin-bottom: 1rem; }
     
     &:extend(.fill-brand-three);
-    &.banner-listing {
-        &:extend(.fill-brand-five);
-        // color: @brand-two;
-        // background: @brand-five;
-        margin-bottom: 1rem;
-    }
     .theme-event &:extend(.fill-brand-two) {}
+    .theme-listing &:extend(.fill-brand-five) {}
     .theme-trainer &:extend(.fill-brand-one) {}
+    .theme-textual &:extend(.fill-brand-two) {}
     
     .mainbar,
     .sidebar {
@@ -119,7 +116,7 @@
     .page-page & {
         margin: 0rem 0 3rem;
         .md-plus({
-            margin: 4rem 0 6rem;
+            margin: 1rem 0 4rem;
         });
     }
 }
@@ -141,8 +138,9 @@
     .theme-trainer &:extend(.brand-two) {}
 }
 .collection-heading {
-    a { text-decoration: none; }
+    &:extend(.size-large);
     margin-top: 0;
+    a { text-decoration: none; color: inherit; }
 }
 
 .page-primary {

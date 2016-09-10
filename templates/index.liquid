@@ -19,7 +19,7 @@ testimonials:
     <h1 class="banner-title size-xlarge">
       Hello
     </h1>
-    <div class="prose size-large">
+    <div class="prose measure-10words size-large">
       {{ page.brief | markdownify }}
     </div>
     <a class="title-label no-underline" href="{{ site.baseurl | append: '/about' }}">
@@ -72,10 +72,9 @@ testimonials:
 
 
 <div class="container">
-  <h2>
+  <h2 class="collection-heading">
     Our Clients
   </h2>
-  
   <ul class="logos-list clearfix">
     {% for client in site.clients %}
       <li>

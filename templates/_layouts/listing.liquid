@@ -1,5 +1,14 @@
 ---
 layout: base
+
+listing_nav:
+  - title: Courses
+    url: /courses/
+  - title: Events
+    url: /events/
+  - title: Trainers
+    url: /trainers/
+
 ---
 
 <main>
@@ -8,6 +17,7 @@ layout: base
       <h1 class="banner-title size-xlarge">
         {{ page.title }}
       </h1>
+      
       {% if page.intro %}
         <div class="prose page-primary">
           {{ page.intro | markdownify }}
@@ -15,11 +25,24 @@ layout: base
       {% endif %}
       {% if page.intro_link %}
         <a class="title-label no-underline" href="{{ page.intro_link.url }}">
-          <span class="size-small">
-            {{ page.intro_link.title }}&nbsp;&rarr;
-          </span>
+          {{ page.intro_link.title }}&nbsp;&rarr;
         </a>
       {% endif %}
+      
+      <ul class="listing-nav clearfix">
+        {% for item in layout.listing_nav %}
+          {% if page.url == item.url %}
+            {% assign attr = 'class="active"' %}
+          {% else %}
+            {% assign attr = '' %}
+          {% endif %}
+          <li>
+            <a {{ attr }} href="{{ site.baseurl | append: item.url }}">
+              {{ item.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
     </div>
   </header>
   

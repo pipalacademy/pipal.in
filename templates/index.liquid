@@ -2,7 +2,8 @@
 layout: base
 
 brief: |
-  Pipal academy is a collective of experienced technologists, who care deeply about the art of software development.
+  We are a collective of experienced technologists
+  who care deeply about the art of software development.
   
   We offer in-depth courses on niche technical topics.
 
@@ -14,10 +15,17 @@ testimonials:
 ---
 
 <header class="banner">
-  <div class="container prose size-large">
-    {{ page.brief | markdownify }}
-    <a class="title-label size-regular no-underline" href="{{ site.baseurl | append: '/about' }}">
-      More&nbsp;about&nbsp;us<span class="no-underline">&nbsp;&rarr;</span>
+  <div class="container">
+    <h1 class="banner-title size-xlarge">
+      Hello
+    </h1>
+    <div class="prose size-large">
+      {{ page.brief | markdownify }}
+    </div>
+    <a class="title-label no-underline" href="{{ site.baseurl | append: '/about' }}">
+      <span class="size-small">
+        More about us&nbsp;&rarr;
+      </span>
     </a>
   </div>
 </header>
@@ -64,18 +72,6 @@ testimonials:
 
 
 <div class="container">
-  {%
-    include testimonial.liquid
-    id=page.testimonials.one
-  %}
-  {%
-    include testimonial.liquid
-    id=page.testimonials.two
-  %}
-</div>
-
-
-<div class="container">
   <h2>
     Our Clients
   </h2>
@@ -98,6 +94,14 @@ testimonials:
 
 
 <div class="container">
+  {%
+    include testimonial.liquid
+    id=page.testimonials.one
+  %}
+  {%
+    include testimonial.liquid
+    id=page.testimonials.two
+  %}
   {%
     include testimonial.liquid
     id=page.testimonials.three

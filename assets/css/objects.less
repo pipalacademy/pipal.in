@@ -107,17 +107,25 @@
 
 
 .section {
-    &:extend(.container);
+    .page-entity &:extend(.container) {}
     .mainbar {
-                   margin-top: 2.0rem;
-        .sm-plus({ margin-top: 0.5rem; });
+        .sm-plus({ margin-top: 0.4rem; });
         .md-plus({ margin-top: 0.65rem; });
     }
-    .md-plus({ margin-bottom: 4rem; });
+    .md-plus({
+        margin-bottom: 4rem;
+    });
+    .page-page & {
+        margin: 2rem 0 3rem;
+        .md-plus({
+            margin: 4rem 0 6rem;
+        });
+    }
 }
 .section-heading {
     clear: both;
     margin-top: 0;
+    margin-bottom: 2.0rem;
     border-left: 1rem solid;
     padding-left: 0.5rem;
     color: @brand-three;
@@ -135,6 +143,58 @@
     a { text-decoration: none; }
 }
 
+.page-primary {
+    .sm-plus({
+        .size-large;
+        max-width: 35em;
+    });
+}
+.page-caption {
+    .sm-plus({
+        .size-small;
+    });
+}
+.page-heading {
+    &:extend(.size-xlarge);
+    margin-top: 0;
+}
+
+
+.inpage-nav-title {
+    &:extend(.title-label);
+    margin-bottom: 0.5rem;
+    .xs-plus({
+        float: left;
+        width: 5rem;
+        margin: 0.5rem 0;
+    });
+    .sm-plus({
+        float: none;
+        width: auto;
+    });
+}
+.inpage-nav {
+    &:extend(.size-small);
+    margin: 0;
+    columns: 2;
+    .xs-plus({
+        margin-left: 5rem;
+    });
+    .sm-plus({
+        margin-left: 0;
+        columns: 1;
+    });
+    li {
+        display: inline-block;
+        width: 100%;
+    }
+    a {
+        display: block;
+        line-height: @title-leading;
+        padding: 0.25rem 0;
+        text-decoration: none;
+    }
+}
 
 .highlight {
     margin: 0 -@container-hpad-xxs;
@@ -368,6 +428,7 @@
     border: solid darken(@brand-two, 10%);
     border-width: 0 1px 2px 0;
     border-radius: 5rem;
+    margin-bottom: 2rem;
     &:extend(.fill-brand-two);
     .theme-event &:extend(.fill-brand-three) {
         border-color: darken(@brand-three, 10%);

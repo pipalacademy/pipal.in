@@ -1011,8 +1011,9 @@ a:visited {
   margin-bottom: 0;
 }
 @media (min-width: 47em) {
-  .banner-title {
-    margin-bottom: 2.5rem;
+  .banner .mainbar,
+  .banner .sidebar {
+    margin-top: 1.5rem;
   }
 }
 .banner-subtitle {

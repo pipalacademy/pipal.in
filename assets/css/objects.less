@@ -17,10 +17,13 @@
     }
     .theme-event &:extend(.fill-brand-two) {}
     .theme-trainer &:extend(.fill-brand-one) {}
+    
+    .mainbar,
+    .sidebar {
+        .sm-plus({ margin-top: 1.5rem; });
+    }
 }
-.banner-title {
-    .sm-plus({ margin-bottom: 2.5rem; });
-}
+.banner-title {}
 .banner-subtitle {
     font-weight: 300;
     .theme-trainer &:extend(.brand-three) {}

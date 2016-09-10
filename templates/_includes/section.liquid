@@ -1,4 +1,5 @@
-{% if include.body or include.highlight or include.teasers %}
+{% assign teasers_count = include.teasers | size %}
+{% if include.body or include.highlight or teasers_count > 0 %}
   <section id="{{ include.title | slugify }}" class="section clearfix">
     <div class="sidebar">
       {% if include.body or include.teasers %}
@@ -20,7 +21,7 @@
           Ugh, Liquid has the poorest
           handling of booleans.
         {% endcomment %}
-        {% assign teasers_count = include.teasers | size %}
+        
         {% if include.teaser_template contains "course_" or include.teaser_template contains "event_" %}
           {% assign show_as_grid = true %}
         {% else %}

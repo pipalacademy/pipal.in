@@ -13,9 +13,15 @@
     
     <div class="mainbar">
       {% if include.body %}
-        <div class="prose">
-          {{ include.body | markdownify }}
-        </div>
+        {% if include.video == true %}
+          <div class="embed-fluid">
+            {{ include.body }}
+          </div>
+        {% else %}
+          <div class="prose">
+            {{ include.body | markdownify }}
+          </div>
+        {% endif %}
       {% endif %}
       
       {% if include.teasers %}

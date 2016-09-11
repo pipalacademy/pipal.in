@@ -1,0 +1,4 @@
+Icons:
+  - Timer https://thenounproject.com/term/timer/45348/
+  - People https://thenounproject.com/term/users/52394/
+  - Map pin https://thenounproject.com/term/map-pin/19977/

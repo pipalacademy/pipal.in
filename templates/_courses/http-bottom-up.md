@@ -4,7 +4,7 @@ title:
   HTTP Bottom Up
 
 brief:
-  A hands-on course that explores building web applications starting all the way from bare sockets, without using any framework.
+  A hands-on course that explores everything that happens behind the scenes of your favorite web framework.
 
 description: |
   HTTP Bottom Up is a two-day hands-on course to explore everything that happens behind the scenes of your favorite web framework.

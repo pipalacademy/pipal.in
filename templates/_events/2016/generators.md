@@ -38,6 +38,24 @@ prerequisites: |
   - Exposure to classes in Python
   - Experience of using Python standard library
 
+outline: |
+
+  ### Understanding Iteration
+
+  Learn iteration works in Python by understanding iteration protocol and the concept of iterable and iterator.
+
+  ### Generators
+
+  Introduction to the concept of generators. Understand how generators support lazy evaluation and how that can be use to create data pipelines for processing large datasets. Also explores how generators leads to better program organization.
+
+  ### Generators as coroutines
+
+  Learn how to use generators as coroutines to achive cooperative multitasking.
+
+  ### Coroutines with async and await
+
+  Understand the new `awat` and `async` constructs introduced in Python 3.5 for writing native coroutines.
+
 city:
   Bangalore
   

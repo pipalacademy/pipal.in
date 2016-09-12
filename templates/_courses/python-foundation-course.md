@@ -73,7 +73,7 @@ trainers:
 
 testimonials:
   - /testimonials/arvind-kota
-  - /testimonials/anurag-mathur
   - /testimonials/bhaktavatsalan-raghavan
+  - /testimonials/anurag-mathur
 
 ---

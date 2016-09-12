@@ -1,7 +1,7 @@
 {% if include.testimonial %}
   {% assign testimonial = include.testimonial %}
-{% else %}
-  {% assign testimonial = site.testimonials | where: 'id', include.id | first %}
+{% elsif include.slug %}
+  {% assign testimonial = site.testimonials | where: 'slug', include.slug | first %}
 {% endif %}
 
 {% if testimonial %}

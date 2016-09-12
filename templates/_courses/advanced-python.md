@@ -6,13 +6,9 @@ title:
 brief:
   An intensive hands-on course that dives deep into the Python internals, advanced features like decorators, generators, meta classes etc. and best practices of Python programming language.
 
-description: |
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  
+description: |  
   An intensive hands-on course that dives deep into the Python internals, advanced features like decorators, generators, meta classes etc. and best practices of Python programming language.
   
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
 audience: |
   This course is targeted at experienced Python programmers who would like to learn advanced features of the Python programming language for building libraries and frameworks with beautiful APIs.
   
@@ -71,7 +67,6 @@ testimonials:
 #  <iframe width="560" height="315" src="https://www.youtube.com/embed/I_oZv55j0EU?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 events:
-  - /events/2016/decorators-demystified
-  - /events/2016/descriptors
+  - /events/2016/generators
 
 ---

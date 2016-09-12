@@ -98,6 +98,30 @@ trainer: /trainers/anand
 course: /courses/http-bottom-up
 
 tickets_embed: |
-  <iframe width="100%" height="600px" src="<site.baseurl>/media/boxoffice.html" frameborder="0"></iframe>
+  <div id="boxoffice-widget" style="padding-top: 0px;"><p class="text-center regular">Loading...</p></div>
+
+  <script type="text/javascript">
+    $(function(){
+      //Boxoffice widget
+      var boxofficeUrl = "https://boxoffice.hasgeek.com";
+      $.get({
+        url: boxofficeUrl+"/api/1/boxoffice.js",
+        crossDomain: true
+      }).done(function(data) {
+        var boxofficeScript = document.createElement('script');
+        boxofficeScript.innerHTML = data.script;
+        document.getElementsByTagName('body')[0].appendChild(boxofficeScript);
+        window.Boxoffice.init({
+          org: 'Pipal Academy',
+          razorpayBanner: 'https://pipal.in/static/images/dummy-logo.png',
+          itemCollection: '176580a1-6885-11e6-871c-253c1946f3fe',
+          paymentDesc: 'HTTP Bottom Up'
+        });
+
+      }).fail(function(response) {
+        $('#boxoffice-widget p').html('Unable to connect. Please try again.');
+      });
+    });
+  </script>
 
 ---

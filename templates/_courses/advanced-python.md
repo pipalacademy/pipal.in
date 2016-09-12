@@ -67,6 +67,6 @@ testimonials:
 #  <iframe width="560" height="315" src="https://www.youtube.com/embed/I_oZv55j0EU?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 events:
-  - /events/2016/generators
+  - /events/2016/generators-inside-out
 
 ---

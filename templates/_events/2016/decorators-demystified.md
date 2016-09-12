@@ -6,6 +6,8 @@ title:
 event_type:
   Online Workshop
 
+published: false
+
 dates:
   October 21 & 22, 2016
 

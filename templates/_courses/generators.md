@@ -3,6 +3,8 @@
 title:
   Generators Inside Out
 
+published: false
+
 brief:
   A hands-on course that provides in-depth introduction to generators in Python.
 

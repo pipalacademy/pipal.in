@@ -94,6 +94,5 @@ trainers:
 testimonials:
 
 events:
-  - /events/2016/http-bottom-up
 
 ---

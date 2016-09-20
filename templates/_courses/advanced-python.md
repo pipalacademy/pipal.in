@@ -60,6 +60,7 @@ infrastructure:
 
 trainers:
   - /trainers/anand
+  - /trainers/noufal
 
 testimonials:
 

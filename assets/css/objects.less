@@ -366,6 +366,12 @@
     .retina-font-weight(normal);
     b { .retina-font-weight(800); margin-right: 0.25rem; }
 }
+.speechbubble-photo {
+    &:extend(.person-photo all);
+    .rounded-photo(3rem);
+    margin-right: @photo-pad;
+    margin-left: -1 * (1.5rem - @photo-pad);
+}
 
 
 .links-list {

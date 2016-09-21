@@ -9,6 +9,9 @@ designation:
 org:
   Juniper networks
 
+photo:
+  
+
 ---
 
 

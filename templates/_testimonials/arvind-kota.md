@@ -9,6 +9,9 @@ designation:
 org:
   LinkedIn
 
+photo:
+  
+
 ---
 
 Anand conducted a a 3 days "Python training" program for the Operations Engineers at

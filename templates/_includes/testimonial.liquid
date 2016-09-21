@@ -28,6 +28,12 @@
       {% endif %}
     </blockquote>
     
+    {% if testimonial.photo %}
+      <figure class="speechbubble-photo">
+        <img alt=" " src="{{ site.baseurl | append: testimonial.photo }}">
+      </figure>
+    {% endif %}
+
     <h4 class="speechbubble-attribution size-large">
       {{ testimonial.title }}
     </h4>

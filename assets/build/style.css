@@ -469,7 +469,8 @@ hr {
 .contain-width img,
 .person-photo img,
 .banner-photo img,
-.profile-photo img {
+.profile-photo img,
+.speechbubble-photo img {
   max-width: 100%;
   height: auto;
 }
@@ -1380,7 +1381,8 @@ a:visited {
           transform: translateY(-50%);
 }
 .person-photo,
-.profile-photo {
+.profile-photo,
+.speechbubble-photo {
   float: left;
   margin: 0;
   margin-left: -80px;
@@ -1483,6 +1485,18 @@ a:visited {
   .speechbubble-credentials b {
     font-weight: 800 ;
   }
+}
+.speechbubble-photo {
+  height: 48px;
+  height: 3rem;
+  width: 48px;
+  width: 3rem;
+  border-radius: 3rem;
+  overflow: hidden;
+  margin-right: 8px;
+  margin-right: 0.5rem;
+  margin-left: -16px;
+  margin-left: -1rem;
 }
 .links-list {
   font-size: 12px;

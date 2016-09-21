@@ -9,6 +9,9 @@ designation:
 org:
   Cisco Systems
 
+photo:
+  
+
 ---
 
 

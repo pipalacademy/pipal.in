@@ -31,26 +31,27 @@ testimonials:
 </header>
 
 
-<!--
-<div class="container">
-  <h2 class="collection-heading">
-    <a href="{{ site.baseurl | append: '/events' }}">
-      Upcoming Sessions
+{% assign upcoming_events = site.events | where:"upcoming", "true" %}
+{% if upcoming_events.size > 0  %}
+  <div class="container">
+    <h2 class="collection-heading">
+      <a href="{{ site.baseurl | append: '/events' }}">
+        Upcoming Sessions
+      </a>
+    </h2>
+    <div class="cards-container clearfix">
+      {% for event in upcoming_events limit:2 %}
+        {%
+          include event_teaser.liquid
+          event=event
+        %}
+      {% endfor %}
+    </div>
+    <a class="title-label size-small no-underline" href="{{ site.baseurl | append: '/events' }}">
+      View all events &rarr;
     </a>
-  </h2>
-  <div class="cards-container clearfix">
-    {% for event in site.events limit:2 %}
-      {%
-        include event_teaser.liquid
-        event=event
-      %}
-    {% endfor %}
   </div>
-  <a class="title-label size-small no-underline" href="{{ site.baseurl | append: '/events' }}">
-    View all events &rarr;
-  </a>
-</div>
--->
+{% endif %}
 
 
 <div class="container">

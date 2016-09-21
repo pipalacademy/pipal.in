@@ -12,6 +12,16 @@ sections:
 ---
 
 <article class="theme-event page-entity clearfix">
+  {% unless page.upcoming %}
+    <div class="size-large highlight">
+      <div class="container clearfix">
+        You’re viewing a past event.
+        <a class="title-label size-xsmall no-underline" href="{{ site.baseurl | append: '/events' }}">
+          View upcoming events &rarr;
+        </a>
+      </div>
+    </div>
+  {% endunless %}
   <header class="banner clearfix">
     <div class="container clearfix">
       {% if page.event_type or page.city %}
@@ -65,22 +75,24 @@ sections:
     </div>
   </header>
   
-  <section class="container">
-    <div class="mainbar">
-      <div class="action-container">
-        <button class="button{% if page.tickets_prices %} button-multiline{% endif %} action-toggle" data-toggle="#register">
-          Register for&nbsp;Event
-          {% if page.tickets_prices %}
-            <i>
-              {{ page.tickets_prices }}
-            </i>
-          {% endif %}
-        </button>
-        <div id="register" class="action-body prose clearfix">
-          {{ page.tickets_embed | replace: '<site.baseurl>', site.baseurl }}
+  <section class="container{% unless page.upcoming %} past-event{% endunless%}">
+    {% if page.upcoming %}
+      <div class="mainbar">
+        <div class="action-container">
+          <button class="button{% if page.tickets_prices %} button-multiline{% endif %} action-toggle" data-toggle="#register">
+            Register for&nbsp;Event
+            {% if page.tickets_prices %}
+              <i>
+                {{ page.tickets_prices }}
+              </i>
+            {% endif %}
+          </button>
+          <div id="register" class="action-body prose clearfix">
+            {{ page.tickets_embed | replace: '<site.baseurl>', site.baseurl }}
+          </div>
         </div>
       </div>
-    </div>
+    {% endif %}
     <nav class="sidebar">
       {%
         include toc.liquid

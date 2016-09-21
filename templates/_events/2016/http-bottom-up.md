@@ -13,6 +13,8 @@ schedule: |
   September 16 & 17, 2016 (Friday & Saturday)
   9:00 AM to 5:00 PM
 
+upcoming: false
+
 brief:
   Explore everything that happens behind the scenes of your favorite web framework.
 

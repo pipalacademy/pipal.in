@@ -31,6 +31,17 @@
     }
 }
 
+.theme-event {
+    .container {
+        &.past-event {
+            padding-top: 0;
+            padding-bottom: 0;
+            .sidebar {
+                margin-top: 2rem;
+            }
+        }
+    }
+}
 
 .cards-container {
     clear: both;
@@ -223,6 +234,10 @@
     padding: 1rem @container-hpad-xxs;
     background: fade(@brand-four, 50%);
     .theme-event & { background: fade(@brand-two, 15%); }
+    .theme-event > & { 
+        padding-top: 0;
+        padding-bottom: 0;
+    }
     color: @brand-two;
 }
 .highlight-heading {

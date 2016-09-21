@@ -13,7 +13,7 @@ schedule: |
   September 18, 2016 (Sunday)  
   9:00 AM to 4:00 PM
 
-published: True
+upcoming: false
 
 brief:
   Learn how to build elegant data pipelines to process large datasets using Python generators.

@@ -1047,6 +1047,14 @@ a:visited {
   margin: -8px 0 32px;
   margin: -0.5rem 0 2rem;
 }
+.theme-event .container.past-event {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.theme-event .container.past-event .sidebar {
+  margin-top: 32px;
+  margin-top: 2rem;
+}
 .cards-container {
   clear: both;
 }
@@ -1293,6 +1301,10 @@ a:visited {
 }
 .theme-event .highlight {
   background: rgba(17, 75, 95, 0.15);
+}
+.theme-event > .highlight {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .highlight-heading {
   color: #1A936F;

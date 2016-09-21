@@ -124,4 +124,6 @@ tickets_embed: |
     });
   </script>
 
+tickets_prices: false
+
 ---

@@ -21,7 +21,7 @@ schedule: |
   9:00 AM - 11:30 AM IST
 
 brief:
-  Learn function programming concepts to build libraries and frameworks with beautiful APIs.
+  Learn functional programming concepts to build libraries and frameworks with beautiful APIs.
 
 description: |
   Decorators are one of the elegant features of the Python programming language. They are heavily used in modern libraries and frameworks to create elegant APIs. 

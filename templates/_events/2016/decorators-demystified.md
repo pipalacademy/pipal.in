@@ -14,11 +14,11 @@ dates:
   October 22 & 23, 2016
 
 time:
-  9AM - 11:30 AM
+  9:00 AM - 11:30 AM IST
 
 schedule: |
   October 22 & 23, 2016 <br>
-  9AM - 11:30 AM
+  9AM - 11:30 AM IST
 
 brief:
   Learn function programming concepts to build libraries and frameworks with beautiful APIs.

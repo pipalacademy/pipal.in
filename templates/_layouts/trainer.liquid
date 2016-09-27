@@ -61,7 +61,7 @@ layout: base
     teaser_template='course_teaser.liquid'
   %}
   
-  {% assign events = site.events | where: 'trainer', page.id | map: 'id' %}
+  {% assign events = site.events | where: 'trainer', page.id | where: 'active', 'true' | map: 'id' %}
   {%
     include section.liquid
     title="Upcoming Events"

@@ -17,7 +17,7 @@ time:
   9AM - 11:30 AM
 
 schedule: |
-  October 22 & 23, 2016
+  October 22 & 23, 2016 <br>
   9AM - 11:30 AM
 
 brief:

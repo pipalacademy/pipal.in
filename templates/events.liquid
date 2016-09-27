@@ -12,9 +12,11 @@ permalink: /events/
 
 <div class="cards-container clearfix">
   {% for event in site.events %}
-    {%
-      include event_teaser.liquid
-      event=event
-    %}
+    {% if event.active %}
+      {%
+        include event_teaser.liquid
+        event=event
+      %}
+    {% endif %}
   {% endfor %}
 </div>

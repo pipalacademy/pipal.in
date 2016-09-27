@@ -3,6 +3,8 @@
 title:
   Generators Inside Out
 
+active: false
+
 event_type:
   Workshop
 

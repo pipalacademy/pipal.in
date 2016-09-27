@@ -3,6 +3,8 @@
 title:
   HTTP Bottom Up
 
+active: false
+
 event_type:
   Workshop
 

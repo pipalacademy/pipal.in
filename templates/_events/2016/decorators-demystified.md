@@ -3,25 +3,25 @@
 title:
   Python Decorators Demystified
 
+active: true  
+
 event_type:
   Online Workshop
 
-published: false
+published: true
 
 dates:
-  October 21 & 22, 2016
+  October 22 & 23, 2016
 
 time:
-  9AM - 11AM
+  9AM - 11:30 AM
 
 schedule: |
-  October 21 & 22, 2016  
-  9AM - 11AM
-
-
+  October 22 & 23, 2016
+  9AM - 11:30 AM
 
 brief:
-  Building libraries and frameworks with elegant APIs using Python decorators.
+  Learn function programming concepts to build libraries and frameworks with beautiful APIs.
 
 description: |
   Decorators are one of the elegant features of the Python programming language. They are heavily used in modern libraries and frameworks to create elegant APIs. 
@@ -44,29 +44,46 @@ outline: |
   
   ### Day 1
   
-  - Introduction to Functions in Python (20 min)
-  - Functions that take functions as arguments (20 min)
-  - Functions returning functions (30 mins)
-  - Introduction to Decorators (50 mins)
+  - Introduction to Functions in Python
+  - Functions that take functions as arguments
+  - Functions returning functions
+  - Introduction to Decorators
   
   ### Day 2
-  - Decorators that take arguments (60 minutes)
-  - Decorator Patterns (20 minutes)
-  - Building a simple web framework using decorators (40 minutes)
+  - Decorators that take arguments
+  - Decorator Patterns
+  - Building a simple web framework using decorators
 
-video: |
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/I_oZv55j0EU?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-
-
-
-testimonials:
-  - /testimonials/bargava-subramanian
 
 trainer: /trainers/anand
 
 course: /courses/advanced-python
 
 tickets_embed: |
-  <iframe width="100%" height="600px" src="<site.baseurl>/media/boxoffice.html" frameborder="0"></iframe>
+  <div id="boxoffice-widget" style="padding-top: 0px;"><p class="text-center regular">Loading...</p></div>
+
+  <script type="text/javascript">
+    $(function(){
+      //Boxoffice widget
+      var boxofficeUrl = "https://boxoffice.hasgeek.com";
+      $.get({
+        url: boxofficeUrl+"/api/1/boxoffice.js",
+        crossDomain: true
+      }).done(function(data) {
+        var boxofficeScript = document.createElement('script');
+        boxofficeScript.innerHTML = data.script;
+        document.getElementsByTagName('body')[0].appendChild(boxofficeScript);
+        window.Boxoffice.init({
+          org: 'Pipal Academy',
+          razorpayBanner: 'https://pipal.in/static/images/dummy-logo.png',
+          itemCollection: 'e49c6d99-819e-11e6-a34f-6fc4a1ee2543',
+          paymentDesc: 'Python Decorators Online Workshop'
+        });
+
+      }).fail(function(response) {
+        $('#boxoffice-widget p').html('Unable to connect. Please try again.');
+      });
+    });
+  </script>
 
 ---

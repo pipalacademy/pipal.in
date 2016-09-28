@@ -9,6 +9,8 @@ author:
 courses:
   - /courses/advanced-python
 
+published: false
+
 ---
 
 

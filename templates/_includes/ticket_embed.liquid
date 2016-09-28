@@ -1,0 +1,24 @@
+<div id="boxoffice-widget" style="padding-top: 0px;"><p class="text-center regular">Loading...</p></div>
+
+<script type="text/javascript">
+  $(function(){
+    //Boxoffice widget
+    var boxofficeUrl = "https://boxoffice.hasgeek.com";
+    $.get({
+      url: boxofficeUrl+"/api/1/boxoffice.js",
+      crossDomain: true
+    }).done(function(data) {
+      var boxofficeScript = document.createElement('script');
+      boxofficeScript.innerHTML = data.script;
+      document.getElementsByTagName('body')[0].appendChild(boxofficeScript);
+      window.Boxoffice.init({
+        org: 'Pipal Academy',
+        razorpayBanner: 'https://pipal.in/static/images/dummy-logo.png',
+        itemCollection: '{{ include.page.boxoffice_id }}',
+        paymentDesc: '{{ page.title }} Workshop'
+      });
+    }).fail(function(response) {
+      $('#boxoffice-widget p').html('Unable to connect. Please try again.');
+    });
+  });
+</script>

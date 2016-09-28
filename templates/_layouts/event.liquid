@@ -71,9 +71,15 @@ sections:
         <button class="button action-toggle" data-toggle="#register">
           Register for&nbsp;Event
         </button>
-        <div id="register" class="action-body prose clearfix">
-          {{ page.tickets_embed | replace: '<site.baseurl>', site.baseurl }}
-        </div>
+
+        {% if page.boxoffice_id %}
+          <div id="register" class="action-body prose clearfix">
+            {%
+              include ticket_embed.liquid
+              page=page
+            %}
+          </div>
+        {% endif %}
       </div>
     </div>
     <nav class="sidebar">

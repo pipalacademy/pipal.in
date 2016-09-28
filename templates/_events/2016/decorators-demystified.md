@@ -59,31 +59,6 @@ trainer: /trainers/anand
 
 course: /courses/advanced-python
 
-tickets_embed: |
-  <div id="boxoffice-widget" style="padding-top: 0px;"><p class="text-center regular">Loading...</p></div>
-
-  <script type="text/javascript">
-    $(function(){
-      //Boxoffice widget
-      var boxofficeUrl = "https://boxoffice.hasgeek.com";
-      $.get({
-        url: boxofficeUrl+"/api/1/boxoffice.js",
-        crossDomain: true
-      }).done(function(data) {
-        var boxofficeScript = document.createElement('script');
-        boxofficeScript.innerHTML = data.script;
-        document.getElementsByTagName('body')[0].appendChild(boxofficeScript);
-        window.Boxoffice.init({
-          org: 'Pipal Academy',
-          razorpayBanner: 'https://pipal.in/static/images/dummy-logo.png',
-          itemCollection: 'e49c6d99-819e-11e6-a34f-6fc4a1ee2543',
-          paymentDesc: 'Python Decorators Online Workshop'
-        });
-
-      }).fail(function(response) {
-        $('#boxoffice-widget p').html('Unable to connect. Please try again.');
-      });
-    });
-  </script>
+boxoffice_id: e49c6d99-819e-11e6-a34f-6fc4a1ee2543
 
 ---

@@ -17,6 +17,10 @@
         itemCollection: '{{ include.page.boxoffice_id }}',
         paymentDesc: '{{ page.title }} Workshop'
       });
+      var fontCss = document.createElement('link');
+      fontCss.rel = 'stylesheet';
+      fontCss.href = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';
+      document.getElementsByTagName('head')[0].appendChild(fontCss);
     }).fail(function(response) {
       $('#boxoffice-widget p').html('Unable to connect. Please try again.');
     });

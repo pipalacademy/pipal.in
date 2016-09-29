@@ -2,6 +2,8 @@
   {% assign testimonial = include.testimonial %}
 {% elsif include.slug %}
   {% assign testimonial = site.testimonials | where: 'slug', include.slug | first %}
+{% else %}
+  {% assign testimonial = site.testimonials | where: 'id', include.id | first %}
 {% endif %}
 
 {% if testimonial %}

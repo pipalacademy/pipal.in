@@ -3,6 +3,8 @@
 title:
   Generators Inside Out
 
+active: false
+
 event_type:
   Workshop
 
@@ -12,8 +14,6 @@ dates:
 schedule: |
   September 18, 2016 (Sunday)  
   9:00 AM to 4:00 PM
-
-upcoming: false
 
 brief:
   Learn how to build elegant data pipelines to process large datasets using Python generators.
@@ -72,32 +72,7 @@ trainer: /trainers/anand
 
 course: /courses/advanced-python
 
-tickets_embed: |
-  <div id="boxoffice-widget" style="padding-top: 0px;"><p class="text-center regular">Loading...</p></div>
-
-  <script type="text/javascript">
-    $(function(){
-      //Boxoffice widget
-      var boxofficeUrl = "https://boxoffice.hasgeek.com";
-      $.get({
-        url: boxofficeUrl+"/api/1/boxoffice.js",
-        crossDomain: true
-      }).done(function(data) {
-        var boxofficeScript = document.createElement('script');
-        boxofficeScript.innerHTML = data.script;
-        document.getElementsByTagName('body')[0].appendChild(boxofficeScript);
-        window.Boxoffice.init({
-          org: 'Pipal Academy',
-          razorpayBanner: 'https://pipal.in/static/images/dummy-logo.png',
-          itemCollection: '4928fee6-6885-11e6-988a-1f0239bee852',
-          paymentDesc: 'Python Generators'
-        });
-
-      }).fail(function(response) {
-        $('#boxoffice-widget p').html('Unable to connect. Please try again.');
-      });
-    });
-  </script>
+boxoffice_id: 4928fee6-6885-11e6-988a-1f0239bee852
 
 tickets_prices: false
 

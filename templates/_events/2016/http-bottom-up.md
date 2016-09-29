@@ -3,6 +3,8 @@
 title:
   HTTP Bottom Up
 
+active: false
+
 event_type:
   Workshop
 
@@ -12,8 +14,6 @@ dates:
 schedule: |
   September 16 & 17, 2016 (Friday & Saturday)
   9:00 AM to 5:00 PM
-
-upcoming: false
 
 brief:
   Explore everything that happens behind the scenes of your favorite web framework.
@@ -99,32 +99,7 @@ trainer: /trainers/anand
 
 course: /courses/http-bottom-up
 
-tickets_embed: |
-  <div id="boxoffice-widget" style="padding-top: 0px;"><p class="text-center regular">Loading...</p></div>
-
-  <script type="text/javascript">
-    $(function(){
-      //Boxoffice widget
-      var boxofficeUrl = "https://boxoffice.hasgeek.com";
-      $.get({
-        url: boxofficeUrl+"/api/1/boxoffice.js",
-        crossDomain: true
-      }).done(function(data) {
-        var boxofficeScript = document.createElement('script');
-        boxofficeScript.innerHTML = data.script;
-        document.getElementsByTagName('body')[0].appendChild(boxofficeScript);
-        window.Boxoffice.init({
-          org: 'Pipal Academy',
-          razorpayBanner: 'https://pipal.in/static/images/dummy-logo.png',
-          itemCollection: '176580a1-6885-11e6-871c-253c1946f3fe',
-          paymentDesc: 'HTTP Bottom Up'
-        });
-
-      }).fail(function(response) {
-        $('#boxoffice-widget p').html('Unable to connect. Please try again.');
-      });
-    });
-  </script>
+boxoffice_id: 176580a1-6885-11e6-871c-253c1946f3fe
 
 tickets_prices: false
 

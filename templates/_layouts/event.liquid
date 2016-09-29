@@ -12,7 +12,7 @@ sections:
 ---
 
 <article class="theme-event page-entity clearfix">
-  {% unless page.upcoming %}
+  {% unless page.active %}
     <div class="size-large highlight">
       <div class="container clearfix">
         You’re viewing a past event.
@@ -75,8 +75,8 @@ sections:
     </div>
   </header>
   
-  <section class="container{% unless page.upcoming %} past-event{% endunless%}">
-    {% if page.upcoming %}
+  <section class="container{% unless page.active %} past-event{% endunless%}">
+    {% if page.active %}
       <div class="mainbar">
         <div class="action-container">
           <button class="button{% if page.tickets_prices %} button-multiline{% endif %} action-toggle" data-toggle="#register">
@@ -87,9 +87,15 @@ sections:
               </i>
             {% endif %}
           </button>
-          <div id="register" class="action-body prose clearfix">
-            {{ page.tickets_embed | replace: '<site.baseurl>', site.baseurl }}
-          </div>
+
+          {% if page.boxoffice_id %}
+            <div id="register" class="action-body prose clearfix">
+              {%
+                include ticket_embed.liquid
+                page=page
+              %}
+            </div>
+          {% endif %}
         </div>
       </div>
     {% endif %}

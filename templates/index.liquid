@@ -31,7 +31,7 @@ testimonials:
 </header>
 
 
-{% assign upcoming_events = site.events | where:"upcoming", "true" %}
+{% assign upcoming_events = site.events | where:"active", "true" %}
 {% if upcoming_events.size > 0  %}
   <div class="container">
     <h2 class="collection-heading">

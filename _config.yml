@@ -8,19 +8,25 @@ collections:
   courses:
     title: Courses
     output: true
+    permalink: /:collection/:path/
   events:
     title: Events
     output: true
+    permalink: /:collection/:path/
   trainers:
     title: Trainers
     output: true
+    permalink: /:collection/:path/
   testimonials:
     title: Testimonials
+    permalink: /:collection/:path/
   clients:
     title: Clients
+    permalink: /:collection/:path/
   articles:
     title: Articles
     output: true
+    permalink: /:collection/:path/
 
 
 # Defaults

@@ -7,7 +7,9 @@
         if (!$(".ticket-price").length)
             return;
         var price = $(".ticket-price:first").text();
-        $("#ticket-price-value").text(price).parent().removeClass("hidden");
+        $("#ticket-price-value").text(price)
+            .parent().removeClass("hidden")
+            .parent().addClass("button-multiline");
     });
 
     //Boxoffice widget

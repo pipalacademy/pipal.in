@@ -85,6 +85,10 @@ sections:
               <i>
                 {{ page.tickets_prices }}
               </i>
+            {% else %}
+              <i id="ticket-price-preview" class="hidden">
+                ₹<span id="ticket-price-value"></span> (all inclusive)
+              </i>
             {% endif %}
           </button>
 

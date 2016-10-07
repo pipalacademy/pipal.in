@@ -63,6 +63,4 @@ course: /courses/advanced-python
 
 boxoffice_id: e49c6d99-819e-11e6-a34f-6fc4a1ee2543
 
-tickets_prices: ₹2700 (all inclusive)
-
 ---

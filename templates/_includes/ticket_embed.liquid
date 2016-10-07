@@ -2,6 +2,14 @@
 
 <script type="text/javascript">
   $(function(){
+    // Show the ticket price
+    $("#boxoffice-widget").bind("DOMSubtreeModified", function() {
+        if (!$(".ticket-price").length)
+            return;
+        var price = $(".ticket-price:first").text();
+        $("#ticket-price-value").text(price).parent().removeClass("hidden");
+    });
+
     //Boxoffice widget
     var boxofficeUrl = "https://boxoffice.hasgeek.com";
     $.get({

@@ -54,6 +54,8 @@ outline: |
   - Decorator Patterns
   - Building a simple web framework using decorators
 
+video: |
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/cWKv39NdrWg?rel=0&controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 trainer: /trainers/anand
 

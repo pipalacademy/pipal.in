@@ -3,7 +3,7 @@
 title:
   Python Decorators Demystified
 
-active: true  
+active: false
 
 event_type:
   Online Workshop

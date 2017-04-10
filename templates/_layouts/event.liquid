@@ -99,6 +99,10 @@ sections:
                 page=page
               %}
             </div>
+          {% elsif page.registration_details %}
+            <div id="register" class="action-body prose clearfix">
+              {{ page.registration_details }}
+            </div>
           {% endif %}
         </div>
       </div>

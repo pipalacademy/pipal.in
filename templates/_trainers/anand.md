@@ -4,7 +4,7 @@ title:
   Anand Chitipothu
 
 bio:
-  Anand is a software consultant and trainer based in Visakhapatnam. He has over 13 years of experience in architecting and developing variety of software applications.
+  Anand is a software consultant and trainer based in Visakhapatnam. He has over 15 years of experience in architecting and developing variety of software applications.
 
   He is co-author of [web.py](http://webpy.org), a micro web framework in Python.
 

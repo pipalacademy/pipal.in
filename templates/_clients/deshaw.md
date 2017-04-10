@@ -7,6 +7,6 @@ logo:
   /media/clients/deshaw.png
 
 links:
-  web: http://www.deshawindia.com/
+  web: https://www.deshawindia.com/
 
 ---

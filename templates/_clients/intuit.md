@@ -7,6 +7,6 @@ logo:
   /media/clients/intuit.svg
 
 links:
-  web: http://www.intuit.com
+  web: https://www.intuit.com
 
 ---

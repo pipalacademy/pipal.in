@@ -74,7 +74,7 @@ registration_details: |
   <div style="text-align: center;">
     <p>This workshop is conducted as part of <a style="color: inherit;" href="http://rootconf.in/2017/">Rootconf 2017</a> conference.</p>
 
-    <a href="https://rootconf.in/2017/#building-restful-apis" style="background-color: #E05F26; border-color: #B94C1D; color: white; padding: 10px; margin-top: 10px; border-radius: 10px;">Register on Rootconf 2017 website</a>
+    <a href="https://rootconf.in/2017/building-restful-apis#building-restful-apis" style="background-color: #E05F26; border-color: #B94C1D; color: white; padding: 10px; margin-top: 10px; border-radius: 10px;">Register on Rootconf 2017 website</a>
   </div>
 
 ---

@@ -22,8 +22,8 @@
       boxofficeScript.innerHTML = data.script;
       document.getElementsByTagName('body')[0].appendChild(boxofficeScript);
       window.Boxoffice.init({
-        org: 'Pipal Academy',
-        razorpayBanner: 'https://pipal.in/static/images/dummy-logo.png',
+        org: {{include.page.boxoffice_org | default('Pipal Academy')}},
+        razorpayBanner: 'https://pipal.in/img/dummy-logo.png',
         itemCollection: '{{ include.page.boxoffice_id }}',
         paymentDesc: '{{ page.title }} Workshop'
       });

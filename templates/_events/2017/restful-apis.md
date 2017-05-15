@@ -3,7 +3,7 @@
 title:
   Building RESTful APIs
 
-active: true
+active: false
 
 event_type:
   Workshop

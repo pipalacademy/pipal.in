@@ -12,6 +12,12 @@ testimonials:
   two:    /testimonials/anurag-mathur
   three:  /testimonials/bargava-subramanian
 
+listed_courses:
+  - /courses/python-foundation-course
+  - /courses/advanced-python
+  - /courses/practical-machine-learning
+  - /courses/git
+
 ---
 
 <header class="banner">
@@ -61,10 +67,10 @@ testimonials:
     </a>
   </h2>
   <div class="cards-container clearfix">
-    {% for course in site.courses limit:4 %}
+    {% for id in page.listed_courses %}
       {%
         include course_teaser.liquid
-        course=course
+        id=id
       %}
     {% endfor %}
   </div>

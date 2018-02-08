@@ -63,6 +63,7 @@ infrastructure: |
 trainers:
   - /trainers/anand
   - /trainers/noufal
+  - /trainers/vikrant
 
 testimonials:
   - /testimonials/arvind-kota

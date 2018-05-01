@@ -12,7 +12,7 @@ dates:
   May 6, 2018
 
 schedule: |
-  May 6, 2017 (Sunday)
+  May 6, 2018 (Sunday)
   9:30 AM to 5:00 PM
 
 brief:
@@ -74,7 +74,7 @@ trainer: /trainers/anand
 
 course:
 
-tickets_prices: ₹4,800
+tickets_prices: (₹4,800)
 
 register_link: https://rootconf.in/2018-designing-restful-apis/#tickets
 register_title: Register on Rootconf website

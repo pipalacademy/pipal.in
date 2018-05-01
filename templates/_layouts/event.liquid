@@ -100,7 +100,7 @@ sections:
               %}
             </div>
           {% elsif page.registration_details %}
-            <div id="register" class="action-body prose clearfix">
+            <div id="register" class="action-body prose clearfix registration-details">
               {{ page.registration_details }}
             </div>
           {% endif %}
@@ -176,5 +176,11 @@ sections:
 #boxoffice-widget .payment-stages-wrapper {
   background-color: #F3E9D2;
   color: #114B5F;
+}
+.registration-details {
+  text-align: center !important;
+}
+.registration-details a {
+  color: white;
 }
 </style>

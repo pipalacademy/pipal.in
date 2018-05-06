@@ -3,7 +3,7 @@
 title:
   Designing Microservices
 
-active: true
+active: false
 
 event_type:
   Workshop

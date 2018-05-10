@@ -8,9 +8,9 @@ brief: |
   We offer in-depth courses on niche technical topics.
 
 testimonials:
-  one:    /testimonials/arvind-kota
-  two:    /testimonials/anurag-mathur
-  three:  /testimonials/bargava-subramanian
+  - /testimonials/arvind-kota
+  - /testimonials/anurag-mathur
+  - /testimonials/ml-vishal-vmware
 
 listed_courses:
   - /courses/python-foundation-course
@@ -102,16 +102,10 @@ listed_courses:
 
 
 <div class="container">
-  {%
-    include testimonial.liquid
-    slug="arvind-kota"
-  %}
-  {%
-    include testimonial.liquid
-    slug="bhaktavatsalan-raghavan"
-  %}
-  {%
-    include testimonial.liquid
-    slug="bargava-subramanian"
-  %}
+  {% for id in page.testimonials %}
+    {%
+      include testimonial.liquid
+      id=id
+    %}
+  {% endfor %}
 </div>

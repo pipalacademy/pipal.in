@@ -118,5 +118,6 @@ trainers:
   - /trainers/bargava
 
 testimonials:
+  - /testimonials/ml-vishal-vmware
 
 ---

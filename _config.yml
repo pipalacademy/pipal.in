@@ -71,5 +71,6 @@ keep_files:
   - build
   - js
   - img
+  - static
 markdown_ext: "markdown,mkdown,mkdn,mkd,md,liquid"
 

@@ -1073,8 +1073,7 @@ a:visited {
   }
   .cards-container .card {
     /*min-height: 33rem;*/
-    /* min-height: 36.5rem; */
-    min-height: 21rem;
+    min-height: 18rem;
   }
 }
 .card-container {

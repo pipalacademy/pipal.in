@@ -9,11 +9,11 @@
   <article class="card-container clearfix">
     <div class="card-mask">
       <a class="card card-course" href="{{ course_link }}">
-        <h1 class="card-title size-xlarge">
+        <h1 class="card-title size-large">
           <b>{{ course.title | smartify }}</b>
         </h1>
         
-        <h3 class="card-subtitle">
+        <h3 class="card-subtitle" style="margin-top: 0px">
           {% if course.duration %}
             <b class="label-timer">
               {{ course.duration | smartify }}

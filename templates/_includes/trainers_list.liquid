@@ -14,6 +14,7 @@
               </figure>
             {% endif %}
             
+            {% if compact != true %}
             <div class="person-info">
               <h5 class="person-name size-regular">
                 {{ trainer.title | smartify }}
@@ -25,6 +26,7 @@
                 </span>
               {% endif %}
             </div>
+            {% endif %}
           </li>
         {% endif %}
       {% endfor %}

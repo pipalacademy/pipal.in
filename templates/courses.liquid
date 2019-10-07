@@ -15,11 +15,14 @@ intro_link:
 permalink: /courses/
 ---
 
+{% assign courses = site.courses | sort: "order" | where: 'active', true %}
+
 <div class="cards-container clearfix">
-  {% for course in site.courses %}
+  {% for course in courses %}
     {%
       include course_teaser.liquid
       course=course
+      show_trainers=false
     %}
   {% endfor %}
 </div>

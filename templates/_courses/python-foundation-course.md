@@ -70,4 +70,7 @@ testimonials:
   - /testimonials/bhaktavatsalan-raghavan
   - /testimonials/anurag-mathur
 
+active: true
+
+order: 10
 ---

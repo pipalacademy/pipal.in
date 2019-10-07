@@ -16,4 +16,5 @@ links:
 photo:
   /media/trainers/vikrant.jpg
 
+active: true
 ---

@@ -14,4 +14,5 @@ links:
 photo:
   /media/trainers/amit.jpg
 
+active: true
 ---

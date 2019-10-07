@@ -14,4 +14,5 @@ links:
 photo:
   /media/trainers/bargava.jpg
 
+active: true
 ---

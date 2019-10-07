@@ -95,4 +95,7 @@ testimonials:
 
 events:
 
+active: true
+
+order: 15
 ---

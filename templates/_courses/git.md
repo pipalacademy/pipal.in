@@ -60,5 +60,5 @@ trainers:
 
 events:
 
-
+active: false
 ---

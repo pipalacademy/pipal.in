@@ -17,4 +17,7 @@ links:
 photo:
   /media/trainers/anand.jpeg
 
+active:
+    true
+
 ---

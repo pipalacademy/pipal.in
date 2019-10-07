@@ -120,4 +120,7 @@ trainers:
 testimonials:
   - /testimonials/ml-vishal-vmware
 
+active: true
+
+order: 20
 ---

@@ -51,5 +51,6 @@ trainers:
 events:
   - /events/2016/generators
 
+active: true
 
 ---

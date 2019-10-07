@@ -18,4 +18,5 @@ links:
 photo:
   /media/trainers/noufal.jpg
 
+active: false
 ---

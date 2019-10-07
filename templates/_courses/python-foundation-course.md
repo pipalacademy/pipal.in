@@ -62,12 +62,10 @@ infrastructure: |
 
 trainers:
   - /trainers/anand
-  - /trainers/noufal
   - /trainers/vikrant
 
 testimonials:
   - /testimonials/arvind-kota
-  - /testimonials/bhaktavatsalan-raghavan
   - /testimonials/anurag-mathur
 
 active: true

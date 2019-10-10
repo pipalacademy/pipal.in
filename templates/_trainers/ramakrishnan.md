@@ -16,4 +16,5 @@ links:
 photo:
   /media/trainers/ramki.jpg
 
+active: false
 ---

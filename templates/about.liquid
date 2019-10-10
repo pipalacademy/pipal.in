@@ -35,7 +35,8 @@ team: |
   </div>
   
   <div class="mainbar">
-    {% for trainer in site.trainers %}
+    {% assign trainers = site.trainers | where: 'active', true %}
+    {% for trainer in trainers %}
       {%
         include trainer_teaser.liquid
         trainer=trainer

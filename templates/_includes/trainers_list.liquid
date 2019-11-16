@@ -7,21 +7,21 @@
       {% for tr_id in include.trainers %}
         {% assign trainer = site.trainers | where: 'id', tr_id | first %}
         {% if trainer %}
-          <li class="person">
+          <li class="person" itemprop="instructor" itemscope itemtype="http://schema.org/Person">
             {% if trainer.photo %}
               <figure class="person-photo">
-                <img alt=" " src="{{ site.baseurl | append: trainer.photo }}">
+                <img alt=" " src="{{ site.baseurl | append: trainer.photo }}" itemprop="image">
               </figure>
             {% endif %}
             
             {% if compact != true %}
             <div class="person-info">
-              <h5 class="person-name size-regular">
+              <h5 class="person-name size-regular" itemprop="name">
                 {{ trainer.title | smartify }}
               </h5>
               
               {% if trainer.links.twitter %}
-                <span class="person-handle size-small">
+                <span class="person-handle size-small" itemprop="url">
                   @{{ trainer.links.twitter }}
                 </span>
               {% endif %}

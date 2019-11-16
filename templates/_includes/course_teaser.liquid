@@ -6,10 +6,10 @@
 
 {% if course %}
   {% assign course_link = site.baseurl | append: course.url %}
-  <article class="card-container clearfix">
+  <article class="card-container clearfix" itemscope itemtype="http://schema.org/Course">
     <div class="card-mask">
-      <a class="card card-course" href="{{ course_link }}">
-        <h1 class="card-title size-large">
+      <a class="card card-course" href="{{ course_link }}" itemprop="url">
+        <h1 class="card-title size-large" itemprop="name">
           <b>{{ course.title | smartify }}</b>
         </h1>
         
@@ -27,7 +27,7 @@
           {% endif %}
         </h3>
         
-        <div class="prose">
+        <div class="prose" itemprop="abstract">
           {{ course.brief | markdownify }}
         </div>
         

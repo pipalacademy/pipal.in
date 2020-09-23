@@ -4,9 +4,11 @@ title:
   Anand Chitipothu
 
 bio:
-  Anand has been crafting beautiful software since a decade and half.  He is co-founder of [Algoshelf](https://algoshelf.com/), a demand sensing and decision support software platform.
+  Anand has been crafting beautiful software since two decades. He has strong product development experience with deep insights in system design, scalability, and developer experience.
 
-  He is co-author of [web.py](http://webpy.org), a micro web framework in Python. He has worked at Strand Life Sciences and Internet Archive.
+  He has co-authored [web.py][1], a micro web framework in Python, built and managed Open Library at the Internet Archive, built a machine learning platform at Rorodata, trained hundreds of engineers through his courses ranging from Advanced Python to Kubernetes.
+
+  [1]: https://webpy.org/
 
 links:
   twitter: anandology

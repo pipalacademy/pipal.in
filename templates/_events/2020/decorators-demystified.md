@@ -11,13 +11,13 @@ event_type:
 published: true
 
 dates:
-  November 14 & 15, 2020
+  November 21 & 22, 2020
 
 time:
   2:00 PM - 06:00 PM IST
 
 schedule: |
-  November 14 & 15, 2020 <br>
+  November 21 & 22, 2020 <br>
   2:00 PM - 06:00 PM IST
 
 brief:

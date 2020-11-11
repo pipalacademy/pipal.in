@@ -14,11 +14,11 @@ dates:
   November 21 & 22, 2020
 
 time:
-  2:00 PM - 06:00 PM IST
+  2:30 PM - 06:30 PM IST
 
 schedule: |
   November 21 & 22, 2020 <br>
-  2:00 PM - 06:00 PM IST
+  2:30 PM - 06:30 PM IST
 
 brief:
   Learn functional programming concepts to build libraries and frameworks with beautiful APIs.

@@ -65,5 +65,5 @@ trainer: /trainers/anand
 # course: /courses/advanced-python
 
 registration_details: |
-  <a href="https://www.townscript.com/e/python-decorators-demystified-342444">Register</a>
+  <a href="https://hasgeek.com/pipalacademy/python-decorators-demystified/#tickets">Register</a>
 ---

@@ -7,6 +7,6 @@ logo:
   /media/clients/vmware.png
 
 links:
-  web: http://www.vmware.com
+  web: https://www.vmware.com
 
 ---

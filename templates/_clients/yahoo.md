@@ -7,6 +7,6 @@ logo:
   /media/clients/yahoo.png
 
 links:
-  web: http://www.yahoo.com
+  web: https://www.yahoo.com
 
 ---

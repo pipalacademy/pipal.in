@@ -1,3 +1,6 @@
 _site/
 assets/build/style.min.*.css
 assets/build/app.min.*.js
+vendor/
+.bundle/
+Gemfile.lock

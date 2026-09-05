@@ -32,6 +32,9 @@ jobs:
 
       - name: Copy static assets
         run: |
+          # _site/{build,js,img} are symlinks into assets/ committed for local
+          # development, and keep_files preserves them across the build.
+          rm -rf _site/build _site/js _site/img
           cp -r assets/build assets/js assets/img _site/
 
       - name: Add cache-busting asset filenames
